@@ -1,0 +1,1096 @@
+@import 'parts/common';
+@import 'parts/icons';
+@import 'parts/service';
+@import 'parts/reviews';
+@import 'parts/materials';
+@import 'parts/freelancers';
+@import 'parts/agency';
+@import 'parts/sale';
+@import 'parts/news';
+@import 'parts/subscribe';
+
+.header {
+    background: $darkBlue;
+    color: #fff;
+    padding: 10px 0;
+    position: relative;
+
+    .container {
+        @include fcn;
+    }
+
+    &__logo {
+        font-size: 24px;
+        transition: $trans;
+
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    &__menu {
+        margin-left: auto;
+        @include fcn;
+
+        a {
+            margin: 0 10px;
+        }
+    }
+
+    .btn {
+        padding: 0px 13px;
+    }
+
+    .btn-white {
+        margin-left: 21px;
+        margin-right: 18px;
+    }
+
+    .bar {
+        position: absolute;
+        height: 3px;
+        background: $orange;
+        width: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+    }
+}
+
+.pages {
+    padding: 80px 0;
+
+    a {
+        font-size: 16px;
+        transition: $trans;
+
+        &:hover {
+            color: $orange;
+        }
+    }
+}
+
+.main {
+    height: 560px;
+    background: url(../img/main.jpg) no-repeat center;
+    background-size: cover;
+    color: #fff;
+
+    .container {
+        @include fcc;
+        text-align: center;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 44px;
+        line-height: 1.18;
+        margin-bottom: 34px;
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 1.38;
+        margin-bottom: 30px;
+    }
+
+    &__search {
+        background: #fff;
+        @include fcsb;
+
+        input {
+            padding: 19px 21px;
+            border: 0;
+            width: 100%;
+
+            &:focus ~ .main__search-dropdown {
+                opacity: 1;
+                pointer-events: all;
+                user-select: initial;
+                bottom: -10px;
+            }
+        }
+
+        button {
+            cursor: pointer;
+            margin-right: 7px;
+            padding: 0 10px;
+            flex-shrink: 0;
+
+            .icon {
+                font-size: 27px;
+                fill: $gray;
+                transition: $trans;
+
+                &:hover {
+                    fill: $orange;
+                }
+            }
+        }
+
+        &-wrap {
+            width: 775px;
+            position: relative;
+        }
+
+        &-dropdown {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            transform: translateY(100%);
+            background: #fff;
+            color: $text;
+            width: 100%;
+            text-align: left;
+            padding: 10px 0;
+            opacity: 0;
+            pointer-events: none;
+            user-select: none;
+            transition: $trans;
+            box-shadow: 0 0 9px 2px rgba(#000, 0.3);
+
+            div {
+                display: block;
+                padding: 5px 20px;
+                cursor: pointer;
+                transition: $trans;
+
+                &:hover {
+                    background: #f4f7fa;
+                }
+            }
+        }
+    }
+}
+
+.how {
+    padding: 60px 0;
+
+    .container {
+        background: #f4f7fa;
+        @include fcsb;
+        padding: 0 81px;
+
+        & > div {
+            width: 50%;
+            position: relative;
+
+            &:first-child {
+                cursor: pointer;
+
+                &:hover .how__btn img {
+                    transform: scale(1.1);
+                }
+            }
+
+            &:last-child {
+                padding-left: 69px;
+            }
+        }
+    }
+
+    img {
+        margin-top: -25px;
+        margin-bottom: -25px;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 36px;
+        margin-bottom: 15px;
+        line-height: 1.27;
+    }
+
+    .orange {
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 23px;
+        display: block;
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 1.38;
+    }
+
+    &__btn {
+        @include fcn;
+        position: absolute;
+        top: 12%;
+        right: 7%;
+
+        img {
+            margin-right: 10px;
+            margin-top: 0;
+            margin-bottom: 0;
+            transition: $trans;
+        }
+
+        span {
+            color: $gray2;
+            font-size: 18px;
+            line-height: 1.05;
+        }
+    }
+}
+
+.circles {
+    padding: 95px 0 40px;
+
+    .container {
+        @include fcsb;
+
+        & > div {
+            width: 50%;
+
+            &:last-child {
+                text-align: center;
+                position: relative;
+            }
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 1.36;
+        margin-bottom: 32px;
+    }
+
+    .orange {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.32;
+        margin-bottom: 31px;
+    }
+
+    img {
+        pointer-events: none;
+        user-select: none;
+        max-width: 100%;
+    }
+
+    &__item {
+        box-shadow: 0px 0px 14.8097px rgba(134, 135, 135, 0.35);
+        @include fcc;
+        width: 205px;
+        height: 78px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: #fff;
+
+        &.p1 {
+            transform: translate(-121%, -104%);
+        }
+
+        &.p2 {
+            transform: translate(-121%, 63%);
+        }
+
+        &.p3 {
+            transform: translate(29%, -160%);
+        }
+
+        &.p4 {
+            transform: translate(21%, -9%);
+        }
+    }
+
+    .btn {
+        margin-top: 47px;
+    }
+}
+
+.category {
+    padding: 40px 0;
+
+    &__list {
+        @include fcsb;
+
+        & > div {
+            width: 49%;
+        }
+
+        a {
+            display: block;
+            @include fcn;
+            padding: 14px 23px;
+            background: #ffffff;
+            box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
+            margin-bottom: 20px;
+            font-size: 18px;
+            position: relative;
+            transition: $trans;
+
+            span {
+                position: relative;
+                z-index: 2;
+            }
+
+            &:hover {
+                color: #fff;
+
+                &::before {
+                    width: 100%;
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 100%;
+                width: 10px;
+                background: #19376b;
+                transition: $trans;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            img {
+                width: 43px;
+                margin-right: 34px;
+                pointer-events: none;
+                user-select: none;
+                position: relative;
+                z-index: 2;
+            }
+        }
+    }
+
+    .btn {
+        margin-top: 39px;
+    }
+}
+
+.tip {
+    position: absolute;
+    top: -15px;
+    left: -18px;
+    transform: translateY(-100%);
+    background: $darkBlue;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.33;
+    padding: 7px 9px;
+    transition: $trans;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    width: auto !important;
+    z-index: 3;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        width: 0;
+        height: 0;
+        transform: translateY(100%);
+        border: 0 solid transparent;
+        border-left-width: 8px;
+        border-right-width: 8px;
+        border-top: 8px solid $darkBlue;
+    }
+
+    &-parent {
+        position: relative;
+        cursor: pointer;
+
+        &:hover {
+            .tip {
+                opacity: 1;
+                pointer-events: all;
+                user-select: initial;
+            }
+        }
+    }
+}
+
+.users {
+    padding: 57px 0;
+
+    &__list {
+        @include r(1023) {
+            @include flexlist(10px);
+        }
+
+        @include r(767) {
+            @include flexlist(1px);
+        }
+
+        @include flexlist(15px);
+    }
+
+    &__item {
+        @include r(1023) {
+            @include flexitem(50%, 10px);
+        }
+
+        @include r(767) {
+            @include flexitem(100%, 1px);
+        }
+
+        @include flexitem(25%, 15px);
+        background: #ffffff;
+        box-shadow: 0px 0px 15px rgba(179, 184, 190, 0.35);
+        padding: 22px 20px;
+        position: relative;
+    }
+
+    &__info {
+        @include fsn;
+        margin-bottom: 9px;
+
+        & > div {
+            @include fcn;
+            flex-wrap: wrap;
+        }
+
+        & > a {
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+    }
+
+    &__photo {
+        width: 60px;
+        border-radius: 50%;
+    }
+
+    &__name {
+        font-weight: 700;
+        width: 100%;
+        line-height: 1.33;
+        margin-bottom: 6px;
+        transition: $trans;
+
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    &__stars {
+        margin-right: 18px;
+    }
+
+    &__trophy {
+        @include fcn;
+        color: $gray2;
+        font-weight: 700;
+        font-size: 12px;
+
+        .icon {
+            fill: $green;
+            margin-right: 5px;
+        }
+    }
+
+    &__work {
+        font-size: 12px;
+        color: $gray2;
+        margin-bottom: 2px;
+    }
+
+    &__time {
+        color: $gray2;
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    &__check {
+        @include fcn;
+        color: $gray2;
+        margin-bottom: 12px;
+        font-weight: 700;
+        font-size: 12px;
+
+        &.active {
+            color: $green;
+
+            .icon {
+                fill: $green;
+            }
+        }
+
+        .icon {
+            fill: $gray2;
+            font-size: 11px;
+            margin-right: 4px;
+        }
+    }
+
+    &__text {
+        font-size: 12px;
+        line-height: 1.33;
+        margin-bottom: 25px;
+
+        a {
+            color: $blue;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .freelancers__features {
+        margin-bottom: 0;
+
+        div span {
+            min-width: 134px;
+        }
+    }
+}
+
+.task {
+    padding: 50px 0;
+
+    &__item {
+        background: #ffffff;
+        box-shadow: 0px 0px 15px rgba(179, 184, 190, 0.35);
+        padding: 15px 38px;
+        margin-bottom: 11px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__top {
+        @include fcn;
+        margin-bottom: 12px;
+
+        a {
+            @include fcn;
+            transition: $trans;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+    }
+
+    &__photo {
+        border-radius: 50%;
+        width: 40px;
+        flex-shrink: 0;
+        margin-right: 12px;
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    &__price {
+        margin-left: auto;
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    &__text {
+        margin-bottom: 16px;
+
+        a {
+            color: $blue;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__bottom {
+        @include fcn;
+
+        .btn {
+            margin-right: 26px;
+        }
+
+        &-item {
+            @include fcn;
+            color: $gray2;
+            font-weight: 700;
+            margin-right: 37px;
+
+            .icon {
+                fill: $gray2;
+                margin-right: 7px;
+                font-size: 18px;
+            }
+        }
+    }
+
+    &__show {
+        margin-left: auto;
+        margin-right: 17px;
+    }
+
+    &__users {
+        @include fcn;
+
+        img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0 1px;
+        }
+    }
+}
+
+.footer {
+    background: #0c1538;
+    color: #fff;
+    margin-top: 53px;
+
+    .container {
+        padding-top: 57px;
+    }
+
+    &__wrap {
+        @include fssb;
+    }
+
+    &__logo {
+        font-size: 24px;
+        margin-bottom: 39px;
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 37px;
+
+        a {
+            margin-bottom: 12px;
+            transition: $trans;
+
+            &:hover {
+                color: $orange;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    &__row {
+        @include fcsb;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 29px 0;
+
+        & > div:not(.footer__social) {
+            line-height: 1.33;
+
+            a {
+                text-decoration: underline;
+                margin-right: 59px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &__social {
+        @include fcn;
+
+        a {
+            margin-left: 27px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:hover .icon {
+                fill: $orange;
+            }
+
+            .icon {
+                fill: #fff;
+                font-size: 32px;
+                transition: $trans;
+            }
+        }
+    }
+}
+
+.head {
+    background: url(../img/head-bg.png) no-repeat center;
+    background-size: cover;
+    color: #fff;
+    padding: 10px 0;
+
+    .main__search {
+        width: 511px;
+        background: #3862ab;
+        height: 32px;
+        @include fcn;
+        position: relative;
+
+        input {
+            height: 100%;
+            width: 100%;
+            background: transparent;
+            border: 0;
+            padding-left: 14px;
+            padding-right: 14px;
+            color: #fff;
+
+            &::placeholder {
+                color: #fff;
+            }
+        }
+
+        button {
+            padding: 0 10px;
+            flex-shrink: 0;
+            cursor: pointer;
+
+            &:hover .icon {
+                fill: $orange;
+            }
+
+            .icon {
+                fill: #fff;
+                font-size: 18px;
+                transition: $trans;
+            }
+        }
+    }
+}
+
+.breadcrumbs {
+    @include fcn;
+    margin-bottom: 11px;
+
+    a {
+        transition: $trans;
+
+        &:hover {
+            color: $orange;
+
+            &::after {
+                color: #fff;
+            }
+        }
+
+        &::after {
+            content: '/';
+            margin-left: 5px;
+            margin-right: 5px;
+            color: #fff !important;
+        }
+
+        &:last-child::after {
+            display: none;
+        }
+    }
+}
+
+.submenu {
+    margin-top: 26px;
+    @include fcn;
+    position: relative;
+
+    a {
+        margin-right: 39px;
+        font-weight: 700;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .bar {
+        position: absolute;
+        height: 3px;
+        background: $orange;
+        width: 0;
+        bottom: -10px;
+        left: 0;
+        z-index: 2;
+    }
+}
+
+.best {
+    padding: 34px 0;
+
+    &__header {
+        @include fcsb;
+        margin-bottom: 18px;
+
+        h2 {
+            display: block;
+            margin-bottom: 0;
+        }
+
+        a {
+            transform: none;
+            position: static;
+            color: $text;
+            font-size: 24px;
+            text-decoration: none;
+            border-bottom: 1px dashed;
+            transition: $trans;
+
+            &:hover {
+                border-color: transparent;
+            }
+        }
+    }
+
+    &__body {
+        @include fssb;
+
+        img {
+            margin-left: 40px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 21px;
+    }
+
+    .scrollto {
+        margin-bottom: 25px;
+    }
+
+    &__links {
+        @include fcn;
+        flex-wrap: wrap;
+
+        a {
+            color: $blue;
+            transition: $trans;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+
+        a,
+        div {
+            &::after {
+                content: '|';
+                margin-left: 5px;
+                margin-right: 5px;
+                color: $text;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.scrollto {
+    color: $blue;
+    @include fcn;
+    display: inline-flex;
+    transition: $trans;
+
+    &:hover {
+        color: $orange;
+
+        .icon {
+            fill: $orange;
+        }
+    }
+
+    .icon {
+        fill: $blue;
+        margin-left: 10px;
+        transition: $trans;
+    }
+}
+
+.sort {
+    margin-bottom: 35px;
+
+    .container {
+        background: $darkBlue;
+        color: #fff;
+        @include fcn;
+        padding: 16px 26px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        margin-right: 15px;
+    }
+
+    &__item {
+        @include fcn;
+        margin-right: 20px;
+
+        &.active {
+            font-weight: 700;
+        }
+
+        span {
+            margin-right: 10px;
+        }
+    }
+
+    &__btn {
+        cursor: pointer;
+
+        &:hover .icon {
+            fill: $orange;
+        }
+
+        .icon {
+            fill: #fff;
+            transition: $trans;
+        }
+    }
+
+    &__count {
+        margin-left: auto;
+        font-weight: 700;
+        font-size: 18px;
+    }
+}
+
+.content {
+    .container {
+        @include fssb;
+    }
+
+    &__body {
+        width: 100%;
+    }
+
+    &__sidebar {
+        width: 270px;
+        flex-shrink: 0;
+        margin-left: 30px;
+    }
+}
+
+.item {
+    background: #ffffff;
+    box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
+    padding: 17px 14px;
+    padding-left: 37px;
+    @include fsn;
+
+    & > a {
+        flex-shrink: 0;
+        margin-right: 17px;
+
+        img {
+            width: 76px;
+        }
+    }
+
+    &__top {
+        @include fssb;
+
+        & > div {
+            &:last-child {
+                @include fcc;
+                flex-direction: column;
+
+                a {
+                    display: block;
+
+                    &:not(.btn) {
+                        color: $orange;
+                        font-size: 12px;
+                        font-weight: 700;
+                        text-decoration: underline;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                .btn {
+                    margin-bottom: 4px;
+                }
+            }
+        }
+    }
+
+    &__controls {
+        @include fcn;
+        margin-top: -5px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        @include fcn;
+        margin-right: 9px;
+
+        .icon {
+            fill: $blue;
+            font-size: 10px;
+            margin-left: 9px;
+            margin-top: -9px;
+        }
+    }
+
+    .heart,
+    .bookmark {
+        path {
+            stroke: $text;
+        }
+
+        &:hover {
+            path {
+                fill: $text;
+            }
+        }
+    }
+
+    .heart {
+        margin-right: 6px;
+    }
+
+    .bookmark {
+        margin-right: 9px;
+    }
+
+    &__reviews {
+        color: $gray2;
+        text-decoration: underline;
+        font-size: 12px;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__info {
+        @include fcn;
+    }
+}

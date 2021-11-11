@@ -1,0 +1,115 @@
+.news {
+    padding: 30px 0;
+
+    &__list {
+        @include r(1023) {
+            @include flexlist(10px);
+        }
+
+        @include r(767) {
+            @include flexlist(1px);
+        }
+
+        @include flexlist(15px);
+    }
+
+    &__item {
+        @include r(1023) {
+            @include flexitem(50%, 10px);
+        }
+
+        @include r(767) {
+            @include flexitem(100%, 1px);
+        }
+
+        @include flexitem(25%, 15px);
+        background: #ffffff;
+        box-shadow: 0px 0px 15px rgba(179, 184, 190, 0.35);
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border: 1px solid #cccccc;
+        transition: $trans;
+        top: 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: #251d1d;
+            opacity: 0.45;
+        }
+
+        &:hover {
+            box-shadow: none;
+            top: -15px;
+        }
+
+        &.full {
+            color: #fff;
+
+            .news__date,
+            .news__link {
+                color: #fff;
+
+                .icon {
+                    fill: #fff;
+                }
+            }
+
+            .news__info {
+                background: transparent;
+            }
+        }
+    }
+
+    &__img {
+        height: 148px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        z-index: 2;
+        transition: $trans;
+    }
+
+    &__info {
+        padding: 15px 18px;
+        position: relative;
+        z-index: 2;
+        background: #fff;
+    }
+
+    &__title {
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 18px;
+        transition: $trans;
+    }
+
+    &__bottom {
+        @include fcsb;
+    }
+
+    &__link {
+        color: #3660ab;
+        @include fcn;
+        font-size: 12px;
+
+        .icon {
+            fill: #3660ab;
+            font-size: 15px;
+            margin-left: 12px;
+        }
+    }
+
+    &__date {
+        font-size: 12px;
+        color: #868787;
+    }
+}

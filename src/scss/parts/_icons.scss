@@ -1,0 +1,28 @@
+.icons {
+    padding: 97px 0;
+
+    .container {
+        @include fsc;
+        text-align: center;
+    }
+
+    .icon {
+        font-size: 60px;
+        fill: $gray;
+        margin-bottom: 13px;
+    }
+
+    &__item {
+        margin: 0 4%;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    &__text {
+        line-height: 1.6;
+    }
+}

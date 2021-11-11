@@ -1,0 +1,77 @@
+.subscribe {
+    padding: 94px 0;
+
+    .container {
+        position: relative;
+        background: #f4f7fa;
+        padding-top: 44px;
+        padding-bottom: 44px;
+        @include fcc;
+        flex-direction: column;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    &__img {
+        position: absolute;
+        left: 14px;
+        bottom: 0;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    &__line {
+        position: absolute;
+        top: 0;
+        right: 0;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    form {
+        input:not([type='checkbox']),
+        button,
+        .checkbox {
+            width: 280px;
+        }
+
+        input:not([type='checkbox']),
+        button {
+            height: 56px;
+            font-size: 20px;
+            margin: 0 6px;
+
+            &::placeholder {
+                color: #c4c4c4;
+            }
+        }
+
+        input:not([type='checkbox']) {
+            padding-left: 21px;
+            padding-right: 21px;
+        }
+    }
+
+    .checkbox {
+        margin-left: auto;
+        margin-top: 12px;
+        position: relative;
+        left: -6px;
+
+        label {
+            font-size: 12px;
+            line-height: 1.33;
+
+            a {
+                color: $orange;
+                text-decoration: underline;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

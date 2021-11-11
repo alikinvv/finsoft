@@ -1,0 +1,368 @@
+@charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import 'mixins';
+
+$red: #862020;
+$green: #4fafa3;
+$blue: #5b88d9;
+$gray: #b3b8be;
+$gray2: #898d9c;
+$darkBlue: #0c1538;
+$orange: #dd8f53;
+$text: #060c1c;
+$trans: all 0.2s ease-in-out;
+
+::selection {
+    background: $blue;
+    color: #fff;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: $text;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+    margin-top: 0;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 46px;
+    @include fcc;
+
+    .tip-parent {
+        margin-left: 15px;
+
+        .tip {
+            top: 0;
+        }
+    }
+
+    & + a {
+        color: $orange;
+        font-weight: 700;
+        text-decoration: underline;
+        @include centerX;
+        display: inline-block;
+        top: -46px;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+button {
+    background: transparent;
+    border: 0;
+}
+
+.btn,
+input,
+textarea,
+select,
+button:focus {
+    outline: none;
+}
+
+input[type='text'],
+textarea {
+    background: #ffffff;
+    border: 1px solid #b3b8be;
+    transition: $trans;
+
+    &:focus {
+        border-color: $text;
+    }
+
+    &::placeholder {
+        color: #8e8e8e;
+    }
+}
+
+.checkbox {
+    @include fsn;
+
+    label {
+        color: $gray2;
+        cursor: pointer;
+        user-select: none;
+
+        & + input {
+            margin-left: 8px;
+        }
+    }
+
+    input + label {
+        margin-left: 8px;
+    }
+}
+
+input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+    background: $gray;
+    appearance: none;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &:checked {
+        background: url(../img/icons/check.svg) no-repeat center $gray;
+        background-size: 12px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn {
+    display: inline-block;
+    transition: $trans;
+    text-decoration: none;
+    border: 0;
+    cursor: pointer;
+    user-select: none;
+    background: $orange;
+    padding: 8px 16px;
+    color: #fff;
+    border: 1px solid transparent;
+    position: relative;
+
+    &.btn-big {
+        font-size: 18px;
+        padding: 12px 19px;
+    }
+
+    .icon {
+        fill: #fff;
+        font-size: 22px;
+    }
+
+    &:hover {
+        background: $green;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &-outline {
+        background: transparent;
+        border-color: $orange;
+        color: $orange;
+
+        &:hover {
+            background: $orange;
+            color: #fff;
+            border-color: $orange;
+
+            .icon {
+                fill: #fff;
+            }
+        }
+
+        .icon {
+            fill: $orange;
+        }
+
+        &.btn-white {
+            border-color: #fff;
+            color: #fff;
+            background: transparent;
+
+            &:hover {
+                background: #fff;
+                color: $text;
+                border-color: #fff;
+
+                .icon {
+                    fill: $text;
+                }
+            }
+
+            .icon {
+                fill: #fff;
+            }
+        }
+    }
+
+    &-white {
+        background: #fff;
+        color: $text;
+
+        .icon {
+            fill: $text;
+        }
+    }
+
+    &-icon {
+        @include fcc;
+    }
+
+    &-download {
+        .icon {
+            @include centerYa;
+            left: 16px;
+        }
+
+        span:not(.divider) {
+            position: relative;
+            left: 38px;
+        }
+
+        &.btn-big {
+            .icon {
+                left: 19px;
+            }
+
+            span:not(.divider) {
+                left: 41px;
+            }
+        }
+    }
+
+    .divider {
+        position: absolute;
+        top: 5px;
+        bottom: 5px;
+        left: 65px;
+        width: 1px;
+        background: #dadada;
+    }
+
+    &-dot {
+        padding-bottom: 10px;
+        padding-top: 6px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            @include centerXa;
+            bottom: -12px;
+            background: #fff;
+            border-radius: 50%;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        &.btn-big {
+            padding-bottom: 16px;
+            padding-top: 8px;
+        }
+
+        &.btn-shadow::before {
+            background: #f9f9f9;
+        }
+    }
+
+    &.center {
+        @include centerX;
+    }
+}
+
+.container {
+    @include r(1200) {
+        padding: 0 15px;
+    }
+
+    margin: 0 auto;
+    max-width: 1170px;
+}
+
+.red {
+    color: $red;
+}
+
+.green {
+    color: $green;
+}
+
+.blue {
+    color: $blue;
+}
+
+.gray {
+    color: $gray;
+}
+
+.gray2 {
+    color: $gray2;
+}
+
+.darkBlue {
+    color: $darkBlue;
+}
+
+.orange {
+    color: $orange;
+}
+
+ul.gray-dot {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+
+    li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 9px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            @include centerYa;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: $gray;
+        }
+    }
+
+    &.sm {
+        li {
+            font-size: 12px;
+            padding-left: 10px;
+            margin-bottom: 2px;
+
+            &::before {
+                width: 5px;
+                height: 5px;
+            }
+        }
+    }
+}

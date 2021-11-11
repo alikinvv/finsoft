@@ -1,0 +1,63 @@
+.materials {
+    padding: 21px 0;
+
+    &__list {
+        @include r(1023) {
+            @include flexlist(10px);
+        }
+
+        @include r(767) {
+            @include flexlist(1px);
+        }
+
+        @include flexlist(15px);
+    }
+
+    &__item {
+        @include r(1023) {
+            @include flexitem(50%, 10px);
+        }
+
+        @include r(767) {
+            @include flexitem(100%, 1px);
+        }
+
+        @include flexitem(25%, 15px);
+        color: #fff;
+    }
+
+    &__wrap {
+        height: 356px;
+        background: url(../img/material.svg) no-repeat left top;
+        background-size: cover;
+        box-shadow: 0px 0px 15px rgba(179, 184, 190, 0.35);
+        margin-bottom: 23px;
+        @include fcc;
+    }
+
+    &__img {
+        width: 203px;
+        height: 288px;
+        @include fnc;
+        text-align: center;
+        padding: 38px 25px;
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.16;
+    }
+
+    &__format {
+        position: absolute;
+        right: 10px;
+        bottom: 15px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+}

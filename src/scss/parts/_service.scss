@@ -1,0 +1,189 @@
+.service {
+    @include r(767) {
+        @include flexitem(100%, 1px);
+    }
+
+    background: #ffffff;
+    box-shadow: 0px 0px 15px rgba(179, 184, 190, 0.35);
+    @include flexitem(33.33%, 15px);
+    padding: 24px;
+    position: relative;
+
+    &__wrap {
+        padding: 37px 0;
+    }
+
+    &__list {
+        @include r(767) {
+            @include flexlist(1px);
+        }
+
+        @include flexlist(15px);
+    }
+
+    &__top {
+        @include fcn;
+        margin-bottom: 9px;
+
+        &:hover {
+            div {
+                color: $blue;
+            }
+        }
+
+        & > img {
+            margin-right: 12px;
+            width: 63px;
+        }
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.33;
+        padding-right: 30px;
+        transition: $trans;
+    }
+
+    &__reviews {
+        @include fcn;
+        margin-bottom: 15px;
+
+        &:hover {
+            span {
+                color: $orange;
+            }
+        }
+
+        img {
+            margin-right: 11px;
+        }
+
+        span {
+            color: $gray2;
+            font-size: 12px;
+            transition: trans;
+        }
+    }
+
+    &__text {
+        max-height: 84px;
+        @include ellipsis;
+        line-height: 1.5;
+        margin-bottom: 21px;
+    }
+
+    &__progress {
+        @include flexlist(13px);
+        margin-bottom: 5px;
+
+        &-item {
+            @include flexitem(50%, 13px);
+            @include fcn;
+
+            &.orange {
+                color: $text;
+
+                span.fill {
+                    background: $orange;
+                }
+            }
+
+            img {
+                width: 15px;
+                flex-shrink: 0;
+            }
+
+            div {
+                width: 100%;
+                margin-left: 8px;
+                @include fcn;
+
+                span {
+                    width: 23px;
+                    height: 10px;
+                    background: $gray;
+                    margin: 0 1px;
+
+                    &.fill {
+                        background: $darkBlue;
+                    }
+                }
+            }
+        }
+    }
+
+    &__features {
+        color: $darkBlue;
+        margin-bottom: 23px;
+
+        div {
+            @include fcn;
+
+            span:first-child {
+                font-weight: 700;
+                margin-right: 5px;
+            }
+        }
+
+        .icon {
+            font-size: 17px;
+            fill: $gray;
+
+            &.active {
+                fill: $darkBlue;
+            }
+        }
+    }
+
+    &__bottom {
+        @include fcsb;
+
+        span {
+            color: $gray;
+
+            &.active {
+                color: #3660ab;
+            }
+        }
+
+        label {
+            font-size: 12px;
+        }
+    }
+
+    &__icons {
+        position: absolute;
+        @include fcc;
+        flex-direction: column;
+        top: -1px;
+        right: 24px;
+
+        &-item {
+            cursor: pointer;
+
+            &.bookmark {
+                &.active,
+                &:hover {
+                    path {
+                        fill: $orange;
+                    }
+                }
+            }
+
+            &.heart {
+                &.active,
+                &:hover {
+                    path {
+                        fill: $darkBlue;
+                    }
+                }
+            }
+
+            path {
+                transition: $trans;
+                fill: transparent;
+            }
+        }
+    }
+}

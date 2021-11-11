@@ -1,0 +1,214 @@
+.reviews {
+    padding: 60px 0;
+
+    &__list {
+        @include flexlist(15px);
+    }
+
+    &__item {
+        @include flexitem(50%, 15px);
+        border: 1px solid $gray;
+        position: relative;
+    }
+
+    &__top {
+        padding: 12px 25px;
+        @include fcn;
+        border-bottom: 1px solid $gray;
+
+        div {
+            @include fcn;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__photo {
+        width: 61px;
+        margin-right: 13px;
+        @include fcc;
+        flex-shrink: 0;
+    }
+
+    a.reviews__title {
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 5px;
+        width: 100%;
+        transition: $trans;
+        padding-right: 30px;
+
+        &:hover {
+            color: $orange;
+        }
+
+        img {
+            width: 10px;
+            position: relative;
+            top: -6px;
+        }
+    }
+
+    &__awards {
+        @include fcn;
+        color: $orange;
+        font-weight: 700;
+        margin-right: 9px;
+        font-size: 12px;
+
+        img {
+            margin-right: 5px;
+            margin-left: 16px;
+        }
+    }
+
+    &__rating {
+        @include fcn;
+        font-weight: 700;
+        margin-right: 15px;
+        font-size: 12px;
+
+        &.top {
+            color: $green;
+        }
+
+        &.bottom {
+            color: $red;
+        }
+
+        img {
+            margin-right: 5px;
+        }
+    }
+
+    &__count {
+        color: $gray2;
+        transition: $trans;
+        font-size: 12px;
+
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    &__user {
+        padding: 12px 25px;
+        @include fsn;
+        border-bottom: 1px solid $gray;
+
+        a img {
+            border-radius: 50%;
+            width: 60px;
+            margin-right: 14px;
+        }
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 12px;
+        margin-bottom: 2px;
+        transition: $trans;
+
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    &__info {
+        &-item {
+            font-size: 10px;
+            font-weight: 700;
+            @include fcn;
+
+            span {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    &__check {
+        font-size: 10px;
+        @include fcn;
+        color: $green;
+        font-weight: 700;
+        white-space: nowrap;
+        margin-top: 2px;
+
+        img {
+            margin-right: 5px;
+        }
+    }
+
+    &__progress {
+        margin-left: auto;
+    }
+
+    .service__progress {
+        &-item {
+            font-size: 10px;
+            margin-right: 0;
+            margin-left: 0;
+            width: 100%;
+            @include fce;
+            margin-bottom: 2px;
+
+            & > span {
+                white-space: nowrap;
+                min-width: 137px;
+                font-weight: 700;
+                color: $gray2;
+            }
+
+            div {
+                width: auto;
+
+                span {
+                    width: 20px;
+                    height: 7px;
+                }
+            }
+        }
+    }
+
+    &__body {
+        padding: 12px 25px;
+
+        .reviews__title {
+            &:first-child {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__controls {
+        padding: 0 25px 12px;
+        @include fcsb;
+
+        .btn-outline {
+            margin-left: 9px;
+        }
+    }
+
+    &__date {
+        font-weight: 700;
+        color: $gray;
+    }
+
+    div.reviews__title {
+        font-weight: 700;
+        margin-bottom: 7px;
+        line-height: 1.31;
+    }
+
+    &__text {
+        margin-bottom: 16px;
+
+        a {
+            color: $blue;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
