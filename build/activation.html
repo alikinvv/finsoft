@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
     <link rel="stylesheet" href="css/main.css">
 
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -94,13 +95,14 @@
                 <div class="wrapper__body">
                     <form action="" class="form">
                         <div class="form__flex">
-                            <div class="form-group">
+                            <div class="form-group error">
                                 <svg class="icon">
                                     <use xlink:href="img/symbol-defs.svg#icon-letter"></use>
                                 </svg>
                                 <input type="text" placeholder="Имя*">
+                                <span class="error">Обязательное поле</span>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group success">
                                 <svg class="icon">
                                     <use xlink:href="img/symbol-defs.svg#icon-letter"></use>
                                 </svg>
@@ -128,24 +130,130 @@
                             </div>
                         </div>
                         <div class="form__flex">
-                            <div class="phone">
-                                <div class="phone__toggle">
-                                    <img src="img/rus.png" alt="">
-                                    <svg class="icon">
-                                        <use xlink:href="img/symbol-defs.svg#icon-select"></use>
-                                    </svg>
+                            <div class="form-group">
+                                <div class="phone">
+                                    <div class="phone__toggle">
+                                        <img src="img/rus.png" alt="">
+                                        <svg class="icon">
+                                            <use xlink:href="img/symbol-defs.svg#icon-select"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="phone__dropdown">
+                                        <div><img src="img/rus.png" alt=""></div>
+                                        <div><img src="img/rus.png" alt=""></div>
+                                        <div><img src="img/rus.png" alt=""></div>
+                                    </div>
+                                    <div class="phone__body">
+                                        <input type="text" class="sm" placeholder="+7(___) ___-__-__">
+                                        <svg class="icon">
+                                            <use xlink:href="img/symbol-defs.svg#icon-checked"></use>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="phone__dropdown">
-                                    <div><img src="img/rus.png" alt=""></div>
-                                    <div><img src="img/rus.png" alt=""></div>
-                                    <div><img src="img/rus.png" alt=""></div>
+                                <button class="btn btn-darkBlue sm">Получить <br> КОД по SMS</button>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="sm" placeholder="Введите КОД из SMS">
+                                <button class="btn btn-darkBlue sm">Подтвердить <br> телефон</button>
+                            </div>
+                        </div>
+                        <div class="form__flex">
+                            <div class="form-group">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-pin"></use>
+                                </svg>
+                                <input type="text" placeholder="Город">
+                            </div>
+                            <div class="form-group">
+                                <span>Пол</span>
+
+                                <div class="form-group radio">
+                                    <input type="radio" name="p1" id="p1">
+                                    <label for="p1">Мужской</label>
                                 </div>
-                                <div class="phone__body">
-                                    <span>+7</span>
-                                    <input type="text" placeholder="Введите номер">
+                                <div class="form-group radio">
+                                    <input type="radio" name="p1" id="p2">
+                                    <label for="p2">Женский</label>
                                 </div>
                             </div>
-                            <button class="btn btn-darkBlue sm">Получить <br> КОД по SMS</button>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="form__flex">
+                            <div class="form-group">
+                                <div class="select">
+                                    <div class="select__current">
+                                        <svg class="icon">
+                                            <use xlink:href="img/symbol-defs.svg#icon-case2"></use>
+                                        </svg>
+                                        <span>Ваша должность</span>
+                                    </div>
+                                    <div class="select__dropdown custom-scroll">
+                                        <div class="select__item">Смоленск</div>
+                                        <div class="select__item">Смоленская область</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="select">
+                                    <div class="select__current">
+                                        <svg class="icon">
+                                            <use xlink:href="img/symbol-defs.svg#icon-case2"></use>
+                                        </svg>
+                                        <span>Название компании</span>
+                                    </div>
+                                    <div class="select__dropdown custom-scroll">
+                                        <div class="select__item">1-10</div>
+                                        <div class="select__item">10-50</div>
+                                        <div class="select__item">50-100</div>
+                                        <div class="select__item">100-500</div>
+                                        <div class="select__item">500-1000</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__flex">
+                            <div class="form-group">
+                                <div class="select">
+                                    <div class="select__current">
+                                        <svg class="icon">
+                                            <use xlink:href="img/symbol-defs.svg#icon-case2"></use>
+                                        </svg>
+                                        <span>Размер компании</span>
+                                    </div>
+                                    <div class="select__dropdown custom-scroll">
+                                        <div class="select__item">Смоленск</div>
+                                        <div class="select__item">Смоленская область</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="select">
+                                    <div class="select__current">
+                                        <svg class="icon">
+                                            <use xlink:href="img/symbol-defs.svg#icon-case2"></use>
+                                        </svg>
+                                        <span>Сфера деятельности</span>
+                                    </div>
+                                    <div class="select__dropdown custom-scroll">
+                                        <div class="select__item">1-10</div>
+                                        <div class="select__item">10-50</div>
+                                        <div class="select__item">50-100</div>
+                                        <div class="select__item">100-500</div>
+                                        <div class="select__item">500-1000</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__flex">
+                            <div class="form-group">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-internet"></use>
+                                </svg>
+                                <input type="text" placeholder="Ссылка на компанию">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-big">Активировать аккаунт</button>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -154,6 +262,47 @@
     </div>
 </section>
 
+<section class="wrapper">
+    <div class="container">
+        <div class="wrapper__sidebar">
+            <a href="javascript:void(0)" class="active">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-login"></use>
+                </svg>
+                Начало работы
+            </a>
+            <a href="javascript:void(0)">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-login"></use>
+                </svg>
+                Языки
+            </a>
+            <a href="javascript:void(0)">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-login"></use>
+                </svg>
+                Языки
+            </a>
+            <a href="javascript:void(0)">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-login"></use>
+                </svg>
+                Языки
+            </a>
+            <a href="javascript:void(0)">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-login"></use>
+                </svg>
+                Языки
+            </a>
+        </div>
+        <div class="wrapper__main">
+            <div class="wrapper__item">
+
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- END CONTENT  -->
 <section class="footer">
@@ -324,6 +473,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 

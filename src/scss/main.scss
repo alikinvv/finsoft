@@ -1209,93 +1209,6 @@
     }
 }
 
-.phone {
-    @include fcn;
-    border: 1px solid #5b88d9;
-    position: relative;
-    margin-bottom: 12px;
-
-    &__toggle {
-        @include fcn;
-        padding: 8px 5px;
-        border-right: 1px solid #5b88d9;
-        flex-shrink: 0;
-        cursor: pointer;
-
-        img {
-            margin-right: 4px;
-        }
-
-        .icon {
-            fill: $gray2;
-            font-size: 10px;
-            flex-shrink: 0;
-            transition: $trans;
-        }
-
-        &.active .icon {
-            transform: rotate(180deg);
-        }
-    }
-
-    &__dropdown {
-        position: absolute;
-        bottom: 0;
-        left: -1px;
-        transform: translateY(100%);
-        display: flex;
-        flex-direction: column;
-        background: #fff;
-        z-index: 2;
-        border: 1px solid #5b88d9;
-        padding: 4px 0;
-        pointer-events: none;
-        user-select: none;
-        opacity: 0;
-
-        &.active {
-            pointer-events: all;
-            user-select: initial;
-            opacity: 1;
-        }
-
-        div {
-            padding: 4px 12px;
-            cursor: pointer;
-            transition: $trans;
-            @include fcc;
-
-            &:hover {
-                background: #f1f1f1;
-            }
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-    }
-
-    &__body {
-        @include fcn;
-        padding: 6px 10px;
-
-        span {
-            font-size: 12px;
-            color: $gray2;
-        }
-
-        input {
-            border: 0;
-            width: 100%;
-            padding: 0 10px;
-
-            &::placeholder {
-                color: $text;
-            }
-        }
-    }
-}
-
 .compare {
     a {
         @include fcc;
@@ -2044,6 +1957,8 @@
 }
 
 .wrapper {
+    padding-bottom: 92px;
+
     .container {
         @include fssb;
     }
@@ -2118,6 +2033,10 @@
         width: 100%;
     }
 
+    &__body {
+        padding: 39px 30px;
+    }
+
     &__item {
         background: #ffffff;
         box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
@@ -2128,7 +2047,6 @@
         background: $darkBlue;
         color: #fff;
         padding: 18px 29px;
-        margin-bottom: 39px;
 
         h2 {
             display: block;
@@ -2171,6 +2089,284 @@
             font-size: 23px;
             margin-right: 15px;
             transition: $trans;
+        }
+    }
+}
+
+.form {
+    &__flex {
+        @include fcsb;
+        margin-bottom: 22px;
+
+        .form-group {
+            width: 48%;
+        }
+    }
+
+    .form-group {
+        position: relative;
+        @include fcn;
+
+        &.error {
+            &::before {
+                content: '';
+                @include centerYa;
+                right: 14px;
+                width: 20px;
+                height: 20px;
+                background: url(../img/icons/error.svg) no-repeat center;
+                background-size: contain;
+            }
+
+            input {
+                border-color: $red;
+                padding-right: 54px;
+            }
+
+            span.error {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                color: $red;
+                font-size: 12px;
+                transform: translateY(100%);
+            }
+        }
+
+        &.success {
+            &::before {
+                content: '';
+                @include centerYa;
+                right: 14px;
+                width: 20px;
+                height: 20px;
+                background: url(../img/icons/checked.svg) no-repeat center;
+                background-size: contain;
+            }
+
+            input {
+                padding-right: 54px;
+            }
+        }
+
+        .icon {
+            position: absolute;
+            @include centerYa;
+            left: 24px;
+            fill: $orange;
+            font-size: 18px;
+
+            &.show {
+                left: initial;
+                right: 24px;
+                fill: $gray;
+                font-size: 24px;
+                cursor: pointer;
+                transition: $trans;
+
+                &.active {
+                    fill: $orange;
+                }
+            }
+        }
+
+        .btn.sm {
+            font-size: 12px;
+            white-space: nowrap;
+            height: 60px;
+            margin-left: 15px;
+        }
+
+        span {
+            color: $gray2;
+            font-size: 20px;
+        }
+
+        .form-group {
+            @include fcs;
+            width: auto;
+            margin-left: 34px;
+        }
+    }
+
+    .radio {
+        label {
+            font-size: 20px;
+            padding-left: 30px;
+
+            &::before {
+                width: 20px;
+                height: 20px;
+                border-width: 2px;
+                @include centerYa;
+            }
+
+            &::after {
+                width: 14px;
+                height: 14px;
+                left: 5px;
+                @include centerYa;
+            }
+        }
+    }
+
+    .phone {
+        margin-bottom: 0;
+        width: 100%;
+
+        &__toggle {
+            height: 58px;
+            padding: 8px 11px;
+
+            img {
+                width: 24px;
+            }
+
+            .icon {
+                position: static;
+                transform: none;
+                fill: #000;
+                font-size: 10px;
+                margin-left: 7px;
+            }
+        }
+
+        input[type='text'] {
+            padding-left: 13px;
+
+            &::placeholder {
+                color: $gray;
+            }
+        }
+
+        &__body {
+            padding: 0 !important;
+        }
+    }
+
+    input[type='password'],
+    input[type='text'] {
+        font-size: 20px;
+        padding: 14px 24px;
+        border-color: $blue;
+        width: 100%;
+        height: 60px;
+
+        &.sm {
+            font-size: 14px;
+        }
+    }
+
+    input[type='password'] {
+        padding-right: 54px;
+    }
+
+    .icon + input {
+        padding-left: 54px;
+    }
+
+    .divider {
+        height: 1px;
+        background: $gray;
+        width: 100%;
+        margin-bottom: 35px;
+        margin-top: 22px;
+    }
+}
+
+.phone {
+    @include fcn;
+    border: 1px solid #5b88d9;
+    position: relative;
+    margin-bottom: 12px;
+
+    &__toggle {
+        @include fcn;
+        padding: 8px 5px;
+        border-right: 1px solid #5b88d9;
+        flex-shrink: 0;
+        cursor: pointer;
+
+        img {
+            margin-right: 4px;
+            width: 18px;
+        }
+
+        .icon {
+            fill: $gray2;
+            font-size: 10px;
+            flex-shrink: 0;
+            transition: $trans;
+        }
+
+        &.active .icon {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__dropdown {
+        position: absolute;
+        bottom: 0;
+        left: -1px;
+        transform: translateY(100%);
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        z-index: 2;
+        border: 1px solid #5b88d9;
+        padding: 4px 0;
+        pointer-events: none;
+        user-select: none;
+        opacity: 0;
+
+        &.active {
+            pointer-events: all;
+            user-select: initial;
+            opacity: 1;
+        }
+
+        div {
+            padding: 4px 12px;
+            cursor: pointer;
+            transition: $trans;
+            @include fcc;
+
+            &:hover {
+                background: #f1f1f1;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .phone__body {
+        @include fcn;
+        padding: 6px 10px;
+
+        span {
+            font-size: 12px;
+            color: $gray2;
+        }
+
+        input {
+            border: 0;
+            width: 100%;
+            padding: 0 10px;
+
+            &::placeholder {
+                color: $text;
+            }
+        }
+
+        .icon {
+            position: absolute;
+            @include centerYa;
+            right: 14px;
+            left: initial;
+            font-size: 20px;
+            fill: $green;
         }
     }
 }

@@ -159,11 +159,14 @@ $(document).click((event) => {
     if (
         !$(event.target).closest('.phone__toggle').length &&
         !$(event.target).closest('.header__user > img').length &&
+        !$(event.target).closest('.select__current').length &&
+        !$(event.target).closest('.select__dropdown').length &&
         !$(event.target).closest('.header__dropdown').length
     ) {
         $('.phone__dropdown').removeClass('active');
         $('.phone__toggle').removeClass('active');
         $('.header__dropdown').removeClass('active');
+        $('.select').removeClass('active');
     }
 });
 
@@ -182,4 +185,29 @@ $('body').on('click', '.header__controls .btn-outline', (e) => {
 
 $('body').on('click', '.header__user > img', (e) => {
     $('.header__dropdown').toggleClass('active');
+});
+
+$('body').on('click', '.icon.show:not(.active)', (e) => {
+    $(e.currentTarget).toggleClass('active');
+    $(e.currentTarget).parent().find('input').attr('type', 'text');
+});
+
+$('body').on('click', '.icon.show.active', (e) => {
+    $(e.currentTarget).toggleClass('active');
+    $(e.currentTarget).parent().find('input').attr('type', 'password');
+});
+
+// Custom scroll
+document.querySelectorAll('.custom-scroll').forEach((el) => {
+    new SimpleBar(el);
+});
+
+$('body').on('click', '.select.active .select__current', (e) => {
+    $('.select').removeClass('active');
+    $(e.currentTarget).parent().removeClass('active');
+});
+
+$('body').on('click', '.select:not(.active) .select__current', (e) => {
+    $('.select').removeClass('active');
+    $(e.currentTarget).parent().addClass('active');
 });
