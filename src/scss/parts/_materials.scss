@@ -11,6 +11,12 @@
         }
 
         @include flexlist(15px);
+
+        &.three {
+            .materials__item {
+                @include flexitem(33.33%, 15px);
+            }
+        }
     }
 
     &__item {
@@ -45,6 +51,7 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+        color: #fff;
     }
 
     &__name {

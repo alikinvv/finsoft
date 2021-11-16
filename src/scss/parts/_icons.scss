@@ -1,9 +1,16 @@
 .icons {
     padding: 97px 0;
 
-    .container {
-        @include fsc;
+    &.center {
         text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 71px;
+    }
+
+    &__list {
+        @include fsc;
     }
 
     .icon {

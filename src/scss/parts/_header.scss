@@ -1,0 +1,210 @@
+.header {
+    background: $darkBlue;
+    color: #fff;
+    padding: 10px 0;
+    position: relative;
+    z-index: 3;
+
+    .container {
+        @include fcn;
+    }
+
+    &__logo {
+        font-size: 24px;
+        transition: $trans;
+
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    &__menu {
+        margin-left: auto;
+        @include fcn;
+
+        a {
+            margin: 0 10px;
+        }
+    }
+
+    .btn {
+        padding: 0px 13px;
+    }
+
+    .btn-white {
+        margin-left: 21px;
+        margin-right: 18px;
+    }
+
+    .bar {
+        position: absolute;
+        height: 3px;
+        background: $orange;
+        width: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+    }
+
+    .icon {
+        fill: #fff;
+        font-size: 20px;
+        transition: $trans;
+
+        &:hover {
+            fill: $orange;
+        }
+    }
+
+    &__icons {
+        padding-right: 14px;
+        margin-right: 18px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            @include centerYa;
+            right: 0;
+            width: 1px;
+            height: 51px;
+            background: $blue;
+        }
+
+        a {
+            margin: 0 7px;
+        }
+
+        .icon {
+            font-size: 23px;
+        }
+    }
+
+    &__user {
+        @include fcn;
+        position: relative;
+
+        img {
+            border-radius: 50%;
+            width: 40px;
+            margin-left: 20px;
+            user-select: none;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+    }
+
+    &__dropdown {
+        width: 250px;
+        background: #fff;
+        box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
+        position: absolute;
+        bottom: -27px;
+        right: -10px;
+        transform: translateY(100%);
+        padding: 18px 24px;
+        pointer-events: none;
+        user-select: none;
+        opacity: 0;
+        transition: $trans;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 10px 10px 10px;
+            border-color: transparent transparent #fff transparent;
+            top: 0;
+            right: 20px;
+            transform: translateY(-100%);
+        }
+
+        &.active {
+            pointer-events: all;
+            user-select: initial;
+            opacity: 1;
+            bottom: -17px;
+        }
+    }
+
+    &__controls {
+        margin-bottom: 10px;
+
+        .btn {
+            margin-right: -4px;
+            padding: 2px 16px;
+
+            &:hover {
+                background: $orange;
+            }
+        }
+    }
+
+    &__btn {
+        @include fcn;
+        color: $text;
+        transition: $trans;
+        margin-bottom: 8px;
+
+        &:hover {
+            color: $orange;
+
+            .icon {
+                fill: $orange;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .icon {
+            fill: $text;
+            transition: $trans;
+            margin-right: 15px;
+        }
+    }
+}
+
+.user {
+    @include fcn;
+    margin-bottom: 8px;
+
+    &.orange {
+        .user__name {
+            color: $orange;
+        }
+    }
+
+    &.gray {
+        .user__name {
+            color: $gray;
+        }
+    }
+
+    &:hover {
+        .user__name {
+            color: $orange;
+        }
+    }
+
+    img {
+        border-radius: 50%;
+        margin-right: 10px;
+        width: 35px;
+        margin-left: 0;
+    }
+
+    &__name {
+        color: $text;
+        font-weight: 600;
+        transition: $trans;
+    }
+
+    &__work {
+        color: $gray2;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,116 @@
+.head {
+    background: url(../img/head-bg.png) no-repeat center;
+    background-size: cover;
+    color: #fff;
+    padding: 10px 0;
+
+    .main__search {
+        width: 511px;
+        background: #3862ab;
+        height: 32px;
+        @include fcn;
+        position: relative;
+        margin-bottom: 6px;
+
+        input {
+            height: 100%;
+            width: 100%;
+            background: transparent;
+            border: 0;
+            padding-left: 14px;
+            padding-right: 14px;
+            color: #fff;
+
+            &::placeholder {
+                color: #fff;
+            }
+        }
+
+        button {
+            padding: 0 10px;
+            flex-shrink: 0;
+            cursor: pointer;
+
+            &:hover .icon {
+                fill: $orange;
+            }
+
+            .icon {
+                fill: #fff;
+                font-size: 18px;
+                transition: $trans;
+            }
+        }
+    }
+
+    .breadcrumbs {
+        a {
+            &:hover {
+                &::after {
+                    color: #fff;
+                }
+            }
+
+            &::after {
+                color: #fff !important;
+            }
+        }
+    }
+}
+
+.breadcrumbs-wrap {
+    padding: 17px 0;
+}
+
+.breadcrumbs {
+    @include fcn;
+    margin-bottom: 11px;
+
+    a {
+        transition: $trans;
+
+        &:hover {
+            color: $orange;
+
+            &::after {
+                color: $text;
+            }
+        }
+
+        &::after {
+            content: '/';
+            margin-left: 5px;
+            margin-right: 5px;
+            color: $text !important;
+        }
+
+        &:last-child::after {
+            display: none;
+        }
+    }
+}
+
+.submenu {
+    @include fcn;
+    position: relative;
+    margin-top: 20px;
+
+    a {
+        margin-right: 39px;
+        font-weight: 700;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .bar {
+        position: absolute;
+        height: 3px;
+        background: $orange;
+        width: 0;
+        bottom: -10px;
+        left: 0;
+        z-index: 2;
+    }
+}

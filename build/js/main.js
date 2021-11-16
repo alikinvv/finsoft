@@ -100,3 +100,76 @@ var resize = function resize() {
 
 resize();
 $(window).on('resize', resize);
+$('body').on('click', '.sidebar .scrollto', function (e) {
+  $(e.currentTarget).next().slideDown(300);
+  $(e.currentTarget).remove();
+});
+$('body').on('click', '[data-scroll]', function (e) {
+  $('html, body').animate({
+    scrollTop: $(".".concat($(e.currentTarget).attr('data-scroll'))).offset().top
+  }, 1000);
+});
+$('body').on('click', '.tabs a', function (e) {
+  $('.tab').removeClass('active');
+  $(".tab[data-tab=\"".concat($(e.currentTarget).attr('data-tab'), "\"]")).addClass('active');
+});
+$('body').on('click', '.theme__nav-item', function (e) {
+  $('.theme__nav-item').removeClass('active');
+  $(e.currentTarget).addClass('active');
+  $('.tab').removeClass('active');
+  $(".tab[data-tab=\"".concat($(e.currentTarget).attr('data-tab'), "\"]")).addClass('active');
+}); // show modal
+
+$('body').on('click', '[data-modal]:not(.modal)', function (e) {
+  if (!$('.backdrop').hasClass('active')) $('.backdrop').addClass('active');
+  $('.modal.active').removeClass('active');
+  $(".modal[data-modal=\"".concat($(e.currentTarget).attr('data-modal'), "\"]")).addClass('active');
+
+  if ($(e.currentTarget).attr('data-modal') === 'thanks') {
+    setTimeout(function () {
+      $('.modal.active').find('svg').addClass('animate');
+    }, 100);
+  }
+}); // close modal events
+
+var closeModal = function closeModal() {
+  $('.backdrop').removeClass('active');
+  $('.modal').removeClass('active');
+  $('.modal').find('svg').removeClass('animate');
+};
+
+$('body').on('click', '.modal__close, .modal .close', closeModal);
+$('body').on('click', '.backdrop', function (e) {
+  if ($(e.target)[0].className === 'backdrop active') closeModal();
+}); // close modal on press ESC
+
+$(document).keyup(function (e) {
+  if (e.keyCode === 27 && $('.backdrop').hasClass('active')) closeModal();
+});
+$('body').on('submit', 'form', function (e) {
+  e.preventDefault();
+});
+$('body').on('click', '.phone__toggle', function (e) {
+  $(e.currentTarget).toggleClass('active');
+  $(e.currentTarget).parent().find('.phone__dropdown').toggleClass('active');
+});
+$(document).click(function (event) {
+  if (!$(event.target).closest('.phone__toggle').length && !$(event.target).closest('.header__user > img').length && !$(event.target).closest('.header__dropdown').length) {
+    $('.phone__dropdown').removeClass('active');
+    $('.phone__toggle').removeClass('active');
+    $('.header__dropdown').removeClass('active');
+  }
+});
+$('body').on('click', '.show-popup', function (e) {
+  $('.popup').toggleClass('active');
+});
+$('body').on('click', '.popup .btn:not(.btn-outline)', function (e) {
+  $('.popup').toggleClass('active');
+});
+$('body').on('click', '.header__controls .btn-outline', function (e) {
+  $('.header__controls .btn:not(.btn-outline)').addClass('btn-outline');
+  $(e.currentTarget).removeClass('btn-outline');
+});
+$('body').on('click', '.header__user > img', function (e) {
+  $('.header__dropdown').toggleClass('active');
+});

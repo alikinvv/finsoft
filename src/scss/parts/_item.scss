@@ -1,0 +1,201 @@
+.item {
+    background: #ffffff;
+    box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
+    padding: 17px 14px;
+    padding-left: 37px;
+    @include fsn;
+    position: relative;
+    margin-bottom: 23px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__tag {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #fff;
+        background: #3862ab;
+        font-size: 12px;
+        font-weight: bold;
+        bottom: 0;
+        width: 28px;
+        @include fcc;
+
+        &::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 6px 0 6px 6px;
+            border-color: transparent transparent transparent #3862ab;
+            position: absolute;
+            top: 34px;
+            right: 0;
+            transform: translateX(100%);
+        }
+
+        span {
+            white-space: nowrap;
+            transform: rotate(-90deg);
+            display: block;
+        }
+    }
+
+    & > a {
+        flex-shrink: 0;
+        margin-right: 17px;
+        margin-top: 7px;
+
+        img {
+            width: 76px;
+        }
+    }
+
+    &__top {
+        @include fssb;
+        margin-bottom: -5px;
+
+        & > div {
+            &:last-child {
+                @include fcc;
+                flex-direction: column;
+
+                a {
+                    display: block;
+
+                    &:not(.btn) {
+                        color: $orange;
+                        font-size: 12px;
+                        font-weight: 700;
+                        text-decoration: underline;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                .btn {
+                    margin-bottom: 4px;
+                }
+            }
+        }
+
+        .btn {
+            padding: 4px 21px;
+        }
+    }
+
+    &__controls {
+        @include fcn;
+        margin-bottom: -3px;
+
+        .heart,
+        .bookmark {
+            path {
+                stroke: $text;
+            }
+
+            &:hover {
+                path {
+                    fill: $text;
+                }
+            }
+        }
+
+        .heart {
+            margin-right: 6px;
+        }
+
+        .bookmark {
+            margin-right: 9px;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        @include fcn;
+        margin-right: 9px;
+
+        .icon {
+            fill: $blue;
+            font-size: 10px;
+            margin-left: 9px;
+            margin-top: -9px;
+        }
+    }
+
+    &__reviews {
+        color: $gray2;
+        text-decoration: underline;
+        font-size: 12px;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__info {
+        @include fcn;
+    }
+
+    &__bottom {
+        @include fssb;
+    }
+
+    &__text {
+        font-size: 12px;
+        line-height: 1.63;
+        margin-bottom: 13px;
+
+        a {
+            color: $blue;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .service__progress {
+        flex-direction: column;
+        flex-shrink: 0;
+        margin-bottom: 0;
+        margin-top: 10px;
+
+        div span {
+            height: 8px;
+        }
+
+        &-item {
+            width: 100%;
+            margin-bottom: 5px;
+
+            img {
+                width: 12px;
+            }
+        }
+    }
+
+    .service__features {
+        @include fcn;
+        font-size: 10px;
+        margin-bottom: 0;
+
+        & > div {
+            margin-right: 19px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        .icon {
+            font-size: 11px;
+        }
+    }
+}
