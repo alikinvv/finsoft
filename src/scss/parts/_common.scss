@@ -510,6 +510,30 @@ ul {
     }
 }
 
+.tabs {
+    border-bottom: 1px solid $gray;
+    padding-bottom: 7px;
+    @include fcn;
+    position: relative;
+    margin-bottom: 34px;
+
+    a {
+        padding: 0 20px;
+        color: $gray;
+        font-size: 16px;
+    }
+
+    .bar {
+        position: absolute;
+        height: 4px;
+        background: $blue;
+        width: 0;
+        bottom: -1px;
+        left: 0;
+        z-index: 2;
+    }
+}
+
 .tab {
     display: none;
 

@@ -46,6 +46,30 @@ $('body').on('mouseleave', '.submenu', (e) => {
     }
 });
 
+// tabs .bar animation
+
+if ($('.tabs .active').length > 0) {
+    $('.tabs .bar').animate({
+        left: $('.tabs .active').offset().left - $('.tabs').offset().left,
+        width: $('.tabs .active').outerWidth(),
+    });
+}
+
+$('body').on('mouseenter', '.tabs a', (e) => {
+    $('.tabs .bar').animate({ left: $(e.currentTarget).offset().left - $('.tabs').offset().left, width: $(e.currentTarget).outerWidth() });
+});
+
+$('body').on('mouseleave', '.tabs', (e) => {
+    if ($('.tabs .active').length > 0) {
+        $('.tabs .bar').animate({
+            left: $('.tabs .active').offset().left - $('.tabs').offset().left,
+            width: $('.tabs .active').outerWidth(),
+        });
+    } else {
+        $('.tabs .bar').animate({ left: 0, width: 0 });
+    }
+});
+
 $('body').on('click', '.bookmark', (e) => {
     $(e.currentTarget).toggleClass('active');
 });

@@ -1181,6 +1181,29 @@
 }
 
 .social {
+    &.flex {
+        @include fcn;
+
+        a {
+            margin-right: 13px;
+            margin-bottom: 0;
+            fill: $blue;
+
+            &:last-child {
+                margin-right: 13px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            .icon {
+                font-size: 21px;
+                margin-right: 0;
+            }
+        }
+    }
+
     a {
         @include fcn;
         transition: $trans;
@@ -2091,6 +2114,10 @@
             transition: $trans;
         }
     }
+
+    .tabs {
+        margin-top: 30px;
+    }
 }
 
 .form {
@@ -2367,6 +2394,76 @@
             left: initial;
             font-size: 20px;
             fill: $green;
+        }
+    }
+}
+
+.controls {
+    padding-bottom: 26px;
+
+    .container {
+        @include fce;
+    }
+}
+
+.profile {
+    padding: 34px 23px;
+    @include fcn;
+
+    &__left {
+        text-align: center;
+        margin-right: 39px;
+    }
+
+    &__photo {
+        width: 135px;
+        border-radius: 50%;
+        margin-bottom: 6px;
+    }
+
+    &__time {
+        color: $gray2;
+        font-size: 12px;
+        line-height: 1.33;
+    }
+
+    &__center {
+        .btn {
+            padding: 7px 19px;
+        }
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    &__stars {
+        width: 94px;
+        margin-bottom: 13px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__work {
+        font-weight: 700;
+        color: $gray2;
+        margin-bottom: 27px;
+    }
+
+    &__right {
+        margin-left: auto;
+        padding-left: 29px;
+        border-left: 1px solid $gray;
+    }
+
+    .freelancers__features div span {
+        font-size: 14px;
+
+        &:first-child {
+            min-width: 190px;
         }
     }
 }

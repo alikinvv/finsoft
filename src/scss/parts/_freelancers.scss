@@ -96,11 +96,11 @@
                 font-weight: 700;
                 font-size: 12px;
                 @include fcn;
-                min-width: 160px;
 
                 &:first-child {
                     color: $gray;
                     flex-shrink: 0;
+                    min-width: 160px;
                 }
             }
 
