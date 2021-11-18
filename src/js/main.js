@@ -1,72 +1,90 @@
 // header .bar animation
 
 if ($('.header__menu .active').length > 0) {
-    $('.header .bar').animate({
-        left: $('.header__menu .active').offset().left,
-        width: $('.header__menu .active').outerWidth(),
-    });
+    $('.header .bar')
+        .stop()
+        .animate({
+            left: $('.header__menu .active').offset().left,
+            width: $('.header__menu .active').outerWidth(),
+        });
 }
 
 $('body').on('mouseenter', '.header__menu a', (e) => {
-    $('.header .bar').animate({ left: $(e.currentTarget).offset().left, width: $(e.currentTarget).outerWidth() });
+    $('.header .bar')
+        .stop()
+        .animate({ left: $(e.currentTarget).offset().left, width: $(e.currentTarget).outerWidth() });
 });
 
 $('body').on('mouseleave', '.header', (e) => {
     if ($('.header__menu .active').length > 0) {
-        $('.header .bar').animate({
-            left: $('.header__menu .active').offset().left,
-            width: $('.header__menu .active').outerWidth(),
-        });
+        $('.header .bar')
+            .stop()
+            .animate({
+                left: $('.header__menu .active').offset().left,
+                width: $('.header__menu .active').outerWidth(),
+            });
     } else {
-        $('.header .bar').animate({ left: 0, width: 0 });
+        $('.header .bar').stop().animate({ left: 0, width: 0 });
     }
 });
 
 // submenu .bar animation
 
 if ($('.submenu .active').length > 0) {
-    $('.submenu .bar').animate({
-        left: $('.submenu .active').offset().left - $('.container').offset().left,
-        width: $('.submenu .active').outerWidth(),
-    });
+    $('.submenu .bar')
+        .stop()
+        .animate({
+            left: $('.submenu .active').offset().left - $('.container').offset().left,
+            width: $('.submenu .active').outerWidth(),
+        });
 }
 
 $('body').on('mouseenter', '.submenu a', (e) => {
-    $('.submenu .bar').animate({ left: $(e.currentTarget).offset().left - $('.container').offset().left, width: $(e.currentTarget).outerWidth() });
+    $('.submenu .bar')
+        .stop()
+        .animate({ left: $(e.currentTarget).offset().left - $('.container').offset().left, width: $(e.currentTarget).outerWidth() });
 });
 
 $('body').on('mouseleave', '.submenu', (e) => {
     if ($('.submenu .active').length > 0) {
-        $('.submenu .bar').animate({
-            left: $('.submenu .active').offset().left - $('.container').offset().left,
-            width: $('.submenu .active').outerWidth(),
-        });
+        $('.submenu .bar')
+            .stop()
+            .animate({
+                left: $('.submenu .active').offset().left - $('.container').offset().left,
+                width: $('.submenu .active').outerWidth(),
+            });
     } else {
-        $('.submenu .bar').animate({ left: 0, width: 0 });
+        $('.submenu .bar').stop().animate({ left: 0, width: 0 });
     }
 });
 
 // tabs .bar animation
 
 if ($('.tabs .active').length > 0) {
-    $('.tabs .bar').animate({
-        left: $('.tabs .active').offset().left - $('.tabs').offset().left,
-        width: $('.tabs .active').outerWidth(),
-    });
+    $('.tabs .bar')
+        .stop()
+        .animate({
+            left: $('.tabs .active').offset().left - $('.tabs').offset().left,
+            width: $('.tabs .active').outerWidth(),
+        });
 }
 
 $('body').on('mouseenter', '.tabs a', (e) => {
-    $('.tabs .bar').animate({ left: $(e.currentTarget).offset().left - $('.tabs').offset().left, width: $(e.currentTarget).outerWidth() });
+    $('.tabs .bar')
+        .stop()
+        .animate({ left: $(e.currentTarget).offset().left - $('.tabs').offset().left, width: $(e.currentTarget).outerWidth() });
 });
 
 $('body').on('mouseleave', '.tabs', (e) => {
     if ($('.tabs .active').length > 0) {
-        $('.tabs .bar').animate({
-            left: $('.tabs .active').offset().left - $('.tabs').offset().left,
-            width: $('.tabs .active').outerWidth(),
-        });
+        $('.tabs .bar')
+            .stop()
+            .animate({
+                left: $('.tabs .active').offset().left - $('.tabs').offset().left,
+                width: $('.tabs .active').outerWidth(),
+            });
     } else {
-        $('.tabs .bar').animate({ left: 0, width: 0 });
+        $('.tabs .bar').stop().animate({ left: 0, width: 0 });
     }
 });
 
@@ -123,12 +141,14 @@ $('body').on('click', '.sidebar .scrollto', (e) => {
     $(e.currentTarget).remove();
 });
 
-$('body').on('click', '[data-scroll]', (e) => {
-    $('html, body').animate({ scrollTop: $(`.${$(e.currentTarget).attr('data-scroll')}`).offset().top }, 1000);
+$('body').on('click', 'a[data-scroll]', (e) => {
+    $('html, body').animate({ scrollTop: $(`*:not(a)[data-scroll="${$(e.currentTarget).attr('data-scroll')}"]`).offset().top }, 1000);
 });
 
 $('body').on('click', '.tabs a', (e) => {
+    $('.tabs a').removeClass('active');
     $('.tab').removeClass('active');
+    $(e.currentTarget).addClass('active');
     $(`.tab[data-tab="${$(e.currentTarget).attr('data-tab')}"]`).addClass('active');
 });
 
@@ -211,12 +231,12 @@ $('body').on('click', '.header__user > img', (e) => {
     $('.header__dropdown').toggleClass('active');
 });
 
-$('body').on('click', '.icon.show:not(.active)', (e) => {
+$('body').on('click', '.password .icon.show:not(.active)', (e) => {
     $(e.currentTarget).toggleClass('active');
     $(e.currentTarget).parent().find('input').attr('type', 'text');
 });
 
-$('body').on('click', '.icon.show.active', (e) => {
+$('body').on('click', '.password .icon.show.active', (e) => {
     $(e.currentTarget).toggleClass('active');
     $(e.currentTarget).parent().find('input').attr('type', 'password');
 });
@@ -234,4 +254,30 @@ $('body').on('click', '.select.active .select__current', (e) => {
 $('body').on('click', '.select:not(.active) .select__current', (e) => {
     $('.select').removeClass('active');
     $(e.currentTarget).parent().addClass('active');
+});
+
+let masks = document.querySelectorAll('.phone-mask');
+
+masks.forEach((el) => {
+    IMask(el, { mask: '+{7} (000) 000 00 00' });
+});
+
+let theme = new Sticky('.theme__nav', {
+    marginTop: 0,
+    stickyClass: 'fixed',
+});
+
+$('body').on('click', '.video + .content__more', (e) => {
+    $('.video.hide').addClass('active');
+    $(e.currentTarget).remove();
+});
+
+$('body').on('click', '.logos + .content__more', (e) => {
+    $(e.currentTarget).prev().addClass('active');
+    $(e.currentTarget).remove();
+});
+
+$('body').on('click', '.company__text a', (e) => {
+    $(e.currentTarget).parent().next().slideDown(300);
+    $(e.currentTarget).remove();
 });

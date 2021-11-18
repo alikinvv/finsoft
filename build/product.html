@@ -115,12 +115,12 @@
                     </div>
 
                     <div class="submenu">
-                        <a href="javascript:void(0)" class="active" data-scroll="content">Описание </a>
-                        <a href="javascript:void(0)" data-scroll="">Возможности </a>
-                        <a href="javascript:void(0)" data-scroll="">Цены</a>
-                        <a href="javascript:void(0)" data-scroll="">Отзывы</a>
-                        <a href="javascript:void(0)" data-scroll="">Интеграторы</a>
-                        <a href="javascript:void(0)" class="orange" data-scroll="">ПРОМО-КОД на СКИДКУ</a>
+                        <a href="javascript:void(0)" data-scroll="content" class="active">Описание </a>
+                        <a href="javascript:void(0)" data-scroll="features">Возможности </a>
+                        <a href="javascript:void(0)" data-scroll="prices">Цены</a>
+                        <a href="javascript:void(0)" data-scroll="reviews">Отзывы</a>
+                        <a href="javascript:void(0)" data-scroll="int">Интеграторы</a>
+                        <a href="javascript:void(0)" class="orange" data-scroll="promo">ПРОМО-КОД на СКИДКУ</a>
                     </div>
                 </div>
             </div>
@@ -128,7 +128,7 @@
     </div>
 </section>
 
-<section class="content padding">
+<section class="content padding" data-scroll="content">
     <div class="container">
         <div class="content__main">
             <div class="content__item overview">
@@ -210,6 +210,21 @@
                         </div>
                     </div>
 
+                    <div class="video hide">
+                        <div class="video__item" data-fancybox href="https://www.youtube.com/watch?v=7AkbUfZjS5k"
+                            style="background-image: url(img/video.jpg);">
+                            <img src="img/icons/play-gray.svg" alt="">
+                        </div>
+                        <div class="video__item" data-fancybox href="https://www.youtube.com/watch?v=7AkbUfZjS5k"
+                            style="background-image: url(img/video.jpg);">
+                            <img src="img/icons/play-gray.svg" alt="">
+                        </div>
+                        <div class="video__item" data-fancybox href="https://www.youtube.com/watch?v=7AkbUfZjS5k"
+                            style="background-image: url(img/video.jpg);">
+                            <img src="img/icons/play-gray.svg" alt="">
+                        </div>
+                    </div>
+
                     <a href="javascript:void(0)" class="content__more">Псмотреть все</a>
                 </div>
             </div>
@@ -220,6 +235,18 @@
                     <div class="content__desc">500,000 пользователей используют наши обзоры по&nbsp;сервисами.</div>
 
                     <div class="video screenshot">
+                        <div class="video__item" data-fancybox="gallery" href="img/screenshot.jpg"
+                            style="background-image: url(img/screenshot.jpg);">
+                        </div>
+                        <div class="video__item" data-fancybox="gallery" href="img/screenshot.jpg"
+                            style="background-image: url(img/screenshot.jpg);">
+                        </div>
+                        <div class="video__item" data-fancybox="gallery" href="img/screenshot.jpg"
+                            style="background-image: url(img/screenshot.jpg);">
+                        </div>
+                    </div>
+
+                    <div class="video hide screenshot">
                         <div class="video__item" data-fancybox="gallery" href="img/screenshot.jpg"
                             style="background-image: url(img/screenshot.jpg);">
                         </div>
@@ -543,7 +570,7 @@
                 </div>
             </div>
 
-            <h2>Возможности сервиса ПланФакт</h2>
+            <h2 data-scroll="features">Возможности сервиса ПланФакт</h2>
             <div class="content__item">
                 <div class="features">
                     <div class="features__row">
@@ -757,10 +784,41 @@
                 </div>
             </div>
 
-            <div class="content__item">
+            <div class="content__item" data-scroll="int">
                 <h2>Сервисы, с которыми есть интеграция</h2>
                 <div class="content__body">
                     <div class="logos">
+                        <a href="javascript:void(0)" class="logos__item">
+                            <div class="logos__img"><img src="img/yandex.png" alt=""></div>
+                            Яндекс.диск
+                        </a>
+                        <a href="javascript:void(0)" class="logos__item">
+                            <div class="logos__img"><img src="img/tilda.png" alt=""></div>
+                            Яндекс.диск
+                        </a>
+                        <a href="javascript:void(0)" class="logos__item">
+                            <div class="logos__img"><img src="img/amo-logo.png" alt=""></div>
+                            Яндекс.диск
+                        </a>
+                        <a href="javascript:void(0)" class="logos__item">
+                            <div class="logos__img"><img src="img/yandex.png" alt=""></div>
+                            Яндекс.диск
+                        </a>
+                        <a href="javascript:void(0)" class="logos__item">
+                            <div class="logos__img"><img src="img/gmail.png" alt=""></div>
+                            Яндекс почта
+                        </a>
+                        <a href="javascript:void(0)" class="logos__item">
+                            <div class="logos__img"><img src="img/gmail.png" alt=""></div>
+                            Яндекс почта
+                        </a>
+                        <a href="javascript:void(0)" class="logos__item">
+                            <div class="logos__img"><img src="img/gmail.png" alt=""></div>
+                            Яндекс почта
+                        </a>
+                    </div>
+
+                    <div class="logos hide">
                         <a href="javascript:void(0)" class="logos__item">
                             <div class="logos__img"><img src="img/yandex.png" alt=""></div>
                             Яндекс.диск
@@ -1084,7 +1142,7 @@
     </div>
 </section>
 
-<section class="sale">
+<section class="sale" data-scroll="prices">
     <div class="container">
         <h2>Бонусы и скидки к сервисам и услугам</h2>
         <a href="javascript:void(0)">Посмотреть все</a>
@@ -1501,7 +1559,7 @@
                 <div class="agency__body">
                     <div class="agency__col">
                         <div class="agency__title">Услуги</div>
-                        <ul class="gray-dot sm">
+                        <ul class="dot sm">
                             <li>Интеграция Mango Office</li>
                             <li>Запуск рекламы в Yandex.Direct</li>
                             <li>Запуск рекламы в Google.Adwods</li>
@@ -1563,7 +1621,7 @@
                 <div class="agency__body">
                     <div class="agency__col">
                         <div class="agency__title">Услуги</div>
-                        <ul class="gray-dot sm">
+                        <ul class="dot sm">
                             <li>Интеграция Mango Office</li>
                             <li>Запуск рекламы в Yandex.Direct</li>
                             <li>Запуск рекламы в Google.Adwods</li>
@@ -1611,7 +1669,7 @@
     </div>
 </section>
 
-<section class="company">
+<section class="company" data-scroll="reviews">
     <div class="container">
         <h2>197 отзывов о сервисе ПланФакт</h2>
 
@@ -1703,8 +1761,10 @@
 
         <div class="company__main">
             <div class="company__user">
-                <img src="img/woman.png" alt="">
-                <div class="company__user-name">Екатерина Князева</div>
+                <a href="javascript:void(0)">
+                    <img src="img/woman.png" alt="">
+                    <div class="company__user-name">Екатерина Князева</div>
+                </a>
                 <div class="company__user-features">
                     <div><span>Специальность:</span> Программист</div>
                     <div><span>Отрасль:</span> Приложения</div>
@@ -1778,6 +1838,7 @@
                         </div>
                     </div>
                 </div>
+                <a href="javascript:void(0)" class="btn">Посмотреть профиль</a>
             </div>
             <div class="company__body">
                 <div class="company__head">
@@ -1788,26 +1849,38 @@
                 <div class="company__text">Начал пользоваться этим сервисом по&nbsp;ркомендации разработчика моего
                     интрнет магазина и&nbsp;так как открывал интернет магазин впервые, ничего не&nbsp;знал интернет
                     магазин впервые, ничего&nbsp;не <a href="javascript:void(0)">Весь текст</a></div>
+                <div class="company__text hide">Начал пользоваться этим сервисом по&nbsp;ркомендации разработчика моего
+                    интрнет магазина и&nbsp;так как открывал интернет магазин впервые, ничего не&nbsp;знал интернет
+                    магазин впервые, ничего&nbsp;не</div>
                 <div class="company__title">Что вам нравится в HubSport?</div>
                 <div class="company__text">Начал пользоваться этим сервисом по&nbsp;ркомендации разработчика моего
                     интрнет магазина и&nbsp;так как открывал интернет магазин впервые, ничего не&nbsp;знал о&nbsp;такого
                     рода сервисах. Но&nbsp;Roistat приятно удивил своим простым и&nbsp;интуитивно понятным интерфесом
                     интуитивно понятным интерфесоминтуитивно понятным интем <a href="javascript:void(0)">Весь текст</a>
                 </div>
+                <div class="company__text hide">Начал пользоваться этим сервисом по&nbsp;ркомендации разработчика моего
+                    интрнет магазина и&nbsp;так как открывал интернет магазин впервые, ничего не&nbsp;знал интернет
+                    магазин впервые, ничего&nbsp;не</div>
                 <div class="company__title">Что вам нравится в HubSport?</div>
                 <div class="company__text">Начал пользоваться этим сервисом по&nbsp;ркомендации разработчика моего
                     интрнет магазина и&nbsp;так как открывал интернет магазин впервые, ничего не&nbsp;знал о&nbsp;такого
                     рода сервисах. Но&nbsp;Roistat приятно удивил своим простым и&nbsp;интуитивно понятным интерфесом
                     интуитивно понятным интерфесоминтуитивно понятным интем <a href="javascript:void(0)">Весь текст</a>
                 </div>
+                <div class="company__text hide">Начал пользоваться этим сервисом по&nbsp;ркомендации разработчика моего
+                    интрнет магазина и&nbsp;так как открывал интернет магазин впервые, ничего не&nbsp;знал интернет
+                    магазин впервые, ничего&nbsp;не</div>
                 <div class="company__title">Что вам нравится в HubSport?</div>
                 <div class="company__text">Начал пользоваться этим сервисом по&nbsp;ркомендации разработчика моего
                     интрнет магазина и&nbsp;так как открывал интернет магазин впервые, ничего не&nbsp;знал о&nbsp;такого
                     рода сервисах. Но&nbsp;Roistat приятно удивил своим простым и&nbsp;интуитивно понятным интерфесом
                     интуитивно понятным интерфесоминтуитивно понятным интем <a href="javascript:void(0)">Весь текст</a>
                 </div>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/SMKPKGW083c"
-                    title="YouTube video player" frameborder="0"
+                <div class="company__text hide">Начал пользоваться этим сервисом по&nbsp;ркомендации разработчика моего
+                    интрнет магазина и&nbsp;так как открывал интернет магазин впервые, ничего не&nbsp;знал интернет
+                    магазин впервые, ничего&nbsp;не</div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/SMKPKGW083c" title="YouTube video player"
+                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
                 <div class="comment">
@@ -2179,6 +2252,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<script src="https://unpkg.com/imask"></script>
+<script src="js/sticky.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 

@@ -1,0 +1,229 @@
+.company {
+    padding: 60px 0;
+
+    &__top {
+        @include fcn;
+        padding: 6px 35px;
+        background: #ffffff;
+        box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
+        margin-bottom: 29px;
+
+        .btn {
+            white-space: nowrap;
+        }
+    }
+
+    &__rating {
+        @include fcn;
+        padding-right: 37px;
+        margin-right: 41px;
+        border-right: 1px solid $gray;
+
+        span {
+            font-weight: 700;
+            margin-right: 19px;
+        }
+
+        div {
+            color: $gray2;
+            font-size: 18px;
+            font-weight: 700;
+
+            strong {
+                color: $text;
+                font-size: 44px;
+            }
+        }
+    }
+
+    .reviews__progress {
+        margin-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -20px;
+
+        .service__progress-item {
+            width: auto;
+            margin: 0 0 4px;
+            margin-right: 20px;
+
+            & > span {
+                font-size: 12px;
+                white-space: nowrap;
+                font-weight: bold;
+                color: $gray2;
+                min-width: 170px;
+            }
+
+            .tip-parent span {
+                width: 20px;
+                height: 5px;
+            }
+        }
+    }
+
+    &__main {
+        background: #ffffff;
+        box-shadow: 0px 0px 20px rgba(134, 135, 135, 0.35);
+        padding: 27px 99px;
+        @include fsn;
+
+        & + .btn {
+            margin-top: 56px;
+        }
+
+        & + .company__main {
+            margin-top: 30px;
+        }
+    }
+
+    &__user {
+        width: 190px;
+        flex-shrink: 0;
+        margin-right: 110px;
+
+        & > img {
+            width: 79px;
+            border-radius: 50%;
+            margin-bottom: 6px;
+        }
+
+        &-name {
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        &-features {
+            color: $gray2;
+            font-size: 12px;
+
+            div span:first-child {
+                font-weight: 700;
+            }
+        }
+
+        .reviews__progress {
+            border-top: 1px solid #c4c4c4;
+            padding-top: 16px;
+
+            .service__progress-item {
+                display: block;
+                margin-right: 0;
+                margin-bottom: 8px;
+
+                & > span {
+                    min-width: auto;
+                    font-size: 12px;
+                    display: block;
+                    margin-bottom: 6px;
+                }
+
+                .tip-parent {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .btn {
+            margin-top: 20px;
+        }
+    }
+
+    .reviews__check {
+        font-weight: 700;
+        font-size: 12px;
+        margin-bottom: 13px;
+    }
+
+    &__head {
+        @include fcn;
+    }
+
+    &__date {
+        font-weight: 700;
+        font-size: 12px;
+        color: #b3b8be;
+        margin-left: 14px;
+    }
+
+    &__body {
+        h3 {
+            margin-bottom: 4px;
+        }
+    }
+
+    &__text {
+        font-size: 12px;
+        margin-bottom: 10px;
+
+        a {
+            color: $blue;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &.hide {
+            display: none;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    iframe {
+        margin-top: 15px;
+    }
+}
+
+.comment {
+    @include fsn;
+    padding: 14px 21px;
+    position: relative;
+    background: #f1f3f5;
+    margin-top: 12px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 30px;
+        transform: translateY(-100%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent #f1f3f5 transparent;
+    }
+
+    img {
+        width: 50px;
+        border-radius: 50%;
+        margin-right: 21px;
+    }
+
+    &__top {
+        @include fcsb;
+        margin-bottom: 5px;
+    }
+
+    &__name {
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    &__date {
+        font-size: 10px;
+        font-weight: 700;
+        color: $gray2;
+    }
+
+    &__text {
+        font-size: 12px;
+    }
+}

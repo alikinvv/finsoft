@@ -62,6 +62,7 @@ h2 {
         }
     }
 
+    & + span.orange,
     & + a {
         color: $orange;
         font-weight: 700;
@@ -72,6 +73,18 @@ h2 {
 
         &:hover {
             text-decoration: none;
+        }
+    }
+
+    & + span.orange {
+        text-decoration: none;
+
+        a {
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
 }
@@ -127,6 +140,48 @@ textarea {
 
     input + label {
         margin-left: 8px;
+    }
+
+    &.slide {
+        input {
+            display: none;
+
+            &:checked + label {
+                background: $orange;
+
+                &::before {
+                    left: 22px;
+                }
+            }
+        }
+
+        label {
+            width: 50px;
+            height: 30px;
+            background: $gray;
+            border-radius: 100px;
+            position: relative;
+            padding: 0;
+            margin: 0;
+            display: block;
+            transition: $trans;
+
+            &::before {
+                content: '';
+                width: 26px;
+                height: 26px;
+                left: 1px;
+                @include centerYa;
+                border: 0;
+                background: url(../img/slide.svg) no-repeat center;
+                background-size: cover;
+                transition: $trans;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
     }
 }
 
@@ -241,6 +296,10 @@ a {
 
 .mb-0 {
     margin-bottom: 0 !important;
+}
+
+.p-0 {
+    padding: 0 !important;
 }
 
 .btn {
@@ -437,10 +496,22 @@ a {
 }
 
 ul {
-    &.gray-dot {
+    &.dot {
         padding-left: 0;
         margin: 0;
         list-style-type: none;
+
+        &.dot-blue {
+            li::before {
+                background: #3660ab;
+            }
+        }
+
+        &.dot-orange {
+            li::before {
+                background: $orange;
+            }
+        }
 
         li {
             position: relative;
@@ -472,42 +543,6 @@ ul {
             }
         }
     }
-
-    &.blue-dot {
-        padding-left: 0;
-        margin: 0;
-        list-style-type: none;
-
-        li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 9px;
-
-            &::before {
-                content: '';
-                position: absolute;
-                @include centerYa;
-                left: 0;
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                background: #3660ab;
-            }
-        }
-
-        &.sm {
-            li {
-                font-size: 12px;
-                padding-left: 10px;
-                margin-bottom: 2px;
-
-                &::before {
-                    width: 5px;
-                    height: 5px;
-                }
-            }
-        }
-    }
 }
 
 .tabs {
@@ -521,6 +556,12 @@ ul {
         padding: 0 20px;
         color: $gray;
         font-size: 16px;
+        transition: $trans;
+        user-select: none;
+
+        &.active {
+            color: $text;
+        }
     }
 
     .bar {
@@ -539,6 +580,24 @@ ul {
 
     &.active {
         display: block;
+    }
+
+    &__flex {
+        @include fssb;
+    }
+
+    &__body {
+        width: 100%;
+    }
+
+    .img {
+        margin-left: 42px;
+
+        &.hide {
+            pointer-events: none;
+            user-select: none;
+            opacity: 0;
+        }
     }
 }
 
@@ -611,6 +670,35 @@ div.select {
         &:hover {
             background: $blue;
             color: #fff;
+        }
+    }
+}
+
+.password {
+    position: relative;
+
+    input {
+        margin-bottom: 0 !important;
+    }
+
+    .icon {
+        position: absolute;
+        @include centerYa;
+        left: 24px;
+        fill: $orange;
+        font-size: 18px;
+
+        &.show {
+            left: initial;
+            right: 24px;
+            fill: $gray;
+            font-size: 24px;
+            cursor: pointer;
+            transition: $trans;
+
+            &.active {
+                fill: $orange;
+            }
         }
     }
 }
