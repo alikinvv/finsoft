@@ -326,7 +326,7 @@ a {
     }
 
     &:hover {
-        background: $green;
+        background: $blue;
     }
 
     &:focus {
@@ -339,9 +339,9 @@ a {
         color: $orange;
 
         &:hover {
-            background: $orange;
+            background: $blue;
             color: #fff;
-            border-color: $orange;
+            border-color: $blue;
 
             .icon {
                 fill: #fff;
@@ -553,7 +553,7 @@ ul {
     margin-bottom: 34px;
 
     a {
-        padding: 0 20px;
+        padding: 0 18px;
         color: $gray;
         font-size: 16px;
         transition: $trans;

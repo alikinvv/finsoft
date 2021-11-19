@@ -847,6 +847,15 @@
     padding-top: 48px;
     margin-bottom: -48px;
 
+    &.margin {
+        margin-bottom: 31px;
+        padding-top: 5px;
+
+        h2 {
+            margin-bottom: 0;
+        }
+    }
+
     h2 {
         width: 100%;
         display: block;
@@ -1723,7 +1732,7 @@
     }
 
     &__more {
-        padding-bottom: 103px;
+        padding-bottom: 95px;
 
         a {
             color: $orange;
@@ -1832,6 +1841,10 @@
 
 .wrapper {
     padding-bottom: 92px;
+
+    &.padding {
+        padding-top: 40px;
+    }
 
     .container {
         @include fssb;
@@ -2259,6 +2272,7 @@
 
     &.flex {
         @include fesb;
+        margin-top: -80px;
 
         .tabs {
             width: 100%;
@@ -3133,6 +3147,7 @@
 
 .buttons {
     @include flexlist(15px);
+    margin-bottom: 30px;
 
     &__item {
         @include flexitem(33.33%, 15px);
@@ -3157,5 +3172,621 @@
             font-size: 16px;
             line-height: 1.37;
         }
+    }
+}
+
+.pdf {
+    padding: 16px 29px;
+
+    &__list {
+        @include flexlist(15px);
+    }
+
+    &__item {
+        @include flexitem(33.33%, 15px, 20px);
+        border: 1px solid $blue;
+        padding: 13px 17px;
+        font-size: 16px;
+        position: relative;
+        height: 100px;
+        transition: $trans;
+
+        &:hover {
+            background: $blue;
+            color: #fff;
+
+            div {
+                color: #fff;
+            }
+        }
+
+        div {
+            position: absolute;
+            bottom: 13px;
+            left: 17px;
+            text-transform: uppercase;
+            color: $gray2;
+            transition: $trans;
+        }
+
+        img {
+            @include centerYa;
+            right: 13px;
+        }
+    }
+}
+
+.send {
+    padding: 30px 27px;
+
+    &__item {
+        padding-top: 19px;
+        margin-top: 19px;
+        border-top: 1px solid #b3b8be;
+
+        &.flex {
+            @include fcsb;
+        }
+
+        & > .checkbox {
+            margin-bottom: 12px;
+
+            input {
+                margin-top: 5px;
+            }
+
+            label {
+                font-size: 10px;
+                color: $gray2;
+            }
+        }
+    }
+
+    &__company {
+        @include fcn;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.38;
+
+        img {
+            width: 47px;
+            margin-right: 17px;
+        }
+    }
+
+    &__search {
+        width: 380px;
+        position: relative;
+
+        input {
+            width: 100%;
+            border-color: $blue;
+            font-size: 20px;
+            padding: 12px 20px;
+            padding-right: 60px;
+        }
+
+        button {
+            @include centerYa;
+            right: 19px;
+            cursor: pointer;
+            @include fcc;
+
+            &:hover .icon {
+                fill: $orange;
+            }
+
+            .icon {
+                font-size: 27px;
+                fill: $gray;
+                transition: $trans;
+            }
+        }
+    }
+
+    .service__progress-item {
+        margin-bottom: 6px;
+
+        & > span {
+            white-space: nowrap;
+            font-weight: 700;
+            color: $gray2;
+            min-width: 200px;
+        }
+
+        div span {
+            width: 40px;
+            height: 10px;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    &__form {
+        background: #f4f7fa;
+        padding: 22px 19px;
+        margin-bottom: 30px;
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 29px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 10px;
+                font-weight: 700;
+            }
+
+            textarea,
+            input {
+                display: block;
+                width: 100%;
+                background: #ffffff;
+                border: 1px solid #898d9c;
+                font-size: 18px;
+                padding: 10px 15px;
+            }
+
+            textarea {
+                resize: none;
+                height: 95px;
+            }
+
+            span {
+                color: $gray2;
+                flex-basis: fill;
+                font-size: 12px;
+                margin-bottom: 13px;
+                margin-top: -10px;
+                display: block;
+            }
+        }
+    }
+
+    &__controls {
+        margin-top: 35px;
+        @include fcn;
+
+        .btn-outline {
+            margin-left: 12px;
+        }
+    }
+}
+
+.note {
+    background: #f4f7fa;
+    @include fcn;
+    font-size: 16px;
+    line-height: 1.37;
+    padding: 17px 5px;
+    padding-right: 57px;
+
+    img {
+        margin-right: 36px;
+        margin-bottom: -28px;
+        margin-top: -40px;
+        pointer-events: none;
+        user-select: none;
+    }
+}
+
+.file {
+    width: 100%;
+    height: 56px;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+        .file__overlay {
+            background: $blue;
+            border-color: $blue;
+        }
+
+        .file__btn,
+        .file__name {
+            color: #fff;
+
+            .icon {
+                fill: #fff;
+            }
+        }
+    }
+
+    input {
+        width: 100%;
+        height: 56px;
+        opacity: 0;
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 56px;
+        z-index: 2;
+        background: #ffffff;
+        border: 1px dashed #b3b8be;
+        @include fcsb;
+        padding: 0 27px;
+        transition: $trans;
+    }
+
+    &__name {
+        font-weight: 700;
+        color: #898d9c;
+        transition: $trans;
+    }
+
+    &__btn {
+        @include fcn;
+        font-weight: 700;
+        color: $orange;
+        transition: $trans;
+
+        .icon {
+            font-size: 20px;
+            fill: $orange;
+            margin-right: 10px;
+            transition: $trans;
+        }
+    }
+}
+
+.create {
+    padding: 40px 30px;
+    padding-right: 154px;
+    background: url(../img/create-bg.svg) no-repeat right -20%;
+
+    &__title {
+        font-weight: 700;
+        font-size: 30px;
+        padding: 15px 37px;
+        width: 100%;
+        border: 0 !important;
+    }
+
+    &__body {
+        position: relative;
+
+        textarea {
+            height: 280px;
+            width: 100%;
+            border: 0;
+            padding: 70px 30px 38px;
+            font-size: 16px;
+            resize: none;
+        }
+
+        span {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-size: 16px;
+            color: $gray;
+            pointer-events: none;
+            user-select: none;
+        }
+    }
+
+    &__controls {
+        position: absolute;
+        top: 20px;
+        left: 229px;
+        @include fcn;
+
+        &-body {
+            background: #f4f7fa;
+            @include fcn;
+            padding: 0 10px;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%) translateX(-100%);
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 7px 7px 7px 0;
+                border-color: transparent #f4f7fa transparent transparent;
+            }
+        }
+
+        &-item {
+            padding: 13px 7px;
+            cursor: pointer;
+            @include fcc;
+
+            &:hover .icon {
+                fill: $blue;
+            }
+
+            .icon {
+                transition: $trans;
+                font-size: 20px;
+            }
+        }
+    }
+
+    &__close {
+        width: 28px;
+        height: 28px;
+        transition: $trans;
+        border-radius: 50%;
+        background: #f4f7fa;
+        @include fcc;
+        margin-right: 15px;
+        cursor: pointer;
+
+        &:hover {
+            background: $blue;
+
+            .icon {
+                fill: #fff;
+            }
+        }
+
+        .icon {
+            font-size: 11px;
+            transition: $trans;
+        }
+    }
+
+    &__services {
+        @include fesb;
+        margin-bottom: 50px;
+
+        .btn {
+            flex-shrink: 0;
+            margin-left: 32px;
+        }
+
+        .form-group {
+            width: 100%;
+
+            label {
+                display: block;
+                margin-bottom: 3px;
+                font-weight: 700;
+                font-size: 16px;
+            }
+
+            input {
+                width: 100%;
+                border: 0;
+                border-bottom: 1px solid $gray;
+                padding: 9px 0;
+            }
+        }
+    }
+
+    h3 {
+        margin-bottom: 8px;
+    }
+
+    &__text {
+        margin-bottom: 19px;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-bottom: 15px;
+
+        input {
+            width: 100%;
+            border-color: $blue;
+            padding: 17px 27px;
+        }
+    }
+
+    .file {
+        margin-bottom: 11px;
+    }
+
+    &__desc {
+        color: $gray2;
+    }
+}
+
+.dictionary {
+    padding: 40px 0;
+
+    h2 {
+        display: block;
+        text-align: left;
+        margin-bottom: 28px;
+    }
+
+    &__list {
+        @include flexlist(15px);
+        flex-flow: column wrap;
+        height: 1367px;
+    }
+
+    &__item {
+        @include flexitem(33.33%, 15px, 30px);
+        background: #ffffff;
+        box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
+        padding: 18px 30px;
+
+        a {
+            color: $blue;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__letter {
+        font-weight: 700;
+        font-size: 38px;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            padding: 13px 0;
+            border-bottom: 1px solid $gray;
+
+            &:last-child {
+                border: 0;
+            }
+        }
+    }
+
+    &__more {
+        margin-bottom: 155px;
+        padding: 12px 42px !important;
+    }
+
+    &__main {
+        @include fssb;
+
+        img {
+            flex-shrink: 0;
+            margin-left: 30px;
+        }
+    }
+
+    &__body {
+        width: 100%;
+        padding: 3px 30px;
+    }
+}
+
+.alphabet {
+    padding: 24px 27px;
+
+    &__row {
+        @include fcn;
+        margin-bottom: 20px;
+
+        img {
+            width: 24px;
+            margin-right: 16px;
+        }
+
+        a {
+            margin: 0 7px;
+            color: $blue;
+            font-size: 24px;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .form-group {
+        @include fcsb;
+
+        input {
+            width: 100%;
+            border-color: $blue;
+            height: 50px;
+            font-size: 20px;
+            padding: 0 21px;
+        }
+
+        .btn {
+            flex-shrink: 0;
+            margin-left: 22px;
+            height: 50px;
+            padding-top: 0;
+            padding-bottom: 0;
+            @include fcc;
+        }
+    }
+
+    &__more,
+    .btn {
+        padding: 12px 42px !important;
+    }
+}
+
+.course {
+    display: flex;
+    padding: 7px 9px;
+    padding-right: 30px;
+
+    &__left {
+        padding-right: 14px;
+        border-right: 1px solid $gray;
+        text-align: center;
+        width: 130px;
+    }
+
+    &__date {
+        color: $blue;
+        font-weight: 700;
+        font-size: 30px;
+        margin-bottom: -4px;
+    }
+
+    &__month {
+        background: $darkBlue;
+        color: #fff;
+        padding: 1px 10px;
+        font-size: 18px;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+
+    &__time {
+        color: $gray2;
+        font-size: 12px;
+    }
+
+    &__center {
+        padding: 0 15px;
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 7px;
+    }
+
+    &__desc {
+        margin-bottom: 21px;
+    }
+
+    &__addr {
+        @include fcn;
+        color: $gray2;
+
+        .icon {
+            fill: $gray2;
+            margin-right: 12px;
+            font-size: 18px;
+        }
+    }
+
+    &__right {
+        margin-left: auto;
+        padding-left: 14px;
+        border-left: 1px solid $gray;
+        @include fcc;
+    }
+
+    .btn {
+        padding: 12px 34px;
     }
 }
