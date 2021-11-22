@@ -1404,6 +1404,42 @@
             transition: $trans;
         }
     }
+
+    &__wrap {
+        @include flexitem(33.33%, 10px, 30px);
+
+        .video__item {
+            width: 100%;
+            margin: 0 0 16px;
+            box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.8);
+        }
+    }
+
+    &__category {
+        color: $gray2;
+        margin-bottom: 7px;
+    }
+
+    &__title {
+        font-weight: 700;
+        margin-bottom: 16px;   
+    }
+
+    &__bottom {
+        @include fcsb;
+
+        div {
+            color: $gray2;
+            font-weight: 700;
+            @include fcn;
+
+            .icon {
+                fill: $gray2;
+                margin-right: 8px;
+                font-size: 20px;
+            }
+        }
+    }
 }
 
 .docs {
@@ -3788,5 +3824,146 @@
 
     .btn {
         padding: 12px 34px;
+    }
+}
+
+.article {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
+    padding: 24px 27px;
+    @include fsn;
+    margin-bottom: 30px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    img {
+        width: 76px;
+        margin-right: 25px;
+        flex-shrink: 0;
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 3px;
+
+        span {
+            color: $gray2;
+            font-size: 14px;
+            font-weight: normal;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 18px;
+    }
+
+    &__info {
+        padding-right: 15px;
+    }
+
+    &__date {
+        font-weight: 700;
+        color: $gray2;
+        margin-bottom: 2px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 3px;
+    }
+
+    &__text {
+        color: $gray2;
+        font-size: 12px;
+    }
+
+    &__right {
+        @include fcn;
+        margin-left: auto;
+        align-self: center;
+
+        a {
+            width: 40px;
+            height: 40px;
+            @include fcc;
+            margin: 0 12px;
+
+            &:hover .icon {
+                fill: $orange;
+            }
+
+            &:first-child .icon {
+                font-size: 20px;
+            }
+
+            .icon {
+                fill: $blue;
+                font-size: 33px;
+                transition: $trans;
+            }
+        }
+    }
+}
+
+.blog {
+    padding-top: 50px;
+    
+    .container {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 220px;
+        @include fcc;
+        flex-direction: column;
+        color: #fff;
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 0;
+    }
+}
+
+.tags {
+    padding: 30px 0;
+
+    &__list {
+        @include fcn;
+        flex-wrap: wrap;
+
+        div {
+            background: #F5F9FA;
+            margin-right: 15px;
+            padding: 4px 14px;
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+
+        a {
+            margin-bottom: 12px;
+            @include fcn;
+            color: $blue;
+            transition: $trans;
+
+            &:hover {
+                color: $orange;
+
+                .icon {
+                    fill: $orange;
+                }
+            }
+
+            .icon {
+                margin-left: 7px;
+                font-size: 6px;
+                fill: $blue;
+                margin-top: 3px;
+                transition: $trans;
+            }
+        }
     }
 }

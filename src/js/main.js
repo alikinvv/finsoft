@@ -96,7 +96,7 @@ $('body').on('click', '.heart', (e) => {
     $(e.currentTarget).toggleClass('active');
 });
 
-let someHeight = (item, element, count) => {
+let sameHeight = (item, element, count) => {
     let titleHeight = 0;
     let items = [];
 
@@ -127,10 +127,10 @@ let someHeight = (item, element, count) => {
 };
 
 let resize = () => {
-    someHeight('.news__item', '.news__title', 4);
-    someHeight('.users__item', '.users__text', 4);
-    someHeight('.reviews__item', '.reviews__body', 2);
-    someHeight('.service', '.service__text', 3);
+    sameHeight('.news .news__item', '.news__title', 4);
+    sameHeight('.users__item', '.users__text', 4);
+    sameHeight('.reviews__item', '.reviews__body', 2);
+    sameHeight('.service', '.service__text', 3);
 };
 
 resize();

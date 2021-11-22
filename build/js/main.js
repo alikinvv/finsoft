@@ -88,7 +88,7 @@ $('body').on('click', '.heart', function (e) {
   $(e.currentTarget).toggleClass('active');
 });
 
-var someHeight = function someHeight(item, element, count) {
+var sameHeight = function sameHeight(item, element, count) {
   var titleHeight = 0;
   var items = [];
 
@@ -119,10 +119,10 @@ var someHeight = function someHeight(item, element, count) {
 };
 
 var resize = function resize() {
-  someHeight('.news__item', '.news__title', 4);
-  someHeight('.users__item', '.users__text', 4);
-  someHeight('.reviews__item', '.reviews__body', 2);
-  someHeight('.service', '.service__text', 3);
+  sameHeight('.news .news__item', '.news__title', 4);
+  sameHeight('.users__item', '.users__text', 4);
+  sameHeight('.reviews__item', '.reviews__body', 2);
+  sameHeight('.service', '.service__text', 3);
 };
 
 resize();

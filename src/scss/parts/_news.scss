@@ -11,6 +11,12 @@
         }
 
         @include flexlist(15px);
+
+        &.three {
+            .news__item {
+                @include flexitem(33.33%, 15px, 30px);
+            }
+        }
     }
 
     &__item {
