@@ -245,3 +245,7 @@ $('body').on('click', '.company__text a', function (e) {
   $(e.currentTarget).parent().next().slideDown(300);
   $(e.currentTarget).remove();
 });
+$('body').on('click', '.points__range div', function (e) {
+  $('.points__range div').removeClass('active');
+  $(e.currentTarget).addClass('active');
+});

@@ -179,51 +179,51 @@
     iframe {
         margin-top: 15px;
     }
-}
 
-.comment {
-    @include fsn;
-    padding: 14px 21px;
-    position: relative;
-    background: #f1f3f5;
-    margin-top: 12px;
+    &__comment {
+        @include fsn;
+        padding: 14px 21px;
+        position: relative;
+        background: #f1f3f5;
+        margin-top: 12px;
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 30px;
-        transform: translateY(-100%);
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 10px 10px 10px;
-        border-color: transparent transparent #f1f3f5 transparent;
-    }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            transform: translateY(-100%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 10px 10px 10px;
+            border-color: transparent transparent #f1f3f5 transparent;
+        }
 
-    img {
-        width: 50px;
-        border-radius: 50%;
-        margin-right: 21px;
-    }
+        img {
+            width: 50px;
+            border-radius: 50%;
+            margin-right: 21px;
+        }
 
-    &__top {
-        @include fcsb;
-        margin-bottom: 5px;
-    }
+        &-top {
+            @include fcsb;
+            margin-bottom: 5px;
+        }
 
-    &__name {
-        font-size: 12px;
-        font-weight: 700;
-    }
+        &-name {
+            font-size: 12px;
+            font-weight: 700;
+        }
 
-    &__date {
-        font-size: 10px;
-        font-weight: 700;
-        color: $gray2;
-    }
+        &-date {
+            font-size: 10px;
+            font-weight: 700;
+            color: $gray2;
+        }
 
-    &__text {
-        font-size: 12px;
+        &-text {
+            font-size: 12px;
+        }
     }
 }

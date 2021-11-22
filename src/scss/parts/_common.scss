@@ -99,6 +99,14 @@ h3 {
     margin-bottom: 14px;
 }
 
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
 button {
     background: transparent;
     border: 0;
@@ -519,13 +527,13 @@ ul {
 
         li {
             position: relative;
-            padding-left: 20px;
+            padding-left: 25px;
             margin-bottom: 9px;
 
             &::before {
                 content: '';
                 position: absolute;
-                @include centerYa;
+                top: 8px;
                 left: 0;
                 width: 8px;
                 height: 8px;
@@ -545,6 +553,29 @@ ul {
                     height: 5px;
                 }
             }
+        }
+    }
+}
+
+ol {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+
+    li {
+        counter-increment: counter;
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 9px;
+
+        &::before {
+            content: counter(counter) '. ';
+            color: $orange;
+            font-weight: bold;
+            font-size: 18px;
+            position: absolute;
+            top: -5px;
+            left: 0;
         }
     }
 }
@@ -662,6 +693,7 @@ div.select {
         pointer-events: none;
         user-select: none;
         z-index: 2;
+        box-shadow: 0 7px 7px rgba(#000, 0.1);
     }
 
     &__item {
