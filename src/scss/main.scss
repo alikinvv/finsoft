@@ -3857,7 +3857,9 @@
         }
 
         @include r(767) {
-            margin-bottom: 0;
+            margin-bottom: 10px;
+            margin-top: 7px;
+            display: block;
         }
 
         width: 94px;
@@ -3910,6 +3912,10 @@
     .social {
         @include r(1023) {
             margin-top: 0;
+        }
+
+        @include r(767) {
+            margin-top: 10px;
         }
 
         margin-top: 14px;
