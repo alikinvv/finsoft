@@ -236,6 +236,7 @@ input[type='checkbox'] {
     appearance: none;
     cursor: pointer;
     flex-shrink: 0;
+    appearance: none;
 
     &:checked {
         background: url(../img/icons/check.svg) no-repeat center $gray;
