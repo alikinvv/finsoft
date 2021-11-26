@@ -1,7 +1,20 @@
 .subscribe {
+    @include r(1345) {
+        padding: 40px 0;
+    }
+
     padding: 94px 0;
 
     .container {
+        @include r(1023) {
+            overflow: hidden;
+        }
+
+        @include r(767) {
+            padding-top: 79px;
+            padding-bottom: 98px;
+        }
+
         position: relative;
         background: #f4f7fa;
         padding-top: 44px;
@@ -11,10 +24,28 @@
     }
 
     h2 {
+        @include r(767) {
+            text-align: center;
+            padding: 0 20px;
+            margin-bottom: 41px;
+        }
+
         margin-bottom: 20px;
     }
 
     &__img {
+        @include r(1023) {
+            bottom: -100px;
+            opacity: 0;
+        }
+
+        @include r(767) {
+            opacity: 1;
+            width: 300px;
+            bottom: -51px;
+            left: 36%;
+        }
+
         position: absolute;
         left: 14px;
         bottom: 0;
@@ -23,6 +54,12 @@
     }
 
     &__line {
+        @include r(767) {
+            top: -26px;
+            right: -39px;
+            width: 259px;
+        }
+
         position: absolute;
         top: 0;
         right: 0;
@@ -34,11 +71,31 @@
         input:not([type='checkbox']),
         button,
         .checkbox {
+            @include r(1023) {
+                width: 209px;
+                position: relative;
+                z-index: 2;
+            }
+
+            @include r(767) {
+                width: 100%;
+                margin-bottom: 14px;
+            }
+
             width: 280px;
         }
 
         input:not([type='checkbox']),
         button {
+            @include r(767) {
+                width: 100%;
+                margin-bottom: 14px;
+                font-size: 14px;
+                height: 40px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
             height: 56px;
             font-size: 20px;
             margin: 0 6px;
@@ -55,12 +112,26 @@
     }
 
     .checkbox {
+        @include r(1023) {
+            width: 100% !important;
+            margin-left: 12px;
+        }
+
+        @include r(767) {
+            margin-top: 0;
+            margin-left: 6px;
+        }
+
         margin-left: auto;
         margin-top: 12px;
         position: relative;
         left: -6px;
 
         label {
+            @include r(767) {
+                margin-top: -3px;
+            }
+
             font-size: 12px;
             line-height: 1.33;
 

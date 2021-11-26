@@ -1,38 +1,27 @@
 .materials {
+    @include r(1023) {
+        overflow: hidden;
+    }
+
+    @include r(767) {
+        padding-bottom: 0;
+    }
+
     padding: 21px 0;
 
     &__list {
-        @include r(1023) {
-            @include flexlist(10px);
-        }
-
-        @include r(767) {
-            @include flexlist(1px);
-        }
-
-        @include flexlist(15px);
-
-        &.three {
-            .materials__item {
-                @include flexitem(33.33%, 15px);
-            }
-        }
+        overflow: visible;
     }
 
     &__item {
-        @include r(1023) {
-            @include flexitem(50%, 10px);
-        }
-
-        @include r(767) {
-            @include flexitem(100%, 1px);
-        }
-
-        @include flexitem(25%, 15px);
         color: #fff;
     }
 
     &__wrap {
+        @include r(767) {
+            height: 293px;
+        }
+
         height: 356px;
         background: url(../img/material.svg) no-repeat left top;
         background-size: cover;
@@ -42,6 +31,11 @@
     }
 
     &__img {
+        @include r(767) {
+            width: 167px;
+            height: 237px;
+        }
+
         width: 203px;
         height: 288px;
         @include fnc;
@@ -55,6 +49,10 @@
     }
 
     &__name {
+        @include r(767) {
+            font-size: 15px;
+        }
+
         font-weight: 700;
         font-size: 18px;
         line-height: 1.16;

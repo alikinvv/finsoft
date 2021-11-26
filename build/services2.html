@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/main.css">
 
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -31,6 +32,7 @@
             </div>
             <a href="javascript:void(0)" class="btn btn-outline btn-white">Регистрация</a>
             <a href="javascript:void(0)" class="btn btn-outline">Войти</a>
+            <div class="hamburger"><span></span></div>
         </div>
         <div class="bar"></div>
     </header>
@@ -144,7 +146,7 @@
                                     <span class="fill"></span>
                                     <span class="fill"></span>
                                     <span></span>
-                                    <div class="tip">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, sed
+                                    <div class="tip right">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, sed
                                         do <br> eiusmod tempor incididunt ut&nbsp;labore <br> et&nbsp;dolore magna aliqua.
                                         Ut&nbsp;enim&nbsp;ad</div>
                                 </div>
@@ -239,7 +241,7 @@
                                     <span class="fill"></span>
                                     <span class="fill"></span>
                                     <span></span>
-                                    <div class="tip">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, sed
+                                    <div class="tip right">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, sed
                                         do <br> eiusmod tempor incididunt ut&nbsp;labore <br> et&nbsp;dolore magna aliqua.
                                         Ut&nbsp;enim&nbsp;ad</div>
                                 </div>
@@ -334,7 +336,7 @@
                                     <span class="fill"></span>
                                     <span class="fill"></span>
                                     <span></span>
-                                    <div class="tip">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, sed
+                                    <div class="tip right">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, sed
                                         do <br> eiusmod tempor incididunt ut&nbsp;labore <br> et&nbsp;dolore magna aliqua.
                                         Ut&nbsp;enim&nbsp;ad</div>
                                 </div>
@@ -429,7 +431,7 @@
                                     <span class="fill"></span>
                                     <span class="fill"></span>
                                     <span></span>
-                                    <div class="tip">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, sed
+                                    <div class="tip right">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, sed
                                         do <br> eiusmod tempor incididunt ut&nbsp;labore <br> et&nbsp;dolore magna aliqua.
                                         Ut&nbsp;enim&nbsp;ad</div>
                                 </div>
@@ -489,54 +491,66 @@
                 <div class="footer__logo">FinSoft</div>
                 <div class="footer__menu">
                     <div class="footer__title">О нас</div>
-                    <a href="javascript:void(0)">О платформе</a>
-                    <a href="javascript:void(0)">Тарифы</a>
-                    <a href="javascript:void(0)">Контакты</a>
+                    <div>
+                        <a href="javascript:void(0)">О платформе</a>
+                        <a href="javascript:void(0)">Тарифы</a>
+                        <a href="javascript:void(0)">Контакты</a>
+                    </div>
                 </div>
             </div>
             <div>
                 <div class="footer__menu">
                     <div class="footer__title">Нужен маркетолог</div>
-                    <a href="javascript:void(0)">Регистрация работодателя</a>
-                    <a href="javascript:void(0)">Каталог маркетологов</a>
-                    <a href="javascript:void(0)">Услуги по маркетингу</a>
-                    <a href="javascript:void(0)">Опубликовать проект</a>
-                    <a href="javascript:void(0)">Опубликовать вакансию</a>
-                    <a href="javascript:void(0)">Помощь в подборе</a>
+                    <div>
+                        <a href="javascript:void(0)">Регистрация работодателя</a>
+                        <a href="javascript:void(0)">Каталог маркетологов</a>
+                        <a href="javascript:void(0)">Услуги по маркетингу</a>
+                        <a href="javascript:void(0)">Опубликовать проект</a>
+                        <a href="javascript:void(0)">Опубликовать вакансию</a>
+                        <a href="javascript:void(0)">Помощь в подборе</a>
+                    </div>
                 </div>
             </div>
             <div>
                 <div class="footer__menu">
                     <div class="footer__title">Для маркетологов</div>
-                    <a href="javascript:void(0)">Регистрация маркетолога</a>
-                    <a href="javascript:void(0)">Поиск проекта</a>
-                    <a href="javascript:void(0)">Поиск вакансии</a>
-                    <a href="javascript:void(0)">Опубликовать кейс</a>
-                    <a href="javascript:void(0)">Опубликовать статью</a>
+                    <div>
+                        <a href="javascript:void(0)">Регистрация маркетолога</a>
+                        <a href="javascript:void(0)">Поиск проекта</a>
+                        <a href="javascript:void(0)">Поиск вакансии</a>
+                        <a href="javascript:void(0)">Опубликовать кейс</a>
+                        <a href="javascript:void(0)">Опубликовать статью</a>
+                    </div>
                 </div>
                 <div class="footer__menu">
                     <div class="footer__title">Документы</div>
-                    <a href="javascript:void(0)">Маркетинг-кит</a>
+                    <div>
+                        <a href="javascript:void(0)">Маркетинг-кит</a>
+                    </div>
                 </div>
             </div>
             <div>
                 <div class="footer__menu">
                     <div class="footer__title">Полезные материалы:</div>
-                    <a href="javascript:void(0)">Условия для маркетологов</a>
-                    <a href="javascript:void(0)">Условия для работодателей</a>
-                    <a href="javascript:void(0)">Блог по маркетингу</a>
-                    <a href="javascript:void(0)">Академия маркетинга</a>
-                    <a href="javascript:void(0)">Форум по маркетингу</a>
+                    <div>
+                        <a href="javascript:void(0)">Условия для маркетологов</a>
+                        <a href="javascript:void(0)">Условия для работодателей</a>
+                        <a href="javascript:void(0)">Блог по маркетингу</a>
+                        <a href="javascript:void(0)">Академия маркетинга</a>
+                        <a href="javascript:void(0)">Форум по маркетингу</a>
+                    </div>
                 </div>
                 <div class="footer__menu">
                     <div class="footer__title">Дукоментация</div>
-                    <a href="javascript:void(0)">Руководство к платформе</a>
+                    <div>
+                        <a href="javascript:void(0)">Руководство к платформе</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="footer__row">
-            <div>ИП Иванов А. В. <br>
+        <div class="footer__row top">
+            <div class="org">ИП Иванов А. В. <br>
                 ОГРНИП: 321774600468241 | ИНН: 772873464466</div>
             <div class="footer__social">
                 <a href="javascript:void(0)">
@@ -582,7 +596,9 @@
             </div>
         </div>
 
-        <div class="footer__row">
+        <div class="footer__row bottom">
+            <div class="org">ИП Иванов А. В. <br>
+                ОГРНИП: 321774600468241 | ИНН: 772873464466</div>
             <div>
                 <a href="javascript:void(0)">Политика конфидениальности </a>
                 <a href="javascript:void(0)">Договор оферты </a>
@@ -633,6 +649,7 @@
     <div class="modal" data-modal="bookmark">
         <div class="modal__content">
             <div class="modal__close"></div>
+            <img src="img/locks.svg" alt="" class="locks">
             <div class="modal__body">
                 <h2>Для добавления в&nbsp;избранное вы&nbsp;должны быть зарегистрированы</h2>
                 <div class="text">Применяйте промокод и&nbsp;получайте дополнительную скидку&nbsp;20% на&nbsp;вашу
@@ -643,7 +660,13 @@
                     <a href="javascript:void(0)" class="close">Отмена</a>
                 </div>
             </div>
-            <img src="img/locks.svg" alt="" class="locks">
+        </div>
+    </div>
+
+    <div class="modal" data-modal="tips">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body"></div>
         </div>
     </div>
 </div>
@@ -653,6 +676,7 @@
 <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
 <script src="https://unpkg.com/imask"></script>
 <script src="js/sticky.min.js"></script>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 

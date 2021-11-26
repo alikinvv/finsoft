@@ -1,19 +1,23 @@
 .reviews {
     padding: 60px 0;
+    overflow: hidden;
 
     &__list {
-        @include flexlist(15px);
+        overflow: visible;
     }
 
     &__item {
-        @include flexitem(50%, 15px);
         border: 1px solid $gray;
         position: relative;
     }
 
     &__top {
+        @include r(767) {
+            padding: 23px 25px 15px;
+        }
+
         padding: 12px 25px;
-        @include fcn;
+        @include fsn;
         border-bottom: 1px solid $gray;
 
         div {
@@ -30,6 +34,15 @@
     }
 
     a.reviews__title {
+        @include r(767) {
+            font-size: 18px;
+            line-height: 1.33;
+            margin-top: -4px;
+            min-height: 61px;
+            @include fcn;
+            margin-bottom: 0;
+        }
+
         font-weight: 700;
         font-size: 16px;
         margin-bottom: 5px;
@@ -48,7 +61,19 @@
         }
     }
 
+    &__wrap {
+        @include r(767) {
+            margin-top: 10px;
+            margin-left: -75px;
+            max-width: 260px;
+        }
+    }
+
     &__awards {
+        @include r(767) {
+            order: 3;
+        }
+
         @include fcn;
         color: $orange;
         font-weight: 700;
@@ -56,12 +81,20 @@
         font-size: 12px;
 
         img {
+            @include r(767) {
+                margin-left: 0;
+            }
+
             margin-right: 5px;
             margin-left: 16px;
         }
     }
 
     &__rating {
+        @include r(767) {
+            order: 4;
+        }
+
         @include fcn;
         font-weight: 700;
         margin-right: 15px;
@@ -81,6 +114,11 @@
     }
 
     &__count {
+        @include r(767) {
+            order: 2;
+            margin-left: 11px;
+        }
+
         color: $gray2;
         transition: $trans;
         font-size: 12px;
@@ -91,18 +129,49 @@
     }
 
     &__user {
+        @include r(1279) {
+            flex-wrap: wrap;
+        }
+
+        @include r(1023) {
+            flex-wrap: nowrap;
+        }
+
+        @include r(767) {
+            flex-wrap: wrap;
+            padding: 20px 25px;
+        }
+
         padding: 12px 25px;
         @include fsn;
         border-bottom: 1px solid $gray;
 
-        a img {
-            border-radius: 50%;
-            width: 60px;
-            margin-right: 14px;
+        a {
+            flex-shrink: 0;
+
+            img {
+                @include r(767) {
+                    margin-right: 9px;
+                }
+
+                border-radius: 50%;
+                width: 60px;
+                margin-right: 14px;
+            }
         }
     }
 
     &__name {
+        @include r(1279) {
+            font-size: 14px;
+        }
+
+        @include r(767) {
+            font-size: 12px;
+            margin-top: -4px;
+            display: block;
+        }
+
         font-weight: 700;
         font-size: 12px;
         margin-bottom: 2px;
@@ -115,6 +184,14 @@
 
     &__info {
         &-item {
+            @include r(1279) {
+                font-size: 12px;
+            }
+
+            @include r(767) {
+                font-size: 10px;
+            }
+
             font-size: 10px;
             font-weight: 700;
             @include fcn;
@@ -126,6 +203,14 @@
     }
 
     &__check {
+        @include r(1279) {
+            font-size: 12px;
+        }
+
+        @include r(767) {
+            font-size: 10px;
+        }
+
         font-size: 10px;
         @include fcn;
         color: $green;
@@ -139,11 +224,32 @@
     }
 
     &__progress {
+        @include r(1279) {
+            width: 100%;
+            margin-left: 75px;
+            margin-top: 10px;
+        }
+
+        @include r(1023) {
+            margin-left: auto;
+            margin-top: 0;
+            width: auto;
+        }
+
+        @include r(767) {
+            margin-top: 14px;
+            width: 100%;
+        }
+
         margin-left: auto;
     }
 
     .service__progress {
         &-item {
+            @include r(1279) {
+                @include fcs;
+            }
+
             font-size: 10px;
             margin-right: 0;
             margin-left: 0;
@@ -152,6 +258,16 @@
             margin-bottom: 2px;
 
             & > span {
+                @include r(1279) {
+                    font-size: 12px;
+                    min-width: 170px;
+                }
+
+                @include r(767) {
+                    font-size: 10px;
+                    min-width: 137px;
+                }
+
                 white-space: nowrap;
                 min-width: 137px;
                 font-weight: 700;
@@ -170,6 +286,11 @@
     }
 
     &__body {
+        @include r(767) {
+            position: relative;
+            padding-top: 59px;
+        }
+
         padding: 12px 25px;
 
         .reviews__title {
@@ -180,26 +301,56 @@
     }
 
     &__controls {
-        padding: 0 25px 12px;
+        @include r(767) {
+            display: block;
+
+            .btn {
+                width: 100%;
+                text-align: center;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
         @include fcsb;
 
         .btn-outline {
+            @include r(767) {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
             margin-left: 9px;
         }
     }
 
     &__date {
+        @include r(767) {
+            position: absolute;
+            top: 20px;
+            left: 22px;
+        }
+
         font-weight: 700;
         color: $gray;
     }
 
     div.reviews__title {
+        @include r(767) {
+            font-size: 15px;
+            width: 100%;
+        }
+
         font-weight: 700;
         margin-bottom: 7px;
         line-height: 1.31;
     }
 
     &__text {
+        @include r(767) {
+            font-size: 13px;
+        }
+
         margin-bottom: 16px;
 
         a {

@@ -1,7 +1,19 @@
 .company {
+    @include r(767) {
+        overflow: hidden;
+    }
+
     padding: 60px 0;
 
     &__top {
+        @include r(1023) {
+            padding: 6px 15px;
+        }
+
+        @include r(767) {
+            display: block;
+        }
+
         @include fcn;
         padding: 6px 35px;
         background: #ffffff;
@@ -9,11 +21,31 @@
         margin-bottom: 29px;
 
         .btn {
+            @include r(767) {
+                width: 100%;
+                text-align: center;
+                padding-left: 0;
+                padding-right: 0;
+                margin-top: 15px;
+                margin-bottom: 5px;
+            }
+
             white-space: nowrap;
         }
     }
 
     &__rating {
+        @include r(1023) {
+            margin-right: 20px;
+            padding-right: 20px;
+        }
+
+        @include r(767) {
+            border: 0;
+            margin-right: 0;
+            padding-right: 0;
+        }
+
         @include fcn;
         padding-right: 37px;
         margin-right: 41px;
@@ -30,6 +62,10 @@
             font-weight: 700;
 
             strong {
+                @include r(767) {
+                    font-size: 30px;
+                }
+
                 color: $text;
                 font-size: 44px;
             }
@@ -48,6 +84,11 @@
             margin-right: 20px;
 
             & > span {
+                @include r(767) {
+                    font-size: 10px;
+                    min-width: 150px;
+                }
+
                 font-size: 12px;
                 white-space: nowrap;
                 font-weight: bold;
@@ -56,6 +97,10 @@
             }
 
             .tip-parent span {
+                @include r(767) {
+                    height: 7px;
+                }
+
                 width: 20px;
                 height: 5px;
             }
@@ -63,12 +108,29 @@
     }
 
     &__main {
+        @include r(1279) {
+            padding: 27px 30px;
+        }
+
+        @include r(767) {
+            padding: 15px;
+            display: block;
+        }
+
         background: #ffffff;
         box-shadow: 0px 0px 20px rgba(134, 135, 135, 0.35);
         padding: 27px 99px;
         @include fsn;
 
         & + .btn {
+            @include r(767) {
+                margin-top: 30px;
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                text-align: center;
+            }
+
             margin-top: 56px;
         }
 
@@ -78,11 +140,29 @@
     }
 
     &__user {
+        @include r(1023) {
+            margin-right: 30px;
+        }
+
+        @include r(767) {
+            width: 100%;
+
+            & > a {
+                @include fsn;
+                flex-wrap: wrap;
+            }
+        }
+
         width: 190px;
         flex-shrink: 0;
         margin-right: 110px;
 
-        & > img {
+        a > img {
+            @include r(767) {
+                width: 60px;
+                margin-right: 14px;
+            }
+
             width: 79px;
             border-radius: 50%;
             margin-bottom: 6px;
@@ -103,15 +183,34 @@
         }
 
         .reviews__progress {
+            @include r(767) {
+                border-top: 0;
+                padding-top: 0;
+                padding-bottom: 16px;
+                border-bottom: 1px solid #c4c4c4;
+                margin-bottom: 20px;
+            }
+
             border-top: 1px solid #c4c4c4;
             padding-top: 16px;
 
             .service__progress-item {
+                @include r(767) {
+                    width: 100%;
+                    @include fcn;
+                    margin-bottom: 0;
+                }
+
                 display: block;
                 margin-right: 0;
                 margin-bottom: 8px;
 
                 & > span {
+                    @include r(767) {
+                        min-width: 150px;
+                        font-size: 10px;
+                    }
+
                     min-width: auto;
                     font-size: 12px;
                     display: block;
@@ -125,6 +224,10 @@
         }
 
         .btn {
+            @include r(767) {
+                display: none;
+            }
+
             margin-top: 20px;
         }
     }
@@ -136,6 +239,10 @@
     }
 
     &__head {
+        @include r(767) {
+            margin-bottom: 20px;
+        }
+
         @include fcn;
     }
 
@@ -153,6 +260,10 @@
     }
 
     &__text {
+        @include r(767) {
+            font-size: 14px;
+        }
+
         font-size: 12px;
         margin-bottom: 10px;
 
@@ -171,16 +282,33 @@
     }
 
     &__title {
+        @include r(767) {
+            font-size: 14px;
+        }
+
         font-weight: 700;
         font-size: 12px;
         margin-bottom: 6px;
     }
 
     iframe {
+        @include r(1023) {
+            width: 100%;
+        }
+
+        @include r(767) {
+            height: 175px;
+        }
+
         margin-top: 15px;
     }
 
     &__comment {
+        @include r(767) {
+            @include fcn;
+            flex-wrap: wrap;
+        }
+
         @include fsn;
         padding: 14px 21px;
         position: relative;
@@ -207,23 +335,48 @@
         }
 
         &-top {
+            @include r(767) {
+                display: block;
+                margin-bottom: 0;
+            }
+
             @include fcsb;
             margin-bottom: 5px;
         }
 
         &-name {
+            @include r(767) {
+                width: 100%;
+            }
+
             font-size: 12px;
             font-weight: 700;
         }
 
         &-date {
+            @include r(767) {
+                width: 100%;
+            }
+
             font-size: 10px;
             font-weight: 700;
             color: $gray2;
         }
 
         &-text {
+            @include r(767) {
+                width: 100%;
+                margin-top: 15px;
+            }
+
             font-size: 12px;
         }
+    }
+}
+
+.tab .company__main {
+    @include r(767) {
+        padding: 0;
+        box-shadow: none;
     }
 }

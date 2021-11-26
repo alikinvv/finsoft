@@ -82,11 +82,18 @@
                 </svg>
             </div>
         </div>
-        <div class="sort__count">Найдено сервисов: 133</div>
+        <div class="sort__wrap">
+            <div class="sort__count">Найдено сервисов: 133</div>
+            <div class="sort__filter">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-filter"></use>
+                </svg>
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="content">
+<section class="content with-filter">
     <div class="container">
         <div class="content__body">
             //= template/item-tag.html
@@ -121,7 +128,7 @@
 
 //= template/reviews.html
 
-<section class="theme">
+<section class="theme" data-scroll="theme">
     <div class="container" data-sticky-container>
         <div class="theme__sidebar">
             <div class="theme__nav">

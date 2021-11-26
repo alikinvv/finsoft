@@ -17,6 +17,13 @@ $trans: all 0.2s ease-in-out;
     color: #fff;
 }
 
+html,
+body {
+    &.overflow {
+        overflow: hidden;
+    }
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
@@ -48,10 +55,23 @@ ul {
 }
 
 h1 {
+    @include r(767) {
+        font-size: 26px;
+        line-height: 1.18;
+    }
+
     font-size: 38px;
 }
 
 h2 {
+    @include r(767) {
+        font-size: 22px;
+        line-height: 1.36;
+        margin-bottom: 35px;
+        @include fcs;
+        text-align: left;
+    }
+
     font-weight: 700;
     font-size: 30px;
     text-align: center;
@@ -68,6 +88,14 @@ h2 {
 
     & + span.orange,
     & + a {
+        @include r(767) {
+            text-align: left;
+            position: relative;
+            transform: none;
+            left: 0;
+            top: -26px;
+        }
+
         color: $orange;
         font-weight: 700;
         text-decoration: underline;
@@ -81,6 +109,10 @@ h2 {
     }
 
     & + span.orange {
+        @include r(767) {
+            display: block;
+        }
+
         text-decoration: none;
 
         a {
@@ -328,6 +360,11 @@ a {
     position: relative;
 
     &.btn-big {
+        @include r(767) {
+            font-size: 16px;
+            padding: 9px 16px;
+        }
+
         font-size: 18px;
         padding: 12px 19px;
     }
@@ -471,8 +508,8 @@ a {
 }
 
 .container {
-    @include r(1200) {
-        padding: 0 15px;
+    @include r(1190) {
+        padding: 0 10px;
     }
 
     margin: 0 auto;
@@ -581,6 +618,22 @@ ol {
 }
 
 .tabs {
+    @include r(1023) {
+        overflow: scroll;
+    }
+
+    @include r(767) {
+        &.center {
+            overflow: hidden;
+            text-align: center;
+            @include fcc;
+
+            a {
+                padding: 0 14px;
+            }
+        }
+    }
+
     border-bottom: 1px solid $gray;
     padding-bottom: 7px;
     @include fcn;
@@ -588,6 +641,20 @@ ol {
     margin-bottom: 34px;
 
     a {
+        @include r(1279) {
+            padding: 0 10px;
+            font-size: 14px;
+        }
+
+        @include r(1023) {
+            white-space: nowrap;
+        }
+
+        @include r(767) {
+            font-size: 14px;
+            padding: 0 9px;
+        }
+
         padding: 0 18px;
         color: $gray;
         font-size: 16px;
@@ -595,11 +662,20 @@ ol {
         user-select: none;
 
         &.active {
+            @include r(767) {
+                color: $blue;
+                font-weight: bold;
+            }
+
             color: $text;
         }
     }
 
     .bar {
+        @include r(1023) {
+            display: none;
+        }
+
         position: absolute;
         height: 4px;
         background: $blue;
@@ -626,12 +702,32 @@ ol {
     }
 
     .img {
+        @include r(1023) {
+            display: none;
+        }
+
         margin-left: 42px;
 
         &.hide {
             pointer-events: none;
             user-select: none;
             opacity: 0;
+        }
+    }
+
+    .video {
+        @include r(767) {
+            @include flexlist(1px);
+        }
+
+        @include flexlist(15px);
+
+        .video__wrap {
+            @include r(767) {
+                @include flexitem(100%, 1px, 30px);
+            }
+
+            @include flexitem(33.33%, 15px, 30px);
         }
     }
 }
@@ -654,6 +750,10 @@ div.select {
     }
 
     .select__current {
+        @include r(767) {
+            padding: 11px 34px;
+        }
+
         border: 1px solid $blue;
         padding: 17px 57px;
         position: relative;
@@ -661,12 +761,22 @@ div.select {
         user-select: none;
 
         .icon {
+            @include r(767) {
+                left: 12px;
+                font-size: 16px;
+            }
+
             @include centerYa;
             left: 17px;
             font-size: 25px;
         }
 
         &::before {
+            @include r(767) {
+                right: 12px;
+                width: 12px;
+            }
+
             content: '';
             @include centerYa;
             right: 22px;
@@ -718,6 +828,11 @@ div.select {
     }
 
     .icon {
+        @include r(767) {
+            left: 12px;
+            font-size: 16px;
+        }
+
         position: absolute;
         @include centerYa;
         left: 24px;
@@ -725,6 +840,11 @@ div.select {
         font-size: 18px;
 
         &.show {
+            @include r(767) {
+                right: 12px;
+                font-size: 16px;
+            }
+
             left: initial;
             right: 24px;
             fill: $gray;
@@ -735,6 +855,26 @@ div.select {
             &.active {
                 fill: $orange;
             }
+        }
+    }
+}
+
+.swiper-pagination {
+    @include r(767) {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    position: static;
+    margin-top: 20px;
+
+    &-bullet {
+        width: 10px;
+        height: 10px;
+        background: #b3b8be;
+
+        &-active {
+            background: $orange;
         }
     }
 }

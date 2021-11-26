@@ -1,34 +1,47 @@
 .news {
+    @include r(1023) {
+        overflow: hidden;
+    }
+
+    @include r(767) {
+        padding-bottom: 0;
+    }
+
     padding: 30px 0;
 
     &__list {
-        @include r(1023) {
-            @include flexlist(10px);
-        }
-
-        @include r(767) {
-            @include flexlist(1px);
-        }
-
-        @include flexlist(15px);
+        overflow: visible;
 
         &.three {
+            @include r(1279) {
+                @include flexlist(10px);
+            }
+
+            @include r(1023) {
+                overflow: hidden;
+            }
+
+            @include r(767) {
+                @include flexlist(1px);
+            }
+
+            @include flexlist(15px);
+
             .news__item {
+                @include r(1279) {
+                    @include flexitem(33.33%, 10px, 30px);
+                }
+
+                @include r(767) {
+                    @include flexitem(100%, 1px, 30px);
+                }
+
                 @include flexitem(33.33%, 15px, 30px);
             }
         }
     }
 
     &__item {
-        @include r(1023) {
-            @include flexitem(50%, 10px);
-        }
-
-        @include r(767) {
-            @include flexitem(100%, 1px);
-        }
-
-        @include flexitem(25%, 15px);
         background: #ffffff;
         box-shadow: 0px 0px 15px rgba(179, 184, 190, 0.35);
         position: relative;
@@ -38,6 +51,7 @@
         border: 1px solid #cccccc;
         transition: $trans;
         top: 0;
+        display: block;
 
         &::before {
             content: '';

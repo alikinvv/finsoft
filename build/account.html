@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/main.css">
 
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -31,6 +32,7 @@
             </div>
             <a href="javascript:void(0)" class="btn btn-outline btn-white">Регистрация</a>
             <a href="javascript:void(0)" class="btn btn-outline">Войти</a>
+            <div class="hamburger"><span></span></div>
         </div>
         <div class="bar"></div>
     </header>
@@ -48,7 +50,7 @@
 <section class="wrapper">
     <div class="container">
         <div class="wrapper__main">
-            <div class="wrapper__item">
+            <div class="wrapper__item shadow">
                 <div class="profile full">
                     <div class="profile__left">
                         <img src="img/user.png" alt="" class="profile__photo">
@@ -156,7 +158,7 @@
             </div>
 
             <div class="tab active" data-tab="about">
-                <div class="wrapper__item">
+                <div class="wrapper__item  shadow">
                     <div class="description">
                         <h3 class="orange">Описание</h3>
                         <div class="description__text">Разработка маркетингового плана (SWOT-анализ, STEP-анализ,
@@ -454,34 +456,38 @@
                     <div class="tab__body">
                         <div class="item">
                             <div class="item__tag"><span>Лидер 2019</span></div>
-                            <a href="javascript:void(0)"><img src="img/plan.png" alt=""></a>
+                            <a href="javascript:void(0)" class="item__photo"><img src="img/greenlogo.png" alt=""></a>
                             <div>
                                 <div class="item__top">
                                     <div>
                                         <div class="item__controls">
                                             <a href="javascript:void(0)">
                                                 <div class="item__title">
-                                                    ПланФакт
+                                                    Keap (formerly Infusionsoft)
                                                     <svg class="icon">
                                                         <use xlink:href="img/symbol-defs.svg#icon-link"></use>
                                                     </svg>
                                                 </div>
                                             </a>
-                                            <div class="service__icons-item heart tip-parent">
-                                                <svg width="17" height="13" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M9.57397 3.17955L9.99991 3.87257L10.4259 3.17958C11.2897 1.77437 12.8333 0.837402 14.599 0.837402C17.3057 0.837402 19.5 3.03157 19.5 5.73829C19.5 7.2109 18.8481 8.52872 17.8174 9.42783L17.8045 9.43903L17.7925 9.45108L10.1392 17.1046C10.1023 17.1416 10.0522 17.1623 9.99994 17.1623C9.94765 17.1623 9.89756 17.1416 9.86064 17.1046L2.2074 9.45108L2.19535 9.43903L2.18252 9.42784C1.15184 8.52873 0.5 7.21092 0.5 5.73829C0.5 3.03149 2.69365 0.837402 5.40032 0.837402C7.16602 0.837402 8.71035 1.77444 9.57397 3.17955Z"
-                                                        stroke="#0C1538" />
-                                                </svg>
-                                                <div class="tip">Текст подсказки</div>
-                                            </div>
-                                            <div class="service__icons-item bookmark tip-parent" data-modal="bookmark">
-                                                <svg width="12" height="13" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M9.75498 19.9425L0.5 25.1453V0.5H19.5V25.1453L10.245 19.9425L10 19.8048L9.75498 19.9425Z"
-                                                        stroke="#DD8F53" />
-                                                </svg>
-                                                <div class="tip">Добавить в избранное</div>
+                                            <div class="item__icons">
+                                                <div class="service__icons-item heart tip-parent">
+                                                    <svg width="17" height="13" viewBox="0 0 20 18" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9.57397 3.17955L9.99991 3.87257L10.4259 3.17958C11.2897 1.77437 12.8333 0.837402 14.599 0.837402C17.3057 0.837402 19.5 3.03157 19.5 5.73829C19.5 7.2109 18.8481 8.52872 17.8174 9.42783L17.8045 9.43903L17.7925 9.45108L10.1392 17.1046C10.1023 17.1416 10.0522 17.1623 9.99994 17.1623C9.94765 17.1623 9.89756 17.1416 9.86064 17.1046L2.2074 9.45108L2.19535 9.43903L2.18252 9.42784C1.15184 8.52873 0.5 7.21092 0.5 5.73829C0.5 3.03149 2.69365 0.837402 5.40032 0.837402C7.16602 0.837402 8.71035 1.77444 9.57397 3.17955Z"
+                                                            stroke="#0C1538" />
+                                                    </svg>
+                                                    <div class="tip">Текст подсказки</div>
+                                                </div>
+                                                <div class="service__icons-item bookmark tip-parent" data-modal="bookmark">
+                                                    <svg width="12" height="13" viewBox="0 0 20 26" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9.75498 19.9425L0.5 25.1453V0.5H19.5V25.1453L10.245 19.9425L10 19.8048L9.75498 19.9425Z"
+                                                            stroke="#DD8F53" />
+                                                    </svg>
+                                                    <div class="tip">Добавить в избранное</div>
+                                                </div>
                                             </div>
                                             <a href="javascript:void(0)" class="item__reviews">230 отзывов</a>
                                         </div>
@@ -492,7 +498,7 @@
                                             <div class="reviews__rating top"><img src="img/icons/arrow-top.svg" alt=""> 23%</div>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div class="item__buttons">
                                         <a href="javascript:void(0)" class="btn">Посетить сайт</a>
                                         <a href="javascript:void(0)">Подробнее</a>
                                     </div>
@@ -569,34 +575,38 @@
                             </div>
                         </div>
                         <div class="item">
-                            <a href="javascript:void(0)"><img src="img/plan.png" alt=""></a>
+                            <a href="javascript:void(0)" class="item__photo"><img src="img/plan.png" alt=""></a>
                             <div>
                                 <div class="item__top">
                                     <div>
                                         <div class="item__controls">
                                             <a href="javascript:void(0)">
                                                 <div class="item__title">
-                                                    ПланФакт
+                                                    Keap (formerly Infusionsoft)
                                                     <svg class="icon">
                                                         <use xlink:href="img/symbol-defs.svg#icon-link"></use>
                                                     </svg>
                                                 </div>
                                             </a>
-                                            <div class="service__icons-item heart tip-parent">
-                                                <svg width="17" height="13" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M9.57397 3.17955L9.99991 3.87257L10.4259 3.17958C11.2897 1.77437 12.8333 0.837402 14.599 0.837402C17.3057 0.837402 19.5 3.03157 19.5 5.73829C19.5 7.2109 18.8481 8.52872 17.8174 9.42783L17.8045 9.43903L17.7925 9.45108L10.1392 17.1046C10.1023 17.1416 10.0522 17.1623 9.99994 17.1623C9.94765 17.1623 9.89756 17.1416 9.86064 17.1046L2.2074 9.45108L2.19535 9.43903L2.18252 9.42784C1.15184 8.52873 0.5 7.21092 0.5 5.73829C0.5 3.03149 2.69365 0.837402 5.40032 0.837402C7.16602 0.837402 8.71035 1.77444 9.57397 3.17955Z"
-                                                        stroke="#0C1538" />
-                                                </svg>
-                                                <div class="tip">Текст подсказки</div>
-                                            </div>
-                                            <div class="service__icons-item bookmark tip-parent" data-modal="bookmark">
-                                                <svg width="12" height="13" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M9.75498 19.9425L0.5 25.1453V0.5H19.5V25.1453L10.245 19.9425L10 19.8048L9.75498 19.9425Z"
-                                                        stroke="#DD8F53" />
-                                                </svg>
-                                                <div class="tip">Добавить в избранное</div>
+                                            <div class="item__icons">
+                                                <div class="service__icons-item heart tip-parent">
+                                                    <svg width="17" height="13" viewBox="0 0 20 18" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9.57397 3.17955L9.99991 3.87257L10.4259 3.17958C11.2897 1.77437 12.8333 0.837402 14.599 0.837402C17.3057 0.837402 19.5 3.03157 19.5 5.73829C19.5 7.2109 18.8481 8.52872 17.8174 9.42783L17.8045 9.43903L17.7925 9.45108L10.1392 17.1046C10.1023 17.1416 10.0522 17.1623 9.99994 17.1623C9.94765 17.1623 9.89756 17.1416 9.86064 17.1046L2.2074 9.45108L2.19535 9.43903L2.18252 9.42784C1.15184 8.52873 0.5 7.21092 0.5 5.73829C0.5 3.03149 2.69365 0.837402 5.40032 0.837402C7.16602 0.837402 8.71035 1.77444 9.57397 3.17955Z"
+                                                            stroke="#0C1538" />
+                                                    </svg>
+                                                    <div class="tip">Текст подсказки</div>
+                                                </div>
+                                                <div class="service__icons-item bookmark tip-parent" data-modal="bookmark">
+                                                    <svg width="12" height="13" viewBox="0 0 20 26" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9.75498 19.9425L0.5 25.1453V0.5H19.5V25.1453L10.245 19.9425L10 19.8048L9.75498 19.9425Z"
+                                                            stroke="#DD8F53" />
+                                                    </svg>
+                                                    <div class="tip">Добавить в избранное</div>
+                                                </div>
                                             </div>
                                             <a href="javascript:void(0)" class="item__reviews">230 отзывов</a>
                                         </div>
@@ -604,11 +614,10 @@
                                             <a href="javascript:void(0)"><img src="img/stars4.svg" alt=""></a>
                                             <a href="javascript:void(0)" class="reviews__awards"><img src="img/icons/trophy.svg" alt=""> Топ
                                                 10 Awards</a>
-                                            <div class="reviews__rating bottom"><img src="img/icons/arrow-bottom.svg" alt=""> 23%
-                                            </div>
+                                            <div class="reviews__rating bottom"><img src="img/icons/arrow-bottom.svg" alt=""> 23%</div>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div class="item__buttons">
                                         <a href="javascript:void(0)" class="btn">Посетить сайт</a>
                                         <a href="javascript:void(0)">Подробнее</a>
                                     </div>
@@ -686,34 +695,38 @@
                         </div>
                         <div class="item">
                             <div class="item__tag"><span>Лидер 2019</span></div>
-                            <a href="javascript:void(0)"><img src="img/plan.png" alt=""></a>
+                            <a href="javascript:void(0)" class="item__photo"><img src="img/greenlogo.png" alt=""></a>
                             <div>
                                 <div class="item__top">
                                     <div>
                                         <div class="item__controls">
                                             <a href="javascript:void(0)">
                                                 <div class="item__title">
-                                                    ПланФакт
+                                                    Keap (formerly Infusionsoft)
                                                     <svg class="icon">
                                                         <use xlink:href="img/symbol-defs.svg#icon-link"></use>
                                                     </svg>
                                                 </div>
                                             </a>
-                                            <div class="service__icons-item heart tip-parent">
-                                                <svg width="17" height="13" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M9.57397 3.17955L9.99991 3.87257L10.4259 3.17958C11.2897 1.77437 12.8333 0.837402 14.599 0.837402C17.3057 0.837402 19.5 3.03157 19.5 5.73829C19.5 7.2109 18.8481 8.52872 17.8174 9.42783L17.8045 9.43903L17.7925 9.45108L10.1392 17.1046C10.1023 17.1416 10.0522 17.1623 9.99994 17.1623C9.94765 17.1623 9.89756 17.1416 9.86064 17.1046L2.2074 9.45108L2.19535 9.43903L2.18252 9.42784C1.15184 8.52873 0.5 7.21092 0.5 5.73829C0.5 3.03149 2.69365 0.837402 5.40032 0.837402C7.16602 0.837402 8.71035 1.77444 9.57397 3.17955Z"
-                                                        stroke="#0C1538" />
-                                                </svg>
-                                                <div class="tip">Текст подсказки</div>
-                                            </div>
-                                            <div class="service__icons-item bookmark tip-parent" data-modal="bookmark">
-                                                <svg width="12" height="13" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M9.75498 19.9425L0.5 25.1453V0.5H19.5V25.1453L10.245 19.9425L10 19.8048L9.75498 19.9425Z"
-                                                        stroke="#DD8F53" />
-                                                </svg>
-                                                <div class="tip">Добавить в избранное</div>
+                                            <div class="item__icons">
+                                                <div class="service__icons-item heart tip-parent">
+                                                    <svg width="17" height="13" viewBox="0 0 20 18" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9.57397 3.17955L9.99991 3.87257L10.4259 3.17958C11.2897 1.77437 12.8333 0.837402 14.599 0.837402C17.3057 0.837402 19.5 3.03157 19.5 5.73829C19.5 7.2109 18.8481 8.52872 17.8174 9.42783L17.8045 9.43903L17.7925 9.45108L10.1392 17.1046C10.1023 17.1416 10.0522 17.1623 9.99994 17.1623C9.94765 17.1623 9.89756 17.1416 9.86064 17.1046L2.2074 9.45108L2.19535 9.43903L2.18252 9.42784C1.15184 8.52873 0.5 7.21092 0.5 5.73829C0.5 3.03149 2.69365 0.837402 5.40032 0.837402C7.16602 0.837402 8.71035 1.77444 9.57397 3.17955Z"
+                                                            stroke="#0C1538" />
+                                                    </svg>
+                                                    <div class="tip">Текст подсказки</div>
+                                                </div>
+                                                <div class="service__icons-item bookmark tip-parent" data-modal="bookmark">
+                                                    <svg width="12" height="13" viewBox="0 0 20 26" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9.75498 19.9425L0.5 25.1453V0.5H19.5V25.1453L10.245 19.9425L10 19.8048L9.75498 19.9425Z"
+                                                            stroke="#DD8F53" />
+                                                    </svg>
+                                                    <div class="tip">Добавить в избранное</div>
+                                                </div>
                                             </div>
                                             <a href="javascript:void(0)" class="item__reviews">230 отзывов</a>
                                         </div>
@@ -724,7 +737,7 @@
                                             <div class="reviews__rating top"><img src="img/icons/arrow-top.svg" alt=""> 23%</div>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div class="item__buttons">
                                         <a href="javascript:void(0)" class="btn">Посетить сайт</a>
                                         <a href="javascript:void(0)">Подробнее</a>
                                     </div>
@@ -801,34 +814,38 @@
                             </div>
                         </div>
                         <div class="item">
-                            <a href="javascript:void(0)"><img src="img/plan.png" alt=""></a>
+                            <a href="javascript:void(0)" class="item__photo"><img src="img/plan.png" alt=""></a>
                             <div>
                                 <div class="item__top">
                                     <div>
                                         <div class="item__controls">
                                             <a href="javascript:void(0)">
                                                 <div class="item__title">
-                                                    ПланФакт
+                                                    Keap (formerly Infusionsoft)
                                                     <svg class="icon">
                                                         <use xlink:href="img/symbol-defs.svg#icon-link"></use>
                                                     </svg>
                                                 </div>
                                             </a>
-                                            <div class="service__icons-item heart tip-parent">
-                                                <svg width="17" height="13" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M9.57397 3.17955L9.99991 3.87257L10.4259 3.17958C11.2897 1.77437 12.8333 0.837402 14.599 0.837402C17.3057 0.837402 19.5 3.03157 19.5 5.73829C19.5 7.2109 18.8481 8.52872 17.8174 9.42783L17.8045 9.43903L17.7925 9.45108L10.1392 17.1046C10.1023 17.1416 10.0522 17.1623 9.99994 17.1623C9.94765 17.1623 9.89756 17.1416 9.86064 17.1046L2.2074 9.45108L2.19535 9.43903L2.18252 9.42784C1.15184 8.52873 0.5 7.21092 0.5 5.73829C0.5 3.03149 2.69365 0.837402 5.40032 0.837402C7.16602 0.837402 8.71035 1.77444 9.57397 3.17955Z"
-                                                        stroke="#0C1538" />
-                                                </svg>
-                                                <div class="tip">Текст подсказки</div>
-                                            </div>
-                                            <div class="service__icons-item bookmark tip-parent" data-modal="bookmark">
-                                                <svg width="12" height="13" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M9.75498 19.9425L0.5 25.1453V0.5H19.5V25.1453L10.245 19.9425L10 19.8048L9.75498 19.9425Z"
-                                                        stroke="#DD8F53" />
-                                                </svg>
-                                                <div class="tip">Добавить в избранное</div>
+                                            <div class="item__icons">
+                                                <div class="service__icons-item heart tip-parent">
+                                                    <svg width="17" height="13" viewBox="0 0 20 18" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9.57397 3.17955L9.99991 3.87257L10.4259 3.17958C11.2897 1.77437 12.8333 0.837402 14.599 0.837402C17.3057 0.837402 19.5 3.03157 19.5 5.73829C19.5 7.2109 18.8481 8.52872 17.8174 9.42783L17.8045 9.43903L17.7925 9.45108L10.1392 17.1046C10.1023 17.1416 10.0522 17.1623 9.99994 17.1623C9.94765 17.1623 9.89756 17.1416 9.86064 17.1046L2.2074 9.45108L2.19535 9.43903L2.18252 9.42784C1.15184 8.52873 0.5 7.21092 0.5 5.73829C0.5 3.03149 2.69365 0.837402 5.40032 0.837402C7.16602 0.837402 8.71035 1.77444 9.57397 3.17955Z"
+                                                            stroke="#0C1538" />
+                                                    </svg>
+                                                    <div class="tip">Текст подсказки</div>
+                                                </div>
+                                                <div class="service__icons-item bookmark tip-parent" data-modal="bookmark">
+                                                    <svg width="12" height="13" viewBox="0 0 20 26" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9.75498 19.9425L0.5 25.1453V0.5H19.5V25.1453L10.245 19.9425L10 19.8048L9.75498 19.9425Z"
+                                                            stroke="#DD8F53" />
+                                                    </svg>
+                                                    <div class="tip">Добавить в избранное</div>
+                                                </div>
                                             </div>
                                             <a href="javascript:void(0)" class="item__reviews">230 отзывов</a>
                                         </div>
@@ -836,11 +853,10 @@
                                             <a href="javascript:void(0)"><img src="img/stars4.svg" alt=""></a>
                                             <a href="javascript:void(0)" class="reviews__awards"><img src="img/icons/trophy.svg" alt=""> Топ
                                                 10 Awards</a>
-                                            <div class="reviews__rating bottom"><img src="img/icons/arrow-bottom.svg" alt=""> 23%
-                                            </div>
+                                            <div class="reviews__rating bottom"><img src="img/icons/arrow-bottom.svg" alt=""> 23%</div>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div class="item__buttons">
                                         <a href="javascript:void(0)" class="btn">Посетить сайт</a>
                                         <a href="javascript:void(0)">Подробнее</a>
                                     </div>
@@ -1079,54 +1095,66 @@
                 <div class="footer__logo">FinSoft</div>
                 <div class="footer__menu">
                     <div class="footer__title">О нас</div>
-                    <a href="javascript:void(0)">О платформе</a>
-                    <a href="javascript:void(0)">Тарифы</a>
-                    <a href="javascript:void(0)">Контакты</a>
+                    <div>
+                        <a href="javascript:void(0)">О платформе</a>
+                        <a href="javascript:void(0)">Тарифы</a>
+                        <a href="javascript:void(0)">Контакты</a>
+                    </div>
                 </div>
             </div>
             <div>
                 <div class="footer__menu">
                     <div class="footer__title">Нужен маркетолог</div>
-                    <a href="javascript:void(0)">Регистрация работодателя</a>
-                    <a href="javascript:void(0)">Каталог маркетологов</a>
-                    <a href="javascript:void(0)">Услуги по маркетингу</a>
-                    <a href="javascript:void(0)">Опубликовать проект</a>
-                    <a href="javascript:void(0)">Опубликовать вакансию</a>
-                    <a href="javascript:void(0)">Помощь в подборе</a>
+                    <div>
+                        <a href="javascript:void(0)">Регистрация работодателя</a>
+                        <a href="javascript:void(0)">Каталог маркетологов</a>
+                        <a href="javascript:void(0)">Услуги по маркетингу</a>
+                        <a href="javascript:void(0)">Опубликовать проект</a>
+                        <a href="javascript:void(0)">Опубликовать вакансию</a>
+                        <a href="javascript:void(0)">Помощь в подборе</a>
+                    </div>
                 </div>
             </div>
             <div>
                 <div class="footer__menu">
                     <div class="footer__title">Для маркетологов</div>
-                    <a href="javascript:void(0)">Регистрация маркетолога</a>
-                    <a href="javascript:void(0)">Поиск проекта</a>
-                    <a href="javascript:void(0)">Поиск вакансии</a>
-                    <a href="javascript:void(0)">Опубликовать кейс</a>
-                    <a href="javascript:void(0)">Опубликовать статью</a>
+                    <div>
+                        <a href="javascript:void(0)">Регистрация маркетолога</a>
+                        <a href="javascript:void(0)">Поиск проекта</a>
+                        <a href="javascript:void(0)">Поиск вакансии</a>
+                        <a href="javascript:void(0)">Опубликовать кейс</a>
+                        <a href="javascript:void(0)">Опубликовать статью</a>
+                    </div>
                 </div>
                 <div class="footer__menu">
                     <div class="footer__title">Документы</div>
-                    <a href="javascript:void(0)">Маркетинг-кит</a>
+                    <div>
+                        <a href="javascript:void(0)">Маркетинг-кит</a>
+                    </div>
                 </div>
             </div>
             <div>
                 <div class="footer__menu">
                     <div class="footer__title">Полезные материалы:</div>
-                    <a href="javascript:void(0)">Условия для маркетологов</a>
-                    <a href="javascript:void(0)">Условия для работодателей</a>
-                    <a href="javascript:void(0)">Блог по маркетингу</a>
-                    <a href="javascript:void(0)">Академия маркетинга</a>
-                    <a href="javascript:void(0)">Форум по маркетингу</a>
+                    <div>
+                        <a href="javascript:void(0)">Условия для маркетологов</a>
+                        <a href="javascript:void(0)">Условия для работодателей</a>
+                        <a href="javascript:void(0)">Блог по маркетингу</a>
+                        <a href="javascript:void(0)">Академия маркетинга</a>
+                        <a href="javascript:void(0)">Форум по маркетингу</a>
+                    </div>
                 </div>
                 <div class="footer__menu">
                     <div class="footer__title">Дукоментация</div>
-                    <a href="javascript:void(0)">Руководство к платформе</a>
+                    <div>
+                        <a href="javascript:void(0)">Руководство к платформе</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="footer__row">
-            <div>ИП Иванов А. В. <br>
+        <div class="footer__row top">
+            <div class="org">ИП Иванов А. В. <br>
                 ОГРНИП: 321774600468241 | ИНН: 772873464466</div>
             <div class="footer__social">
                 <a href="javascript:void(0)">
@@ -1172,7 +1200,9 @@
             </div>
         </div>
 
-        <div class="footer__row">
+        <div class="footer__row bottom">
+            <div class="org">ИП Иванов А. В. <br>
+                ОГРНИП: 321774600468241 | ИНН: 772873464466</div>
             <div>
                 <a href="javascript:void(0)">Политика конфидениальности </a>
                 <a href="javascript:void(0)">Договор оферты </a>
@@ -1223,6 +1253,7 @@
     <div class="modal" data-modal="bookmark">
         <div class="modal__content">
             <div class="modal__close"></div>
+            <img src="img/locks.svg" alt="" class="locks">
             <div class="modal__body">
                 <h2>Для добавления в&nbsp;избранное вы&nbsp;должны быть зарегистрированы</h2>
                 <div class="text">Применяйте промокод и&nbsp;получайте дополнительную скидку&nbsp;20% на&nbsp;вашу
@@ -1233,7 +1264,13 @@
                     <a href="javascript:void(0)" class="close">Отмена</a>
                 </div>
             </div>
-            <img src="img/locks.svg" alt="" class="locks">
+        </div>
+    </div>
+
+    <div class="modal" data-modal="tips">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body"></div>
         </div>
     </div>
 </div>
@@ -1243,6 +1280,7 @@
 <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
 <script src="https://unpkg.com/imask"></script>
 <script src="js/sticky.min.js"></script>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 

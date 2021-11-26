@@ -1,20 +1,19 @@
 .agency {
+    @include r(1023) {
+        overflow: hidden;
+    }
+
+    @include r(767) {
+        padding-bottom: 0;
+    }
+
     padding: 22px 0;
 
     &__list {
-        @include r(1023) {
-            @include flexlist(1px);
-        }
-
-        @include flexlist(15px);
+        overflow: visible;
     }
 
     &__item {
-        @include r(1023) {
-            @include flexitem(100%, 1px);
-        }
-
-        @include flexitem(50%, 15px);
         background: #ffffff;
         box-shadow: 0px 0px 15px rgba(179, 184, 190, 0.35);
         padding: 22px 26px;
@@ -22,6 +21,10 @@
     }
 
     &__top {
+        @include r(767) {
+            @include fcn;
+        }
+
         @include fsn;
         margin-bottom: 11px;
 
@@ -58,7 +61,18 @@
         }
     }
 
+    &__stars {
+        @include r(767) {
+            width: 100%;
+        }
+    }
+
     &__text {
+        @include r(767) {
+            max-height: 93px;
+            margin-bottom: 14px;
+        }
+
         width: 100%;
         font-size: 12px;
         line-height: 1.5;
@@ -68,9 +82,17 @@
     }
 
     &__body {
+        @include r(767) {
+            display: block;
+        }
+
         @include fsn;
 
         & > div {
+            @include r(767) {
+                width: 100%;
+            }
+
             width: 50%;
         }
     }
@@ -85,5 +107,14 @@
         font-size: 12px;
         font-weight: 700;
         margin-bottom: 17px;
+    }
+
+    .btn {
+        @include r(767) {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+        }
     }
 }

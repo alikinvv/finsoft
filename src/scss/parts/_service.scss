@@ -1,27 +1,47 @@
 .service {
-    @include r(767) {
-        @include flexitem(100%, 1px);
-    }
-
     background: #ffffff;
     box-shadow: 0px 0px 15px rgba(179, 184, 190, 0.35);
-    @include flexitem(33.33%, 15px);
     padding: 24px;
     position: relative;
 
     &__wrap {
+        @include r(1023) {
+            overflow: hidden;
+        }
+
+        @include r(767) {
+            h2 + a {
+                display: none;
+            }
+        }
+
         padding: 37px 0;
     }
 
     &__list {
-        @include r(767) {
-            @include flexlist(1px);
-        }
-
-        @include flexlist(15px);
+        overflow: visible;
 
         &.two-col {
+            @include r(1279) {
+                overflow: hidden;
+                padding: 15px;
+                margin: -15px;
+            }
+
+            @include r(767) {
+                @include flexlist(1px);
+                padding: 0;
+                margin: 0;
+                overflow: visible;
+            }
+
+            @include flexlist(15px);
+
             .service {
+                @include r(767) {
+                    @include flexitem(100%, 1px, 30px);
+                }
+
                 @include flexitem(50%, 15px, 30px);
             }
         }
@@ -73,6 +93,10 @@
     }
 
     &__text {
+        @include r(767) {
+            max-height: 105px;
+        }
+
         max-height: 84px;
         @include ellipsis;
         line-height: 1.5;
@@ -80,10 +104,19 @@
     }
 
     &__progress {
+        @include r(767) {
+            @include flexlist(1px);
+            margin-bottom: 13px;
+        }
+
         @include flexlist(13px);
         margin-bottom: 5px;
 
         &-item {
+            @include r(767) {
+                @include flexitem(100%, 1px, 6px);
+            }
+
             @include flexitem(50%, 13px);
             @include fcn;
 
@@ -106,6 +139,14 @@
                 @include fcn;
 
                 span {
+                    @include r(1279) {
+                        width: 18px;
+                    }
+
+                    @include r(767) {
+                        width: 32px;
+                    }
+
                     width: 23px;
                     height: 10px;
                     background: $gray;
@@ -121,6 +162,10 @@
     }
 
     &__features {
+        @include r(767) {
+            margin-bottom: 15px;
+        }
+
         color: $darkBlue;
         margin-bottom: 23px;
 
@@ -170,19 +215,65 @@
             cursor: pointer;
 
             &.bookmark {
-                &.active,
-                &:hover {
+                &.active {
+                    &:hover {
+                        @include r(767) {
+                            path {
+                                fill: $orange;
+                            }
+                        }
+                    }
+
                     path {
                         fill: $orange;
+                    }
+                }
+
+                &:hover {
+                    path {
+                        @include r(767) {
+                            fill: #fff;
+                        }
+
+                        fill: $orange;
+                    }
+                }
+
+                @include r(767) {
+                    &:hover {
+                        path {
+                            fill: #fff;
+                        }
                     }
                 }
             }
 
             &.heart {
-                &.active,
+                &.active {
+                    &:hover {
+                        @include r(767) {
+                            path {
+                                fill: $darkBlue;
+                            }
+                        }
+                    }
+
+                    path {
+                        fill: $darkBlue;
+                    }
+                }
+
                 &:hover {
                     path {
                         fill: $darkBlue;
+                    }
+                }
+
+                @include r(767) {
+                    &:hover {
+                        path {
+                            fill: #fff;
+                        }
                     }
                 }
             }
@@ -191,6 +282,31 @@
                 transition: $trans;
                 fill: transparent;
             }
+        }
+    }
+
+    &__controls {
+        @include r(1023) {
+            margin-top: 30px;
+        }
+
+        @include fcsb;
+
+        .swiper-pagination {
+            margin-top: 0;
+            text-align: left;
+        }
+
+        a {
+            @include r(767) {
+                color: $orange;
+                font-weight: 700;
+                display: inline-block;
+                flex-shrink: 0;
+                text-decoration: underline;
+            }
+
+            display: none;
         }
     }
 }

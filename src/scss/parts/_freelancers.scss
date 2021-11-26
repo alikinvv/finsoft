@@ -1,28 +1,19 @@
 .freelancers {
+    @include r(1023) {
+        overflow: hidden;
+    }
+
+    @include r(767) {
+        padding-bottom: 20px;
+    }
+
     padding: 56px 0;
 
     &__list {
-        @include r(1023) {
-            @include flexlist(10px);
-        }
-
-        @include r(767) {
-            @include flexlist(1px);
-        }
-
-        @include flexlist(15px);
+        overflow: visible;
     }
 
     &__item {
-        @include r(1023) {
-            @include flexitem(50%, 10px);
-        }
-
-        @include r(767) {
-            @include flexitem(100%, 1px);
-        }
-
-        @include flexitem(25%, 15px);
         background: #ffffff;
         box-shadow: 0px 0px 15px rgba(179, 184, 190, 0.35);
         padding: 23px 20px;
@@ -88,6 +79,10 @@
         margin-bottom: 23px;
 
         div {
+            @include r(1023) {
+                @include fcsb;
+            }
+
             @include fcn;
             margin-bottom: 3px;
 
@@ -98,6 +93,10 @@
                 @include fcn;
 
                 &:first-child {
+                    @include r(1023) {
+                        min-width: auto;
+                    }
+
                     color: $gray;
                     flex-shrink: 0;
                     min-width: 160px;
@@ -109,6 +108,15 @@
                 margin-right: 7px;
                 fill: $gray;
             }
+        }
+    }
+
+    .btn {
+        @include r(767) {
+            text-align: center;
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
         }
     }
 }

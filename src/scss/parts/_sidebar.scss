@@ -1,4 +1,9 @@
 .sidebar {
+    @include r(767) {
+        width: 100%;
+        margin-left: 0;
+    }
+
     width: 270px;
     flex-shrink: 0;
     margin-left: 30px;
@@ -129,9 +134,57 @@
 
     .similar {
         padding: 0;
+        overflow: visible !important;
     }
 
     &__banner {
         margin-bottom: 30px;
+    }
+}
+
+.filter {
+    @include r(767) {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        z-index: 3;
+        height: 100%;
+        overflow-y: scroll;
+        opacity: 0;
+        pointer-events: none;
+        user-select: none;
+        transition: $trans;
+
+        &.active {
+            opacity: 1;
+            pointer-events: all;
+            user-select: initial;
+        }
+    }
+
+    &__close {
+        @include r(767) {
+            display: flex;
+        }
+
+        width: 40px;
+        height: 40px;
+        @include fcc;
+        background: $orange;
+        display: none;
+        margin-left: auto;
+
+        .icon {
+            fill: #fff;
+            font-size: 20px;
+        }
+    }
+
+    .btn {
+        display: block;
+        text-align: center;
     }
 }

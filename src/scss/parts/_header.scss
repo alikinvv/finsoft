@@ -1,4 +1,64 @@
 .header {
+    @include r(1023) {
+        margin-bottom: 40px;
+    }
+
+    @include r(767) {
+        margin-bottom: -1px;
+        padding-bottom: 68px;
+        padding-top: 17px;
+
+        .main__search,
+        .main__search-wrap {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            margin-left: 0;
+            width: calc(100% - 70px);
+
+            .main__search {
+                position: static;
+                width: 100%;
+            }
+        }
+
+        .main__search {
+            margin-left: 0;
+            margin-right: 0;
+            width: 100%;
+
+            input {
+                padding: 0 16px;
+                padding-right: 0;
+                font-size: 12px;
+                height: 40px;
+            }
+
+            .icon {
+                font-size: 18px;
+            }
+        }
+
+        &.center {
+            padding-bottom: 11px;
+
+            .container {
+                flex-wrap: wrap;
+            }
+
+            .header__logo {
+                width: 100%;
+                text-align: center;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .btn-white {
+                margin-left: 0;
+            }
+        }
+    }
+
     background: $darkBlue;
     color: #fff;
     padding: 10px 0;
@@ -10,6 +70,10 @@
     }
 
     &__logo {
+        @include r(767) {
+            font-size: 18px;
+        }
+
         font-size: 24px;
         transition: $trans;
 
@@ -19,24 +83,90 @@
     }
 
     &__menu {
+        @include r(1023) {
+            position: absolute;
+            bottom: 3px;
+            transform: translateY(100%);
+            background: $darkBlue;
+            left: 0;
+            width: 100%;
+            @include fcc;
+            padding-bottom: 20px;
+            padding-top: 3px;
+        }
+
+        @include r(767) {
+            @include fsn;
+            flex-direction: column;
+            margin-left: 0;
+            opacity: 0;
+            pointer-events: none;
+            user-select: none;
+            padding: 0 10px;
+            transition: $trans;
+        }
+
         margin-left: auto;
         @include fcn;
 
+        &.active {
+            opacity: 1;
+            pointer-events: all;
+            user-select: initial;
+        }
+
         a {
+            @include r(1279) {
+                font-size: 13px;
+            }
+
+            @include r(767) {
+                padding: 12px 30px;
+                border-bottom: 1px solid $gray;
+                width: 100%;
+                margin: 0;
+
+                &:last-child {
+                    border: 0;
+                }
+            }
+
             margin: 0 10px;
+
+            &.active {
+                @include r(1023) {
+                    color: $orange;
+                }
+            }
         }
     }
 
     .btn {
+        @include r(767) {
+            padding: 8px 13px;
+        }
+
         padding: 0px 13px;
     }
 
     .btn-white {
+        @include r(1023) {
+            margin-left: auto;
+        }
+
+        @include r(767) {
+            margin-left: auto;
+        }
+
         margin-left: 21px;
         margin-right: 18px;
     }
 
     .bar {
+        @include r(767) {
+            display: none;
+        }
+
         position: absolute;
         height: 3px;
         background: $orange;
@@ -57,11 +187,25 @@
     }
 
     &__icons {
+        @include r(1023) {
+            margin-left: auto;
+        }
+
+        @include r(767) {
+            order: 5;
+            margin-left: 10px;
+            border: 0;
+        }
+
         padding-right: 14px;
         margin-right: 18px;
         position: relative;
 
         &::before {
+            @include r(767) {
+                display: none;
+            }
+
             content: '';
             position: absolute;
             @include centerYa;
@@ -76,15 +220,30 @@
         }
 
         .icon {
+            @include r(767) {
+                font-size: 18px;
+            }
+
             font-size: 23px;
         }
     }
 
     &__user {
+        @include r(767) {
+            & > a {
+                order: 2;
+            }
+        }
+
         @include fcn;
         position: relative;
 
         img {
+            @include r(767) {
+                margin-left: 0;
+                margin-right: 20px;
+            }
+
             border-radius: 50%;
             width: 40px;
             margin-left: 20px;
@@ -95,6 +254,11 @@
     }
 
     &__dropdown {
+        @include r(767) {
+            right: initial;
+            left: 0;
+        }
+
         width: 250px;
         background: #fff;
         box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
@@ -107,8 +271,14 @@
         user-select: none;
         opacity: 0;
         transition: $trans;
+        z-index: 3;
 
         &::after {
+            @include r(767) {
+                right: initial;
+                left: 10px;
+            }
+
             content: '';
             position: absolute;
             width: 0;
@@ -164,6 +334,82 @@
             fill: $text;
             transition: $trans;
             margin-right: 15px;
+        }
+    }
+}
+
+.hamburger {
+    @include r(767) {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        display: block;
+        @include fcc;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    width: 35px;
+    height: 35px;
+    position: relative;
+    cursor: pointer;
+    display: none;
+    z-index: 21;
+    margin-left: 10px;
+    background: $orange;
+
+    & + .main__search {
+        width: calc(100% - 70px) !important;
+    }
+
+    &.active,
+    &.active:hover {
+        span {
+            background: transparent;
+
+            &::before {
+                top: 0;
+                transform: rotate(45deg);
+                transition: top 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s;
+            }
+
+            &::after {
+                bottom: 0;
+                transform: rotate(-45deg);
+                transition: bottom 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s;
+            }
+        }
+    }
+
+    span {
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        top: 18px;
+        transition: background 0.2s ease-in-out 0.1s;
+        pointer-events: none;
+        user-select: none;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background: #fff;
+            left: 0;
+        }
+
+        &::before {
+            top: -7px;
+            transition: top 0.2s ease-in-out 0.2s, transform 0.2s ease-in-out;
+        }
+
+        &::after {
+            bottom: -7px;
+            transition: bottom 0.2s ease-in-out 0.2s, transform 0.2s ease-in-out;
         }
     }
 }

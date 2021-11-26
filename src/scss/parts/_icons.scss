@@ -1,4 +1,12 @@
 .icons {
+    @include r(1345) {
+        padding: 40px 0;
+    }
+
+    @include r(767) {
+        padding: 101px 0 0;
+    }
+
     padding: 97px 0;
 
     &.center {
@@ -10,16 +18,32 @@
     }
 
     &__list {
+        @include r(1023) {
+            flex-wrap: wrap;
+        }
+
         @include fsc;
     }
 
     .icon {
+        @include r(767) {
+            margin-bottom: 4px;
+        }
+
         font-size: 60px;
         fill: $gray;
         margin-bottom: 13px;
     }
 
     &__item {
+        @include r(1279) {
+            margin: 0 13px;
+        }
+
+        @include r(1023) {
+            margin-bottom: 35px;
+        }
+
         margin: 0 4%;
     }
 
@@ -30,6 +54,14 @@
     }
 
     &__text {
+        @include r(767) {
+            line-height: 1.4;
+
+            br {
+                display: none;
+            }
+        }
+
         line-height: 1.6;
     }
 }

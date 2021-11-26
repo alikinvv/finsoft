@@ -1,10 +1,20 @@
 .head {
+    @include r(767) {
+        padding: 16px 0;
+        background: $darkBlue;
+    }
+
     background: url(../img/head-bg.png) no-repeat center;
     background-size: cover;
     color: #fff;
     padding: 10px 0;
 
     .main__search {
+        @include r(1023) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
         width: 511px;
         background: #3862ab;
         height: 32px;
@@ -67,6 +77,10 @@
     margin-bottom: 11px;
 
     a {
+        @include r(767) {
+            font-size: 12px;
+        }
+
         transition: $trans;
 
         &:hover {
@@ -91,11 +105,26 @@
 }
 
 .submenu {
+    @include r(767) {
+        white-space: nowrap;
+        overflow-x: scroll;
+        margin-top: 35px;
+    }
+
     @include fcn;
     position: relative;
     margin-top: 20px;
 
     a {
+        @include r(767) {
+            white-space: nowrap;
+            margin-right: 20px;
+
+            &.active {
+                color: $orange;
+            }
+        }
+
         margin-right: 39px;
         font-weight: 700;
 
@@ -105,6 +134,10 @@
     }
 
     .bar {
+        @include r(767) {
+            display: none;
+        }
+
         position: absolute;
         height: 3px;
         background: $orange;

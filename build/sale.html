@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/main.css">
 
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -31,6 +32,7 @@
             </div>
             <a href="javascript:void(0)" class="btn btn-outline btn-white">Регистрация</a>
             <a href="javascript:void(0)" class="btn btn-outline">Войти</a>
+            <div class="hamburger"><span></span></div>
         </div>
         <div class="bar"></div>
     </header>
@@ -70,209 +72,216 @@
 <div class="title">
     <div class="container">
         <h2>Бонусы и скидки к сервисам и услугам</h2>
+
+        <div class="sort__filter">
+            <svg class="icon">
+                <use xlink:href="img/symbol-defs.svg#icon-filter"></use>
+            </svg>
+        </div>
     </div>
 </div>
 
-<section class="content padding">
+<section class="content with-filter padding">
     <div class="container">
         <div class="content__main">
-            <section class="sale">
-                <div class="container">
-                    <div class="sale__list four">
-                        <a href="javascript:void(0)" class="sale__item" data-modal="sale">
-                            <div class="sale__trophy">
-                                <svg class="icon">
-                                    <use xlink:href="img/symbol-defs.svg#icon-trophy"></use>
-                                </svg>
-                                Топ 10
-                            </div>
-                            <div class="sale__top">
-                                <img src="img/bonita.png" alt="">
-                            </div>
-                            <div class="sale__name">AmoCRM</div>
-                            <div class="sale__text">Дарим на баланс</div>
-                            <div class="sale__price">5 000р</div>
-                            <div class="sale__date">Активен до: 01.03.2020 </div>
-                            <div class="btn btn-big btn-dot btn-shadow">Получить</div>
-                        </a>
-            
-                        <a href="javascript:void(0)" class="sale__item" data-modal="sale">
-                            <div class="sale__trophy">
-                                <svg class="icon">
-                                    <use xlink:href="img/symbol-defs.svg#icon-trophy"></use>
-                                </svg>
-                                Топ 10
-                            </div>
-                            <div class="sale__top">
-                                <img src="img/bonita.png" alt="">
-                            </div>
-                            <div class="sale__name">AmoCRM</div>
-                            <div class="sale__text">Дарим на баланс</div>
-                            <div class="sale__price">5 000р</div>
-                            <div class="sale__date">Активен до: 01.03.2020 </div>
-                            <div class="btn btn-big btn-dot btn-shadow">Получить</div>
-                        </a>
-            
-                        <a href="javascript:void(0)" class="sale__item" data-modal="sale">
-                            <div class="sale__trophy">
-                                №1
-                            </div>
-                            <div class="sale__top">
-                                <img src="img/ibm.png" alt="">
-                            </div>
-                            <div class="sale__name">AmoCRM</div>
-                            <div class="sale__text">Дарим на баланс</div>
-                            <div class="sale__price">5 000р</div>
-                            <div class="sale__date">Активен до: 01.03.2020 </div>
-                            <div class="btn btn-big btn-dot btn-shadow">Получить</div>
-                        </a>
-            
-                        <a href="javascript:void(0)" class="sale__item" data-modal="sale">
-                            <div class="sale__trophy">
-                                №1
-                            </div>
-                            <div class="sale__top">
-                                <img src="img/promo.png" alt="">
-                            </div>
-                            <div class="sale__name">AmoCRM</div>
-                            <div class="sale__text">Дарим на баланс</div>
-                            <div class="sale__price">5 000р</div>
-                            <div class="sale__date">Активен до: 01.03.2020 </div>
-                            <div class="btn btn-big btn-dot btn-shadow">Получить</div>
-                        </a>
-            
-                        <a href="javascript:void(0)" class="sale__item" data-modal="sale">
-                            <div class="sale__trophy">
-                                <svg class="icon">
-                                    <use xlink:href="img/symbol-defs.svg#icon-trophy"></use>
-                                </svg>
-                                Топ 10
-                            </div>
-                            <div class="sale__top">
-                                <img src="img/promo.png" alt="">
-                            </div>
-                            <div class="sale__name">AmoCRM</div>
-                            <div class="sale__text">Дарим на баланс</div>
-                            <div class="sale__price">5 000р</div>
-                            <div class="sale__date">Активен до: 01.03.2020 </div>
-                            <div class="btn btn-big btn-dot btn-shadow">Получить</div>
-                        </a>
-            
-                        <a href="javascript:void(0)" class="sale__item" data-modal="sale">
-                            <div class="sale__trophy">
-                                <svg class="icon">
-                                    <use xlink:href="img/symbol-defs.svg#icon-trophy"></use>
-                                </svg>
-                                Топ 10
-                            </div>
-                            <div class="sale__top">
-                                <img src="img/bonita.png" alt="">
-                            </div>
-                            <div class="sale__name">AmoCRM</div>
-                            <div class="sale__text">Дарим на баланс</div>
-                            <div class="sale__price">5 000р</div>
-                            <div class="sale__date">Активен до: 01.03.2020 </div>
-                            <div class="btn btn-big btn-dot btn-shadow">Получить</div>
-                        </a>
-            
-                        <a href="javascript:void(0)" class="sale__item" data-modal="sale">
-                            <div class="sale__trophy">
-                                <svg class="icon">
-                                    <use xlink:href="img/symbol-defs.svg#icon-trophy"></use>
-                                </svg>
-                                Топ 10
-                            </div>
-                            <div class="sale__top">
-                                <img src="img/bonita.png" alt="">
-                            </div>
-                            <div class="sale__name">AmoCRM</div>
-                            <div class="sale__text">Дарим на баланс</div>
-                            <div class="sale__price">5 000р</div>
-                            <div class="sale__date">Активен до: 01.03.2020 </div>
-                            <div class="btn btn-big btn-dot btn-shadow">Получить</div>
-                        </a>
-            
-                        <a href="javascript:void(0)" class="sale__item" data-modal="sale">
-                            <div class="sale__trophy">
-                                №1
-                            </div>
-                            <div class="sale__top">
-                                <img src="img/ibm.png" alt="">
-                            </div>
-                            <div class="sale__name">AmoCRM</div>
-                            <div class="sale__text">Дарим на баланс</div>
-                            <div class="sale__price">5 000р</div>
-                            <div class="sale__date">Активен до: 01.03.2020 </div>
-                            <div class="btn btn-big btn-dot btn-shadow">Получить</div>
-                        </a>
-            
-                        <a href="javascript:void(0)" class="sale__item" data-modal="sale">
-                            <div class="sale__trophy">
-                                №1
-                            </div>
-                            <div class="sale__top">
-                                <img src="img/promo.png" alt="">
-                            </div>
-                            <div class="sale__name">AmoCRM</div>
-                            <div class="sale__text">Дарим на баланс</div>
-                            <div class="sale__price">5 000р</div>
-                            <div class="sale__date">Активен до: 01.03.2020 </div>
-                            <div class="btn btn-big btn-dot btn-shadow">Получить</div>
-                        </a>
-            
-                        <a href="javascript:void(0)" class="sale__item" data-modal="sale">
-                            <div class="sale__trophy">
-                                <svg class="icon">
-                                    <use xlink:href="img/symbol-defs.svg#icon-trophy"></use>
-                                </svg>
-                                Топ 10
-                            </div>
-                            <div class="sale__top">
-                                <img src="img/promo.png" alt="">
-                            </div>
-                            <div class="sale__name">AmoCRM</div>
-                            <div class="sale__text">Дарим на баланс</div>
-                            <div class="sale__price">5 000р</div>
-                            <div class="sale__date">Активен до: 01.03.2020 </div>
-                            <div class="btn btn-big btn-dot btn-shadow">Получить</div>
-                        </a>
-            
-                        <a href="javascript:void(0)" class="sale__item" data-modal="sale">
-                            <div class="sale__trophy">
-                                №1
-                            </div>
-                            <div class="sale__top">
-                                <img src="img/promo.png" alt="">
-                            </div>
-                            <div class="sale__name">AmoCRM</div>
-                            <div class="sale__text">Дарим на баланс</div>
-                            <div class="sale__price">5 000р</div>
-                            <div class="sale__date">Активен до: 01.03.2020 </div>
-                            <div class="btn btn-big btn-dot btn-shadow">Получить</div>
-                        </a>
-            
-                        <a href="javascript:void(0)" class="sale__item" data-modal="sale">
-                            <div class="sale__trophy">
-                                <svg class="icon">
-                                    <use xlink:href="img/symbol-defs.svg#icon-trophy"></use>
-                                </svg>
-                                Топ 10
-                            </div>
-                            <div class="sale__top">
-                                <img src="img/promo.png" alt="">
-                            </div>
-                            <div class="sale__name">AmoCRM</div>
-                            <div class="sale__text">Дарим на баланс</div>
-                            <div class="sale__price">5 000р</div>
-                            <div class="sale__date">Активен до: 01.03.2020 </div>
-                            <div class="btn btn-big btn-dot btn-shadow">Получить</div>
-                        </a>
+            <div class="sale__list four">
+                <a href="javascript:void(0)" class="sale__item" data-modal="sale">
+                    <div class="sale__trophy">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-trophy"></use>
+                        </svg>
+                        Топ 10
                     </div>
-                </div>
-            </section>
+                    <div class="sale__top">
+                        <img src="img/bonita.png" alt="">
+                    </div>
+                    <div class="sale__name">AmoCRM</div>
+                    <div class="sale__text">Дарим на баланс</div>
+                    <div class="sale__price">5 000р</div>
+                    <div class="sale__date">Активен до: 01.03.2020 </div>
+                    <div class="btn btn-big btn-dot btn-shadow">Получить</div>
+                </a>
+            
+                <a href="javascript:void(0)" class="sale__item" data-modal="sale">
+                    <div class="sale__trophy">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-trophy"></use>
+                        </svg>
+                        Топ 10
+                    </div>
+                    <div class="sale__top">
+                        <img src="img/bonita.png" alt="">
+                    </div>
+                    <div class="sale__name">AmoCRM</div>
+                    <div class="sale__text">Дарим на баланс</div>
+                    <div class="sale__price">5 000р</div>
+                    <div class="sale__date">Активен до: 01.03.2020 </div>
+                    <div class="btn btn-big btn-dot btn-shadow">Получить</div>
+                </a>
+            
+                <a href="javascript:void(0)" class="sale__item" data-modal="sale">
+                    <div class="sale__trophy">
+                        №1
+                    </div>
+                    <div class="sale__top">
+                        <img src="img/ibm.png" alt="">
+                    </div>
+                    <div class="sale__name">AmoCRM</div>
+                    <div class="sale__text">Дарим на баланс</div>
+                    <div class="sale__price">5 000р</div>
+                    <div class="sale__date">Активен до: 01.03.2020 </div>
+                    <div class="btn btn-big btn-dot btn-shadow">Получить</div>
+                </a>
+            
+                <a href="javascript:void(0)" class="sale__item" data-modal="sale">
+                    <div class="sale__trophy">
+                        №1
+                    </div>
+                    <div class="sale__top">
+                        <img src="img/promo.png" alt="">
+                    </div>
+                    <div class="sale__name">AmoCRM</div>
+                    <div class="sale__text">Дарим на баланс</div>
+                    <div class="sale__price">5 000р</div>
+                    <div class="sale__date">Активен до: 01.03.2020 </div>
+                    <div class="btn btn-big btn-dot btn-shadow">Получить</div>
+                </a>
+            
+                <a href="javascript:void(0)" class="sale__item" data-modal="sale">
+                    <div class="sale__trophy">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-trophy"></use>
+                        </svg>
+                        Топ 10
+                    </div>
+                    <div class="sale__top">
+                        <img src="img/promo.png" alt="">
+                    </div>
+                    <div class="sale__name">AmoCRM</div>
+                    <div class="sale__text">Дарим на баланс</div>
+                    <div class="sale__price">5 000р</div>
+                    <div class="sale__date">Активен до: 01.03.2020 </div>
+                    <div class="btn btn-big btn-dot btn-shadow">Получить</div>
+                </a>
+            
+                <a href="javascript:void(0)" class="sale__item" data-modal="sale">
+                    <div class="sale__trophy">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-trophy"></use>
+                        </svg>
+                        Топ 10
+                    </div>
+                    <div class="sale__top">
+                        <img src="img/bonita.png" alt="">
+                    </div>
+                    <div class="sale__name">AmoCRM</div>
+                    <div class="sale__text">Дарим на баланс</div>
+                    <div class="sale__price">5 000р</div>
+                    <div class="sale__date">Активен до: 01.03.2020 </div>
+                    <div class="btn btn-big btn-dot btn-shadow">Получить</div>
+                </a>
+            
+                <a href="javascript:void(0)" class="sale__item" data-modal="sale">
+                    <div class="sale__trophy">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-trophy"></use>
+                        </svg>
+                        Топ 10
+                    </div>
+                    <div class="sale__top">
+                        <img src="img/bonita.png" alt="">
+                    </div>
+                    <div class="sale__name">AmoCRM</div>
+                    <div class="sale__text">Дарим на баланс</div>
+                    <div class="sale__price">5 000р</div>
+                    <div class="sale__date">Активен до: 01.03.2020 </div>
+                    <div class="btn btn-big btn-dot btn-shadow">Получить</div>
+                </a>
+            
+                <a href="javascript:void(0)" class="sale__item" data-modal="sale">
+                    <div class="sale__trophy">
+                        №1
+                    </div>
+                    <div class="sale__top">
+                        <img src="img/ibm.png" alt="">
+                    </div>
+                    <div class="sale__name">AmoCRM</div>
+                    <div class="sale__text">Дарим на баланс</div>
+                    <div class="sale__price">5 000р</div>
+                    <div class="sale__date">Активен до: 01.03.2020 </div>
+                    <div class="btn btn-big btn-dot btn-shadow">Получить</div>
+                </a>
+            
+                <a href="javascript:void(0)" class="sale__item" data-modal="sale">
+                    <div class="sale__trophy">
+                        №1
+                    </div>
+                    <div class="sale__top">
+                        <img src="img/promo.png" alt="">
+                    </div>
+                    <div class="sale__name">AmoCRM</div>
+                    <div class="sale__text">Дарим на баланс</div>
+                    <div class="sale__price">5 000р</div>
+                    <div class="sale__date">Активен до: 01.03.2020 </div>
+                    <div class="btn btn-big btn-dot btn-shadow">Получить</div>
+                </a>
+            
+                <a href="javascript:void(0)" class="sale__item" data-modal="sale">
+                    <div class="sale__trophy">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-trophy"></use>
+                        </svg>
+                        Топ 10
+                    </div>
+                    <div class="sale__top">
+                        <img src="img/promo.png" alt="">
+                    </div>
+                    <div class="sale__name">AmoCRM</div>
+                    <div class="sale__text">Дарим на баланс</div>
+                    <div class="sale__price">5 000р</div>
+                    <div class="sale__date">Активен до: 01.03.2020 </div>
+                    <div class="btn btn-big btn-dot btn-shadow">Получить</div>
+                </a>
+            
+                <a href="javascript:void(0)" class="sale__item" data-modal="sale">
+                    <div class="sale__trophy">
+                        №1
+                    </div>
+                    <div class="sale__top">
+                        <img src="img/promo.png" alt="">
+                    </div>
+                    <div class="sale__name">AmoCRM</div>
+                    <div class="sale__text">Дарим на баланс</div>
+                    <div class="sale__price">5 000р</div>
+                    <div class="sale__date">Активен до: 01.03.2020 </div>
+                    <div class="btn btn-big btn-dot btn-shadow">Получить</div>
+                </a>
+            
+                <a href="javascript:void(0)" class="sale__item" data-modal="sale">
+                    <div class="sale__trophy">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-trophy"></use>
+                        </svg>
+                        Топ 10
+                    </div>
+                    <div class="sale__top">
+                        <img src="img/promo.png" alt="">
+                    </div>
+                    <div class="sale__name">AmoCRM</div>
+                    <div class="sale__text">Дарим на баланс</div>
+                    <div class="sale__price">5 000р</div>
+                    <div class="sale__date">Активен до: 01.03.2020 </div>
+                    <div class="btn btn-big btn-dot btn-shadow">Получить</div>
+                </a>
+            </div>
         </div>
         <div class="sidebar">
-            <div class="sidebar__item">
+            <div class="sidebar__item filter">
+                <div class="filter__close">
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-close"></use>
+                    </svg>
+                </div>
                 <div class="sidebar__title">Размер бизнеса</div>
                 <div class="sidebar__group">
                     <div class="form-group radio">
@@ -413,54 +422,66 @@
                 <div class="footer__logo">FinSoft</div>
                 <div class="footer__menu">
                     <div class="footer__title">О нас</div>
-                    <a href="javascript:void(0)">О платформе</a>
-                    <a href="javascript:void(0)">Тарифы</a>
-                    <a href="javascript:void(0)">Контакты</a>
+                    <div>
+                        <a href="javascript:void(0)">О платформе</a>
+                        <a href="javascript:void(0)">Тарифы</a>
+                        <a href="javascript:void(0)">Контакты</a>
+                    </div>
                 </div>
             </div>
             <div>
                 <div class="footer__menu">
                     <div class="footer__title">Нужен маркетолог</div>
-                    <a href="javascript:void(0)">Регистрация работодателя</a>
-                    <a href="javascript:void(0)">Каталог маркетологов</a>
-                    <a href="javascript:void(0)">Услуги по маркетингу</a>
-                    <a href="javascript:void(0)">Опубликовать проект</a>
-                    <a href="javascript:void(0)">Опубликовать вакансию</a>
-                    <a href="javascript:void(0)">Помощь в подборе</a>
+                    <div>
+                        <a href="javascript:void(0)">Регистрация работодателя</a>
+                        <a href="javascript:void(0)">Каталог маркетологов</a>
+                        <a href="javascript:void(0)">Услуги по маркетингу</a>
+                        <a href="javascript:void(0)">Опубликовать проект</a>
+                        <a href="javascript:void(0)">Опубликовать вакансию</a>
+                        <a href="javascript:void(0)">Помощь в подборе</a>
+                    </div>
                 </div>
             </div>
             <div>
                 <div class="footer__menu">
                     <div class="footer__title">Для маркетологов</div>
-                    <a href="javascript:void(0)">Регистрация маркетолога</a>
-                    <a href="javascript:void(0)">Поиск проекта</a>
-                    <a href="javascript:void(0)">Поиск вакансии</a>
-                    <a href="javascript:void(0)">Опубликовать кейс</a>
-                    <a href="javascript:void(0)">Опубликовать статью</a>
+                    <div>
+                        <a href="javascript:void(0)">Регистрация маркетолога</a>
+                        <a href="javascript:void(0)">Поиск проекта</a>
+                        <a href="javascript:void(0)">Поиск вакансии</a>
+                        <a href="javascript:void(0)">Опубликовать кейс</a>
+                        <a href="javascript:void(0)">Опубликовать статью</a>
+                    </div>
                 </div>
                 <div class="footer__menu">
                     <div class="footer__title">Документы</div>
-                    <a href="javascript:void(0)">Маркетинг-кит</a>
+                    <div>
+                        <a href="javascript:void(0)">Маркетинг-кит</a>
+                    </div>
                 </div>
             </div>
             <div>
                 <div class="footer__menu">
                     <div class="footer__title">Полезные материалы:</div>
-                    <a href="javascript:void(0)">Условия для маркетологов</a>
-                    <a href="javascript:void(0)">Условия для работодателей</a>
-                    <a href="javascript:void(0)">Блог по маркетингу</a>
-                    <a href="javascript:void(0)">Академия маркетинга</a>
-                    <a href="javascript:void(0)">Форум по маркетингу</a>
+                    <div>
+                        <a href="javascript:void(0)">Условия для маркетологов</a>
+                        <a href="javascript:void(0)">Условия для работодателей</a>
+                        <a href="javascript:void(0)">Блог по маркетингу</a>
+                        <a href="javascript:void(0)">Академия маркетинга</a>
+                        <a href="javascript:void(0)">Форум по маркетингу</a>
+                    </div>
                 </div>
                 <div class="footer__menu">
                     <div class="footer__title">Дукоментация</div>
-                    <a href="javascript:void(0)">Руководство к платформе</a>
+                    <div>
+                        <a href="javascript:void(0)">Руководство к платформе</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="footer__row">
-            <div>ИП Иванов А. В. <br>
+        <div class="footer__row top">
+            <div class="org">ИП Иванов А. В. <br>
                 ОГРНИП: 321774600468241 | ИНН: 772873464466</div>
             <div class="footer__social">
                 <a href="javascript:void(0)">
@@ -506,7 +527,9 @@
             </div>
         </div>
 
-        <div class="footer__row">
+        <div class="footer__row bottom">
+            <div class="org">ИП Иванов А. В. <br>
+                ОГРНИП: 321774600468241 | ИНН: 772873464466</div>
             <div>
                 <a href="javascript:void(0)">Политика конфидениальности </a>
                 <a href="javascript:void(0)">Договор оферты </a>
@@ -557,6 +580,7 @@
     <div class="modal" data-modal="bookmark">
         <div class="modal__content">
             <div class="modal__close"></div>
+            <img src="img/locks.svg" alt="" class="locks">
             <div class="modal__body">
                 <h2>Для добавления в&nbsp;избранное вы&nbsp;должны быть зарегистрированы</h2>
                 <div class="text">Применяйте промокод и&nbsp;получайте дополнительную скидку&nbsp;20% на&nbsp;вашу
@@ -567,7 +591,13 @@
                     <a href="javascript:void(0)" class="close">Отмена</a>
                 </div>
             </div>
-            <img src="img/locks.svg" alt="" class="locks">
+        </div>
+    </div>
+
+    <div class="modal" data-modal="tips">
+        <div class="modal__content">
+            <div class="modal__close"></div>
+            <div class="modal__body"></div>
         </div>
     </div>
 </div>
@@ -577,6 +607,7 @@
 <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
 <script src="https://unpkg.com/imask"></script>
 <script src="js/sticky.min.js"></script>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 

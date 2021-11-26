@@ -1,4 +1,9 @@
 .item {
+    @include r(767) {
+        padding-left: 14px;
+        display: block;
+    }
+
     background: #ffffff;
     box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
     padding: 17px 14px;
@@ -12,6 +17,13 @@
     }
 
     &__tag {
+        @include r(767) {
+            width: auto;
+            bottom: initial;
+            padding: 3px 34px;
+            top: -17px;
+        }
+
         position: absolute;
         top: 0;
         left: 0;
@@ -24,6 +36,19 @@
         @include fcc;
 
         &::before {
+            @include r(767) {
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 6px 6px 0 6px;
+                border-color: #3862ab transparent transparent transparent;
+                top: initial;
+                bottom: 1px;
+                right: initial;
+                left: 20px;
+                transform: translateY(100%);
+            }
+
             content: '';
             width: 0;
             height: 0;
@@ -32,11 +57,15 @@
             border-color: transparent transparent transparent #3862ab;
             position: absolute;
             top: 34px;
-            right: 0;
+            right: 1px;
             transform: translateX(100%);
         }
 
         span {
+            @include r(767) {
+                transform: none;
+            }
+
             white-space: nowrap;
             transform: rotate(-90deg);
             display: block;
@@ -44,48 +73,69 @@
     }
 
     & > a {
+        @include r(767) {
+            @include fcn;
+            margin-right: 0;
+        }
+
         flex-shrink: 0;
         margin-right: 17px;
         margin-top: 7px;
 
         img {
+            @include r(767) {
+                margin-right: 17px;
+            }
+
             width: 76px;
         }
     }
 
     &__top {
+        @include r(767) {
+            position: relative;
+        }
+
         @include fssb;
         margin-bottom: -5px;
 
-        & > div {
-            &:last-child {
-                @include fcc;
-                flex-direction: column;
+        .btn {
+            padding: 4px 21px;
+        }
+    }
 
-                a {
-                    display: block;
+    &__buttons {
+        @include fcc;
+        flex-direction: column;
 
-                    &:not(.btn) {
-                        color: $orange;
-                        font-size: 12px;
-                        font-weight: 700;
-                        text-decoration: underline;
+        a {
+            display: block;
 
-                        &:hover {
-                            text-decoration: none;
-                        }
-                    }
-                }
+            &:not(.btn) {
+                color: $orange;
+                font-size: 12px;
+                font-weight: 700;
+                text-decoration: underline;
 
-                .btn {
-                    margin-bottom: 4px;
+                &:hover {
+                    text-decoration: none;
                 }
             }
         }
 
         .btn {
-            padding: 4px 21px;
+            margin-bottom: 4px;
         }
+    }
+
+    &__icons {
+        @include r(767) {
+            position: absolute;
+            top: 10px;
+            right: 0;
+        }
+
+        @include fcn;
     }
 
     &__controls {
@@ -94,14 +144,15 @@
 
         .heart,
         .bookmark {
-            path {
-                stroke: $text;
+            @include r(767) {
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
             }
 
-            &:hover {
-                path {
-                    fill: $text;
-                }
+            path {
+                stroke: $text;
             }
         }
 
@@ -121,14 +172,24 @@
         margin-right: 9px;
 
         .icon {
+            @include r(767) {
+                display: none;
+            }
+
             fill: $blue;
             font-size: 10px;
             margin-left: 9px;
             margin-top: -9px;
+            flex-shrink: 0;
         }
     }
 
     &__reviews {
+        @include r(767) {
+            order: 2;
+            margin-left: 10px;
+        }
+
         color: $gray2;
         text-decoration: underline;
         font-size: 12px;
@@ -139,14 +200,42 @@
     }
 
     &__info {
+        @include r(767) {
+            flex-wrap: wrap;
+            max-width: 250px;
+            margin-top: 10px;
+        }
+
         @include fcn;
     }
 
+    .reviews__rating,
+    .reviews__awards {
+        @include r(767) {
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+    }
+
     &__bottom {
+        @include r(767) {
+            display: block;
+
+            & > div {
+                @include fcn;
+                flex-wrap: wrap;
+            }
+        }
+
         @include fssb;
     }
 
     &__text {
+        @include r(767) {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
         font-size: 12px;
         line-height: 1.63;
         margin-bottom: 13px;
@@ -162,6 +251,12 @@
     }
 
     .service__progress {
+        @include r(767) {
+            margin-top: 0;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
         flex-direction: column;
         flex-shrink: 0;
         margin-bottom: 0;
@@ -182,6 +277,16 @@
     }
 
     .service__features {
+        @include r(1279) {
+            flex-wrap: wrap;
+        }
+
+        @include r(767) {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
         @include fcn;
         font-size: 10px;
         margin-bottom: 0;

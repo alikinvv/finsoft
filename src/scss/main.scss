@@ -34,12 +34,30 @@
 }
 
 .main {
+    @include r(1345) {
+        height: 450px;
+    }
+
+    @include r(1023) {
+        overflow: hidden;
+        height: 340px;
+    }
+
+    @include r(767) {
+        height: 71vh;
+    }
+
     height: 560px;
     background: url(../img/main.jpg) no-repeat center;
     background-size: cover;
     color: #fff;
 
     .container {
+        @include r(767) {
+            @include fcs;
+            padding-top: 18%;
+        }
+
         @include fcc;
         text-align: center;
         flex-direction: column;
@@ -47,6 +65,23 @@
     }
 
     &__title {
+        @include r(1279) {
+            font-size: 38px;
+        }
+
+        @include r(1023) {
+            font-size: 33px;
+        }
+
+        @include r(767) {
+            font-size: 26px;
+            margin-bottom: 19px;
+
+            br {
+                display: none;
+            }
+        }
+
         font-weight: 700;
         font-size: 44px;
         line-height: 1.18;
@@ -54,12 +89,21 @@
     }
 
     &__text {
+        @include r(767) {
+            font-size: 16px;
+        }
+
         font-size: 18px;
         line-height: 1.38;
         margin-bottom: 30px;
     }
 
     &__search {
+        @include r(1023) {
+            width: 95%;
+            margin: 0 auto;
+        }
+
         background: #fff;
         @include fcsb;
 
@@ -81,6 +125,7 @@
             margin-right: 7px;
             padding: 0 10px;
             flex-shrink: 0;
+            @include fcc;
 
             .icon {
                 font-size: 27px;
@@ -132,15 +177,40 @@
     padding: 60px 0;
 
     .container {
+        @include r(1023) {
+            @include fssb;
+            flex-direction: column;
+            padding: 40px 10px;
+            text-align: center;
+        }
+
+        @include r(767) {
+            text-align: left;
+            padding: 77px 10px;
+        }
+
         background: #f4f7fa;
         @include fcsb;
         padding: 0 81px;
 
         & > div {
+            @include r(767) {
+                width: 100%;
+            }
+
             width: 50%;
             position: relative;
 
             &:first-child {
+                @include r(1023) {
+                    order: 2;
+                    margin: 0 auto;
+                }
+
+                @include r(767) {
+                    margin-bottom: -83px;
+                }
+
                 cursor: pointer;
 
                 &:hover .how__btn img {
@@ -149,12 +219,27 @@
             }
 
             &:last-child {
+                @include r(1023) {
+                    padding-left: 0;
+                    width: 100%;
+                    margin-bottom: 30px;
+                }
+
+                @include r(767) {
+                    margin-bottom: 75px;
+                }
+
                 padding-left: 69px;
             }
         }
     }
 
     img {
+        @include r(1023) {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
         margin-top: -25px;
         margin-bottom: -25px;
         pointer-events: none;
@@ -162,6 +247,15 @@
     }
 
     &__title {
+        @include r(1023) {
+            margin-bottom: 5px;
+        }
+
+        @include r(767) {
+            font-size: 26px;
+            margin-bottom: 16px;
+        }
+
         font-weight: 700;
         font-size: 36px;
         margin-bottom: 15px;
@@ -169,6 +263,15 @@
     }
 
     .orange {
+        @include r(1023) {
+            margin-bottom: 15px;
+        }
+
+        @include r(767) {
+            font-size: 20px;
+            margin-bottom: 17px;
+        }
+
         font-weight: 700;
         font-size: 24px;
         margin-bottom: 23px;
@@ -176,17 +279,31 @@
     }
 
     &__text {
+        @include r(767) {
+            font-size: 16px;
+        }
+
         font-size: 18px;
         line-height: 1.38;
     }
 
     &__btn {
+        @include r(767) {
+            top: -9%;
+            right: 16%;
+        }
+
         @include fcn;
         position: absolute;
         top: 12%;
         right: 7%;
 
         img {
+            @include r(767) {
+                width: 78px;
+                height: 78px;
+            }
+
             margin-right: 10px;
             margin-top: 0;
             margin-bottom: 0;
@@ -202,15 +319,35 @@
 }
 
 .circles {
+    @include r(1279) {
+        overflow: hidden;
+    }
+
+    @include r(1023) {
+        padding: 20px 0;
+    }
+
     padding: 95px 0 40px;
 
     .container {
+        @include r(1023) {
+            display: block;
+        }
+
         @include fcsb;
 
         & > div {
+            @include r(1023) {
+                width: 100%;
+            }
+
             width: 50%;
 
             &:last-child {
+                @include r(1023) {
+                    margin-top: 40px;
+                }
+
                 text-align: center;
                 position: relative;
             }
@@ -218,6 +355,20 @@
     }
 
     &__title {
+        @include r(1279) {
+            font-size: 25px;
+        }
+
+        @include r(1023) {
+            br {
+                display: none;
+            }
+        }
+
+        @include r(767) {
+            font-size: 22px;
+        }
+
         font-weight: 700;
         font-size: 30px;
         line-height: 1.36;
@@ -225,19 +376,47 @@
     }
 
     .orange {
+        @include r(1023) {
+            br {
+                display: none;
+            }
+        }
+
+        @include r(767) {
+            font-size: 16px;
+            margin-bottom: 27px;
+        }
+
         font-weight: 700;
         font-size: 18px;
         line-height: 1.32;
         margin-bottom: 31px;
     }
 
+    &__text {
+        @include r(1023) {
+            br:not(.mobile) {
+                display: none;
+            }
+        }
+    }
+
     img {
+        @include r(767) {
+            max-width: 73%;
+        }
+
         pointer-events: none;
         user-select: none;
         max-width: 100%;
     }
 
     &__item {
+        @include r(767) {
+            width: 120px;
+            height: 45px;
+        }
+
         box-shadow: 0px 0px 14.8097px rgba(134, 135, 135, 0.35);
         @include fcc;
         width: 205px;
@@ -265,21 +444,57 @@
     }
 
     .btn {
+        @include r(767) {
+            width: calc(100% - 20px);
+            text-align: center;
+            @include centerX;
+            margin-top: 39px;
+        }
+
         margin-top: 47px;
     }
 }
 
 .category {
+    @include r(767) {
+        overflow: hidden;
+        padding: 63px 0 46px;
+    }
+
     padding: 40px 0;
 
     &__list {
+        @include r(767) {
+            display: block;
+        }
+
         @include fcsb;
 
         & > div {
+            @include r(767) {
+                width: 100%;
+                margin-bottom: 11px;
+            }
+
             width: 49%;
         }
 
         a {
+            @include r(1279) {
+                font-size: 16px;
+            }
+
+            @include r(1023) {
+                font-size: 14px;
+                min-height: 72px;
+            }
+
+            @include r(767) {
+                min-height: auto;
+                margin-bottom: 11px;
+                padding: 19px 23px;
+            }
+
             display: block;
             @include fcn;
             padding: 14px 23px;
@@ -319,6 +534,16 @@
             }
 
             img {
+                @include r(1023) {
+                    width: 33px;
+                    margin-right: 15px;
+                }
+
+                @include r(767) {
+                    font-size: 42px;
+                    margin-right: 18px;
+                }
+
                 width: 43px;
                 margin-right: 34px;
                 pointer-events: none;
@@ -330,11 +555,22 @@
     }
 
     .btn {
+        @include r(767) {
+            width: calc(100% - 20px);
+            text-align: center;
+            @include centerX;
+            margin-top: 28px;
+        }
+
         margin-top: 39px;
     }
 }
 
 .tip {
+    @include r(767) {
+        display: none;
+    }
+
     position: absolute;
     top: -15px;
     left: -18px;
@@ -367,12 +603,30 @@
         border-top: 8px solid $darkBlue;
     }
 
+    &.right {
+        @include r(1345) {
+            left: initial;
+            right: -18px;
+
+            &::before {
+                left: initial;
+                right: 20px;
+            }
+        }
+    }
+
     &-parent {
         position: relative;
         cursor: pointer;
 
         &:hover {
             .tip {
+                @include r(1023) {
+                    opacity: 0;
+                    pointer-events: none;
+                    user-select: none;
+                }
+
                 opacity: 1;
                 pointer-events: all;
                 user-select: initial;
@@ -382,30 +636,21 @@
 }
 
 .users {
+    @include r(1279) {
+        overflow: hidden;
+    }
+
+    @include r(767) {
+        padding-bottom: 20px;
+    }
+
     padding: 57px 0;
 
     &__list {
-        @include r(1023) {
-            @include flexlist(10px);
-        }
-
-        @include r(767) {
-            @include flexlist(1px);
-        }
-
-        @include flexlist(15px);
+        overflow: visible;
     }
 
     &__item {
-        @include r(1023) {
-            @include flexitem(50%, 10px);
-        }
-
-        @include r(767) {
-            @include flexitem(100%, 1px);
-        }
-
-        @include flexitem(25%, 15px);
         background: #ffffff;
         box-shadow: 0px 0px 15px rgba(179, 184, 190, 0.35);
         padding: 22px 20px;
@@ -473,6 +718,10 @@
     }
 
     &__check {
+        @include r(1279) {
+            font-size: 10px;
+        }
+
         @include fcn;
         color: $gray2;
         margin-bottom: 12px;
@@ -512,8 +761,18 @@
     .freelancers__features {
         margin-bottom: 0;
 
-        div span {
-            min-width: 134px;
+        div {
+            @include r(1023) {
+                @include fcsb;
+            }
+
+            span {
+                @include r(1023) {
+                    min-width: auto;
+                }
+
+                min-width: 134px;
+            }
         }
     }
 }
@@ -522,6 +781,14 @@
     padding: 50px 0;
 
     &__item {
+        @include r(1023) {
+            padding: 15px 20px;
+        }
+
+        @include r(767) {
+            padding: 15px 16px;
+        }
+
         background: #ffffff;
         box-shadow: 0px 0px 15px rgba(179, 184, 190, 0.35);
         padding: 15px 38px;
@@ -533,6 +800,10 @@
     }
 
     &__top {
+        @include r(767) {
+            margin-bottom: 16px;
+        }
+
         @include fcn;
         margin-bottom: 12px;
 
@@ -554,11 +825,19 @@
     }
 
     &__name {
+        @include r(767) {
+            font-size: 16px;
+        }
+
         font-weight: 700;
         font-size: 18px;
     }
 
     &__price {
+        @include r(767) {
+            margin-bottom: 20px;
+        }
+
         margin-left: auto;
         font-weight: 700;
         font-size: 18px;
@@ -578,13 +857,38 @@
     }
 
     &__bottom {
+        @include r(1023) {
+            flex-wrap: wrap;
+        }
+
         @include fcn;
 
         .btn {
+            @include r(1023) {
+                order: 10;
+                width: 100%;
+                text-align: center;
+                margin-right: 0;
+                margin-top: 10px;
+            }
+
+            @include r(767) {
+                margin-top: 22px;
+            }
+
             margin-right: 26px;
         }
 
         &-item {
+            @include r(1023) {
+                margin-right: 13px;
+            }
+
+            @include r(767) {
+                font-size: 12px;
+                margin-right: 25px;
+            }
+
             @include fcn;
             color: $gray2;
             font-weight: 700;
@@ -598,7 +902,26 @@
         }
     }
 
+    &__answers {
+        @include r(767) {
+            margin-right: 43px;
+        }
+    }
+
+    &__category {
+        @include r(767) {
+            order: 5;
+            width: 100%;
+        }
+    }
+
     &__show {
+        @include r(767) {
+            margin-left: 0;
+            margin-top: 20px;
+            margin-bottom: 14px;
+        }
+
         margin-left: auto;
         margin-right: 17px;
     }
@@ -607,6 +930,11 @@
         @include fcn;
 
         img {
+            @include r(1023) {
+                width: 20px;
+                height: 20px;
+            }
+
             width: 30px;
             height: 30px;
             border-radius: 50%;
@@ -621,22 +949,54 @@
     margin-top: 53px;
 
     .container {
+        @include r(767) {
+            padding-top: 39px;
+        }
+
         padding-top: 57px;
     }
 
     &__wrap {
+        @include r(1023) {
+            div {
+                font-size: 13px;
+            }
+        }
+
+        @include r(767) {
+            display: block;
+        }
+
         @include fssb;
     }
 
     &__logo {
+        @include r(767) {
+            font-size: 24px !important;
+        }
+
         font-size: 24px;
         margin-bottom: 39px;
     }
 
     &__menu {
+        @include r(767) {
+            margin-bottom: 0;
+        }
+
         display: flex;
         flex-direction: column;
         margin-bottom: 37px;
+
+        div:not(.footer__title) {
+            @include r(767) {
+                display: none;
+                padding-top: 20px;
+            }
+
+            display: flex;
+            flex-direction: column;
+        }
 
         a {
             margin-bottom: 12px;
@@ -653,20 +1013,88 @@
     }
 
     &__title {
+        @include r(767) {
+            font-size: 16px !important;
+            margin: 0;
+            padding: 15px 0;
+            border-bottom: 1px solid $gray;
+            width: 100%;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 10px;
+                background: url(../img/icons/footer-toggle.svg) no-repeat center;
+                width: 30px;
+                height: 30px;
+                transition: $trans;
+            }
+
+            &.active::before {
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+
         font-weight: 700;
         font-size: 16px;
         margin-bottom: 12px;
     }
 
     &__row {
+        @include r(1023) {
+            font-size: 13px;
+        }
+
+        @include r(767) {
+            display: block;
+            border: 0;
+
+            &:last-child {
+                border-top: 1px solid rgba(255, 255, 255, 0.5);
+            }
+        }
+
         @include fcsb;
         border-top: 1px solid rgba(255, 255, 255, 0.5);
         padding: 29px 0;
+
+        &.top {
+            @include r(767) {
+                .org {
+                    display: none;
+                }
+            }
+        }
+
+        &.bottom {
+            .org {
+                @include r(767) {
+                    display: block;
+                    margin-bottom: 20px;
+                    font-size: 12px;
+                }
+
+                display: none;
+            }
+        }
 
         & > div:not(.footer__social) {
             line-height: 1.33;
 
             a {
+                @include r(767) {
+                    margin-right: 0;
+                    display: block;
+                    margin-bottom: 13px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
                 text-decoration: underline;
                 margin-right: 59px;
 
@@ -682,12 +1110,29 @@
     }
 
     &__social {
+        @include r(767) {
+            @include fcc;
+            flex-wrap: wrap;
+            padding: 0 15px;
+            margin-bottom: -15px;
+        }
+
         @include fcn;
 
         a {
+            @include r(767) {
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-bottom: 15px;
+            }
+
             margin-left: 27px;
 
             &:first-child {
+                @include r(767) {
+                    margin-left: 10px;
+                }
+
                 margin-left: 0;
             }
 
@@ -696,6 +1141,10 @@
             }
 
             .icon {
+                @include r(767) {
+                    font-size: 40px;
+                }
+
                 fill: #fff;
                 font-size: 32px;
                 transition: $trans;
@@ -705,9 +1154,17 @@
 }
 
 .best {
+    @include r(767) {
+        padding: 51px 0;
+    }
+
     padding: 34px 0;
 
     &__header {
+        @include r(767) {
+            margin-bottom: 29px;
+        }
+
         @include fcsb;
         margin-bottom: 18px;
 
@@ -717,6 +1174,10 @@
         }
 
         a {
+            @include r(767) {
+                display: none;
+            }
+
             transform: none;
             position: static;
             color: $text;
@@ -732,9 +1193,18 @@
     }
 
     &__main {
+        @include r(1023) {
+            display: block;
+        }
+
         @include fssb;
 
         img {
+            @include r(1023) {
+                margin-left: 0;
+                margin-top: 30px;
+            }
+
             margin-left: 40px;
         }
     }
@@ -764,8 +1234,8 @@
         div {
             &::after {
                 content: '|';
-                margin-left: 5px;
-                margin-right: 5px;
+                margin-left: 3px;
+                margin-right: 3px;
                 color: $text;
                 text-decoration: none;
             }
@@ -798,6 +1268,18 @@
     margin-bottom: 35px;
 
     .container {
+        @include r(767) {
+            background: transparent;
+            color: $text;
+            flex-wrap: wrap;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            & > div:nth-child(3) {
+                margin-right: 0;
+            }
+        }
+
         background: $darkBlue;
         color: #fff;
         @include fcn;
@@ -805,16 +1287,38 @@
     }
 
     &__title {
+        @include r(1023) {
+            display: none;
+        }
+
+        @include r(767) {
+            display: block;
+            line-height: 1.32;
+            margin-bottom: 17px;
+        }
+
         font-weight: 700;
         font-size: 18px;
         margin-right: 15px;
     }
 
     &__item {
+        @include r(767) {
+            background: #b3b8be;
+            padding: 10px 10px;
+            color: #fff;
+            margin-right: 12px;
+        }
+
         @include fcn;
         margin-right: 20px;
 
         &.active {
+            @include r(767) {
+                font-weight: normal;
+                background: $darkBlue;
+            }
+
             font-weight: 700;
         }
 
@@ -836,10 +1340,42 @@
         }
     }
 
-    &__count {
+    &__wrap {
+        @include r(1023) {
+            @include fcn;
+        }
+
+        @include r(767) {
+            margin-left: 0;
+            width: 100%;
+            @include fcsb;
+            margin-top: 46px;
+        }
+
         margin-left: auto;
+    }
+
+    &__count {
         font-weight: 700;
         font-size: 18px;
+    }
+
+    &__filter {
+        @include r(1023) {
+            display: flex;
+        }
+
+        width: 40px;
+        height: 40px;
+        background: $orange;
+        @include fcc;
+        display: none;
+        margin-left: 20px;
+
+        .icon {
+            fill: #fff;
+            font-size: 20px;
+        }
     }
 }
 
@@ -861,6 +1397,17 @@
         display: block;
         text-align: left;
     }
+
+    .container {
+        @include r(1023) {
+            @include fcsb;
+            margin-bottom: 30px;
+
+            h2 {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
 
 .content {
@@ -868,7 +1415,74 @@
         padding: 48px 0;
     }
 
+    &.with-filter {
+        @include r(1023) {
+            overflow: hidden;
+            padding-top: 30px;
+            margin-top: -30px;
+
+            .sidebar {
+                margin-right: -300px;
+            }
+        }
+
+        @include r(767) {
+            .sidebar {
+                margin-right: 0 !important;
+            }
+
+            &.show-filter {
+                .content__main,
+                .content__body {
+                    margin-left: 0 !important;
+                }
+            }
+        }
+
+        &.show-filter {
+            .content__main,
+            .content__body {
+                margin-left: -300px;
+            }
+
+            .sidebar {
+                margin-right: 0;
+            }
+        }
+
+        .content__main,
+        .content__body {
+            transition: $trans;
+        }
+
+        .sidebar {
+            transition: $trans;
+        }
+    }
+
+    &:not(.with-filter) {
+        @include r(1023) {
+            .container {
+                display: block;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+
+        @include r(767) {
+            .sidebar {
+                display: block;
+            }
+        }
+    }
+
     & > .container {
+        @include r(767) {
+            display: block;
+        }
+
         @include fssb;
     }
 
@@ -877,22 +1491,44 @@
     }
 
     &__main {
-        width: 100%;
-    }
+        @include r(1023) {
+            width: 100%;
+        }
 
-    &__body {
-        padding: 13px 23px 29px;
+        width: calc(100% - 300px);
     }
 
     &__item {
+        @include r(1279) {
+            overflow: hidden;
+        }
+
+        @include r(1023) {
+            margin-bottom: 45px;
+        }
+
         background: #ffffff;
         box-shadow: 0px 0px 20px rgba(134, 135, 135, 0.35);
         margin-bottom: 85px;
 
         h2 {
+            @include r(767) {
+                text-align: center;
+                padding: 15px 0;
+                display: block;
+            }
+
             padding: 3px 0;
             border-bottom: 1px solid #b3b8be;
             margin-bottom: 0;
+        }
+
+        .content__body {
+            @include r(767) {
+                padding: 19px 10px;
+            }
+
+            padding: 13px 23px 29px;
         }
     }
 
@@ -901,6 +1537,12 @@
     }
 
     &__desc {
+        @include r(1279) {
+            br {
+                display: none;
+            }
+        }
+
         text-align: center;
         margin-bottom: 19px;
         line-height: 1.33;
@@ -928,6 +1570,11 @@
 }
 
 .pagination {
+    @include r(767) {
+        flex-wrap: wrap;
+        margin-bottom: 70px;
+    }
+
     @include fcc;
     font-size: 20px;
     color: #060c1c;
@@ -954,6 +1601,13 @@
     }
 
     &__prev {
+        @include r(767) {
+            margin-top: 10px;
+            width: 50%;
+            margin-right: 0;
+            text-align: center;
+        }
+
         cursor: pointer;
         margin-right: 30px;
         transition: $trans;
@@ -964,6 +1618,12 @@
     }
 
     &__next {
+        @include r(767) {
+            margin-top: 10px;
+            width: 50%;
+            text-align: center;
+        }
+
         cursor: pointer;
         transition: $trans;
 
@@ -977,21 +1637,47 @@
     padding: 40px 0;
 
     .container {
+        @include r(1023) {
+            display: block;
+        }
+
         @include fsn;
     }
 
     &__sidebar {
+        @include r(1279) {
+            margin-right: 40px;
+        }
+
+        @include r(1023) {
+            margin-right: 0;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
         flex-shrink: 0;
         margin-right: 62px;
         width: 340px;
     }
 
     &__nav {
+        @include r(1023) {
+            width: 100% !important;
+        }
+
+        @include r(767) {
+            padding-bottom: 8px;
+        }
+
         border: 1px solid #b3b8be;
         padding-bottom: 16px;
         width: 340px !important;
 
         &-title {
+            @include r(767) {
+                padding: 8px 15px;
+            }
+
             padding: 16px 27px;
             font-weight: 700;
             font-size: 18px;
@@ -1001,18 +1687,38 @@
         }
 
         &-item {
+            @include r(767) {
+                padding: 5px 10px;
+            }
+
+            @include r(374) {
+                padding: 3px 6px;
+            }
+
             padding: 3px 27px;
             font-size: 12px;
             cursor: pointer;
             transition: $trans;
 
             &.active {
+                @include r(767) {
+                    padding: 5px 10px;
+                }
+
+                @include r(374) {
+                    padding: 3px 6px;
+                }
+
                 padding: 8px 27px;
                 color: #fff;
                 background: #3660ab;
                 position: relative;
 
                 &::after {
+                    @include r(1023) {
+                        display: none;
+                    }
+
                     content: '';
                     position: absolute;
                     width: 27px;
@@ -1024,6 +1730,10 @@
                 }
 
                 &::before {
+                    @include r(1023) {
+                        display: none;
+                    }
+
                     content: '';
                     position: absolute;
                     top: 0;
@@ -1069,6 +1779,10 @@
     }
 
     &__img {
+        @include r(1023) {
+            height: 130px;
+        }
+
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -1076,11 +1790,93 @@
         height: 153px;
     }
 
+    &__icons {
+        @include r(767) {
+            position: absolute;
+            right: 0;
+            top: 9px;
+        }
+
+        @include fcn;
+    }
+
+    .plan__buttons {
+        @include r(1023) {
+            padding-left: 20px;
+
+            .btn-outline {
+                margin-right: 10px;
+            }
+        }
+
+        @include r(767) {
+            padding-left: 0;
+            margin-top: 30px;
+
+            .btn {
+                margin: 0;
+                width: 100%;
+                text-align: center;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .btn-outline {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .item__info {
+        @include r(767) {
+            max-width: 100%;
+            flex-wrap: nowrap;
+            @include fcsb;
+
+            .reviews__rating {
+                margin-right: 0;
+            }
+
+            .item__reviews {
+                margin-left: 0;
+            }
+
+            .reviews__awards {
+                font-size: 10px;
+                margin-right: 0;
+            }
+        }
+    }
+
     &__info {
+        @include r(1023) {
+            padding: 9px 20px;
+        }
+
+        @include r(767) {
+            padding-left: 0;
+            padding-right: 0;
+            @include fcn;
+            position: relative;
+            padding-bottom: 0;
+            padding-top: 17px;
+        }
+
         padding: 9px 30px;
         @include fen;
 
         & > img {
+            @include r(1023) {
+                width: 100px;
+            }
+
+            @include r(767) {
+                margin-top: 0;
+                margin-right: 11px;
+                width: 66px;
+            }
+
+            width: 140px;
             margin-right: 30px;
             margin-top: -55px;
         }
@@ -1100,9 +1896,25 @@
     }
 
     .submenu {
+        @include r(1023) {
+            padding-left: 20px;
+            padding-bottom: 10px;
+            white-space: nowrap;
+            overflow-x: scroll;
+        }
+
+        @include r(767) {
+            padding-left: 0;
+            margin-top: 34px;
+        }
+
         margin-top: 14px;
 
         a {
+            @include r(1023) {
+                white-space: nowrap;
+            }
+
             color: $gray2;
             font-weight: 400;
 
@@ -1131,17 +1943,36 @@
 
 .overview {
     &__row {
+        @include r(1279) {
+            flex-wrap: wrap;
+            @include fssb;
+        }
+
+        @include r(767) {
+            padding: 19px 10px;
+        }
+
         padding: 12px 23px;
         @include fcn;
         border-bottom: 1px solid #b3b8be;
     }
 
     &__item {
+        @include r(767) {
+            display: block;
+            width: 47%;
+            margin-right: 0;
+        }
+
         margin-right: 19px;
         font-size: 12px;
         @include fcn;
 
         span {
+            @include r(767) {
+                display: block;
+            }
+
             font-weight: 700;
             margin-right: 5px;
         }
@@ -1156,15 +1987,44 @@
         }
     }
 
+    &__likes {
+        @include r(767) {
+            @include fcn;
+            margin-top: 20px;
+        }
+
+        order: 4;
+    }
+
     &__form {
+        @include r(1279) {
+            margin-left: 0;
+        }
+
+        @include r(767) {
+            @include fssb;
+            width: 100%;
+        }
+
         @include fcn;
         margin-left: auto;
 
         .form-group {
+            @include r(767) {
+                display: block;
+                width: 47%;
+            }
+
             margin-left: 11px;
             font-size: 12px;
 
             label {
+                @include r(767) {
+                    padding-left: 0;
+                    display: block;
+                    margin-left: 0;
+                }
+
                 color: $text;
             }
 
@@ -1180,12 +2040,26 @@
         margin-bottom: 15px;
 
         & > div {
+            @include r(767) {
+                @include fsn;
+                margin-right: 0;
+                width: 100%;
+
+                &.hide {
+                    display: none;
+                }
+            }
+
             margin-right: 27px;
             margin-bottom: 3px;
         }
     }
 
     &__text {
+        @include r(767) {
+            line-height: 1.5;
+        }
+
         line-height: 2.05;
 
         a {
@@ -1217,6 +2091,10 @@
             }
 
             .icon {
+                @include r(767) {
+                    font-size: 29px;
+                }
+
                 font-size: 21px;
                 margin-right: 0;
             }
@@ -1291,29 +2169,17 @@
 }
 
 .similar {
+    @include r(1279) {
+        overflow: hidden;
+        padding-bottom: 30px;
+    }
+
     padding: 60px 0 0;
 
     &__list {
-        @include r(1023) {
-            @include flexlist(10px);
-        }
-
-        @include r(767) {
-            @include flexlist(1px);
-        }
-
-        @include flexlist(15px);
+        overflow: visible;
 
         .similar__item {
-            @include r(1023) {
-                @include flexitem(50%, 10px);
-            }
-
-            @include r(767) {
-                @include flexitem(100%, 1px);
-            }
-
-            @include flexitem(25%, 15px);
             margin-bottom: 0;
         }
     }
@@ -1330,11 +2196,12 @@
     }
 
     &__flex {
-        @include fcn;
+        @include fsn;
 
         & > a {
             width: 52px;
             margin-right: 7px;
+            flex-shrink: 0;
         }
     }
 
@@ -1373,12 +2240,10 @@
 }
 
 .video {
-    @include flexlist(10px);
-
     &.screenshot .video__item {
-        background: transparent;
+        background-color: transparent;
         height: 148px;
-        background-size: cover;
+        background-size: 100%;
     }
 
     &.hide {
@@ -1386,12 +2251,11 @@
         margin-top: 20px;
 
         &.active {
-            display: flex;
+            display: block;
         }
     }
 
     &__item {
-        @include flexitem(33.33%, 10px);
         @include fcc;
         height: 191px;
         background-repeat: no-repeat;
@@ -1447,10 +2311,9 @@
 }
 
 .docs {
-    @include flexlist(10px);
+    overflow: visible;
 
     &__item {
-        @include flexitem(33.33%, 10px);
         display: block;
         position: relative;
         box-shadow: 0px 0px 20px rgba(134, 135, 135, 0.35);
@@ -1504,6 +2367,11 @@
 
 .rating {
     &__item {
+        @include r(1279) {
+            display: block;
+            position: relative;
+        }
+
         @include fcn;
         padding: 7px 0;
         border-bottom: 1px dashed #b3b8be;
@@ -1514,10 +2382,26 @@
     }
 
     &__info {
+        @include r(1279) {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
         width: 63%;
     }
 
     &__title {
+        @include r(1279) {
+            padding-left: 51px;
+            margin-bottom: 10px;
+        }
+
+        @include r(767) {
+            padding-right: 51px;
+            padding-left: 0;
+            font-size: 16px;
+        }
+
         font-weight: 700;
         font-size: 18px;
     }
@@ -1527,6 +2411,18 @@
     }
 
     &__num {
+        @include r(1279) {
+            position: absolute;
+            top: 7px;
+            left: 0;
+        }
+
+        @include r(767) {
+            left: initial;
+            right: 0;
+            top: 12px;
+        }
+
         width: 31px;
         height: 31px;
         border-radius: 50%;
@@ -1537,7 +2433,17 @@
         flex-shrink: 0;
     }
 
+    .reviews__progress {
+        @include r(1279) {
+            margin-left: 0;
+        }
+    }
+
     .service__progress-item {
+        @include r(1279) {
+            @include fcs;
+        }
+
         width: 100%;
         margin: 0 0 2px;
         @include fcsb;
@@ -1549,19 +2455,45 @@
             white-space: nowrap;
         }
 
+        & > span {
+            @include r(1279) {
+                min-width: 200px;
+                font-size: 12px;
+            }
+
+            @include r(767) {
+                min-width: 163px;
+            }
+        }
+
         div span {
             width: 20px;
             height: 5px;
         }
 
         .tip-parent {
+            @include r(1279) {
+                width: auto;
+            }
+
             @include fce;
         }
     }
 }
 
 .features {
+    @include r(767) {
+        overflow: scroll;
+    }
+
     &__row {
+        @include r(767) {
+            white-space: nowrap;
+            width: 100%;
+            border: 0;
+            padding: 0;
+        }
+
         @include fcsb;
         padding: 20px 0;
         border-bottom: 1px solid $gray;
@@ -1572,6 +2504,13 @@
     }
 
     &__item {
+        @include r(767) {
+            white-space: nowrap;
+            width: 100%;
+            padding: 20px;
+            border-bottom: 1px solid $gray;
+        }
+
         width: 33.33%;
         text-align: center;
         @include fcc;
@@ -1589,11 +2528,17 @@
             margin-right: 12px;
             font-size: 19px;
             fill: $orange;
+            flex-shrink: 0;
         }
     }
 }
 
 .logos {
+    @include r(767) {
+        min-width: 565px;
+        overflow: scroll;
+    }
+
     @include fcsb;
     padding-top: 20px;
 
@@ -1607,6 +2552,14 @@
     }
 
     &__item {
+        @include r(1279) {
+            font-size: 12px;
+        }
+
+        @include r(767) {
+            padding: 0 50px;
+        }
+
         width: 14.28%;
         @include fcc;
         flex-direction: column;
@@ -1634,6 +2587,10 @@
     }
 
     &__img {
+        @include r(1279) {
+            width: 60px;
+        }
+
         box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
         margin-bottom: 18px;
         @include fcc;
@@ -1641,10 +2598,18 @@
 }
 
 .registration {
+    @include r(1279) {
+        background: transparent;
+    }
+
     background: url(../img/registration.png) no-repeat right bottom;
     background-size: 100% contain;
 
     &.login form {
+        @include r(767) {
+            width: 100%;
+        }
+
         width: 470px;
 
         .btn {
@@ -1698,15 +2663,29 @@
     }
 
     form {
+        @include r(1023) {
+            width: 100%;
+        }
+
         width: 50%;
     }
 
     &__group {
+        @include r(767) {
+            display: block;
+        }
+
         @include fcn;
         margin-bottom: 8px;
         flex-wrap: wrap;
 
         .form-group {
+            @include r(767) {
+                width: 100%;
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+
             margin-bottom: 21px;
             font-size: 18px;
             width: 50%;
@@ -1733,6 +2712,10 @@
 
     input[type='password'],
     input[type='text'] {
+        @include r(767) {
+            font-size: 16px;
+        }
+
         font-size: 20px;
         border-color: $blue;
         padding: 13px 18px;
@@ -1762,16 +2745,38 @@
         }
 
         label {
+            @include r(767) {
+                white-space: normal;
+                font-size: 8px;
+
+                br {
+                    display: none;
+                }
+            }
+
             white-space: nowrap;
             color: #19376b;
         }
     }
 
     button {
+        @include r(767) {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+        }
+
         margin-bottom: 6px;
     }
 
     &__more {
+        @include r(767) {
+            text-align: center;
+            margin-top: 10px;
+            padding-bottom: 45px;
+        }
+
         padding-bottom: 95px;
 
         a {
@@ -1785,6 +2790,10 @@
     }
 
     &__text {
+        @include r(767) {
+            font-size: 16px;
+        }
+
         font-size: 18px;
         line-height: 1.66;
         margin-bottom: 30px;
@@ -1796,6 +2805,10 @@
         margin-bottom: 41px;
 
         div {
+            @include r(767) {
+                font-size: 14px;
+            }
+
             @include fcn;
             font-size: 18px;
             color: $green;
@@ -1808,8 +2821,9 @@
 
             .icon {
                 fill: $green;
-                font: 23px;
+                font-size: 23px;
                 margin-right: 17px;
+                flex-shrink: 0;
             }
         }
     }
@@ -1821,15 +2835,32 @@
 
 .trust {
     .container {
+        @include r(1023) {
+            padding: 53px 10px 30px;
+        }
+
         background: #f4f7fa;
         padding: 53px 64px 30px;
     }
 
     h2 {
+        @include r(767) {
+            margin-bottom: 14px;
+        }
+
         margin-bottom: 34px;
     }
 
     &__list {
+        @include r(767) {
+            white-space: nowrap;
+            overflow: scroll;
+
+            img {
+                margin: 0 10px;
+            }
+        }
+
         @include fcsb;
     }
 }
@@ -1891,6 +2922,14 @@
     }
 
     &__sidebar {
+        @include r(1279) {
+            margin-right: 20px;
+        }
+
+        @include r(1023) {
+            display: none;
+        }
+
         width: 249px;
         flex-shrink: 0;
         margin-right: 50px;
@@ -1961,10 +3000,20 @@
     }
 
     &__body {
+        @include r(767) {
+            padding: 15px 0;
+        }
+
         padding: 39px 30px;
     }
 
     &__item {
+        @include r(767) {
+            &.shadow {
+                box-shadow: none;
+            }
+        }
+
         background: #ffffff;
         box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
         margin-bottom: 35px;
@@ -1976,12 +3025,28 @@
     }
 
     &__top {
+        @include r(767) {
+            display: block;
+            padding: 10px 15px;
+            text-align: center;
+        }
+
         @include fcsb;
         background: $darkBlue;
         color: #fff;
         padding: 18px 29px;
 
         h2 {
+            @include r(767) {
+                font-size: 18px;
+                margin-bottom: 0;
+                text-align: center;
+
+                br {
+                    display: none;
+                }
+            }
+
             display: block;
             text-align: left;
             margin-bottom: 0;
@@ -1989,6 +3054,14 @@
         }
 
         .divider {
+            @include r(1279) {
+                margin-right: 20px;
+            }
+
+            @include r(767) {
+                display: none;
+            }
+
             position: relative;
 
             &::before {
@@ -2004,10 +3077,22 @@
     }
 
     &__email {
+        @include r(767) {
+            font-size: 14px;
+            text-align: center;
+            margin: 10px auto 0;
+            @include fcc;
+
+            br {
+                display: none;
+            }
+        }
+
         @include fcn;
         font-size: 16px;
         font-weight: 700;
         transition: $trans;
+        flex-shrink: 0;
 
         &:hover {
             color: $orange;
@@ -2032,10 +3117,24 @@
 
 .form {
     &__flex {
+        @include r(1023) {
+            margin-bottom: 15px;
+        }
+
+        @include r(767) {
+            display: block;
+            margin-bottom: 0;
+        }
+
         @include fcsb;
         margin-bottom: 22px;
 
         .form-group {
+            @include r(767) {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
             width: 48%;
         }
     }
@@ -2046,6 +3145,12 @@
 
         &.error {
             &::before {
+                @include r(767) {
+                    width: 16px;
+                    height: 16px;
+                    right: 12px;
+                }
+
                 content: '';
                 @include centerYa;
                 right: 14px;
@@ -2061,6 +3166,10 @@
             }
 
             span.error {
+                @include r(767) {
+                    font-size: 10px;
+                }
+
                 position: absolute;
                 bottom: 0;
                 left: 0;
@@ -2072,6 +3181,12 @@
 
         &.success {
             &::before {
+                @include r(767) {
+                    width: 16px;
+                    height: 16px;
+                    right: 12px;
+                }
+
                 content: '';
                 @include centerYa;
                 right: 14px;
@@ -2090,6 +3205,11 @@
             display: block;
 
             label {
+                @include r(767) {
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                }
+
                 font-weight: 700;
                 font-size: 16px;
                 margin-bottom: 16px;
@@ -2102,6 +3222,11 @@
         }
 
         .icon {
+            @include r(767) {
+                left: 12px;
+                font-size: 16px;
+            }
+
             position: absolute;
             @include centerYa;
             left: 24px;
@@ -2109,6 +3234,11 @@
             font-size: 18px;
 
             &.show {
+                @include r(767) {
+                    right: 12px;
+                    font-size: 20px;
+                }
+
                 left: initial;
                 right: 24px;
                 fill: $gray;
@@ -2130,6 +3260,10 @@
         }
 
         span {
+            @include r(767) {
+                font-size: 16px;
+            }
+
             color: $gray2;
             font-size: 20px;
         }
@@ -2142,11 +3276,29 @@
     }
 
     .radio {
+        @include r(767) {
+            margin-bottom: 0;
+            margin-left: 15px !important;
+        }
+
         label {
+            @include r(1279) {
+                font-size: 16px;
+            }
+
+            @include r(767) {
+                padding-left: 25px;
+            }
+
             font-size: 20px;
             padding-left: 30px;
 
             &::before {
+                @include r(767) {
+                    width: 16px;
+                    height: 16px;
+                }
+
                 width: 20px;
                 height: 20px;
                 border-width: 2px;
@@ -2154,6 +3306,12 @@
             }
 
             &::after {
+                @include r(767) {
+                    width: 12px;
+                    height: 12px;
+                    left: 4px;
+                }
+
                 width: 14px;
                 height: 14px;
                 left: 5px;
@@ -2162,11 +3320,39 @@
         }
     }
 
+    .phone-wrap {
+        @include r(1279) {
+            display: block;
+
+            & > input {
+                margin-bottom: 10px;
+            }
+
+            button.btn.sm {
+                margin-left: 0;
+                width: 100%;
+                height: 40px;
+
+                br {
+                    display: none;
+                }
+            }
+        }
+    }
+
     .phone {
+        @include r(1279) {
+            margin-bottom: 10px;
+        }
+
         margin-bottom: 0;
         width: 100%;
 
         &__toggle {
+            @include r(767) {
+                height: 38px;
+            }
+
             height: 58px;
             padding: 8px 11px;
 
@@ -2198,6 +3384,12 @@
 
     input[type='password'],
     input[type='text'] {
+        @include r(767) {
+            height: 50px;
+            font-size: 16px;
+            padding: 10px 14px;
+        }
+
         font-size: 20px;
         padding: 14px 24px;
         border-color: $blue;
@@ -2210,10 +3402,18 @@
     }
 
     input[type='password'] {
+        @include r(767) {
+            padding-right: 34px;
+        }
+
         padding-right: 54px;
     }
 
     .icon + input {
+        @include r(767) {
+            padding-left: 34px;
+        }
+
         padding-left: 54px;
     }
 
@@ -2226,6 +3426,11 @@
     }
 
     textarea {
+        @include r(767) {
+            font-size: 16px;
+            height: 130px;
+        }
+
         width: 100%;
         height: 214px;
         padding: 13px 18px;
@@ -2236,6 +3441,15 @@
 
     .settings__list {
         margin-bottom: 20px;
+    }
+
+    .btn {
+        @include r(767) {
+            width: 100%;
+            text-align: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }
 
@@ -2340,10 +3554,24 @@
     padding-bottom: 26px;
 
     &.flex {
+        @include r(1023) {
+            margin-top: -60px;
+        }
+
+        @include r(767) {
+            flex-direction: column;
+            margin-top: -50px;
+        }
+
         @include fesb;
         margin-top: -80px;
 
         .tabs {
+            @include r(767) {
+                order: 2;
+                margin-top: 15px;
+            }
+
             width: 100%;
             margin: 0;
         }
@@ -2360,15 +3588,52 @@
 }
 
 .profile {
+    @include r(767) {
+        display: block;
+        text-align: left;
+        padding: 0;
+    }
+
     padding: 34px 23px;
     @include fcn;
 
     &.full {
+        @include r(1023) {
+            flex-wrap: wrap;
+
+            .profile__center {
+                width: 50%;
+            }
+
+            .profile__right {
+                width: 50%;
+                border: 0;
+                padding-left: 0;
+                margin-top: 20px;
+            }
+        }
+
+        @include r(767) {
+            .profile__center {
+                width: 100%;
+            }
+
+            .profile__right {
+                width: 100%;
+                padding-top: 15px;
+                border-top: 1px solid $gray;
+            }
+        }
+
         .profile__left {
             align-self: flex-start;
         }
 
         .freelancers__features div {
+            @include r(1279) {
+                margin-bottom: 18px;
+            }
+
             margin-bottom: 27px;
 
             &:last-child {
@@ -2388,6 +3653,10 @@
 
     &__features {
         div {
+            @include r(1279) {
+                margin-bottom: 9px;
+            }
+
             margin-bottom: 20px;
             font-weight: 700;
 
@@ -2403,17 +3672,41 @@
     }
 
     &__left {
+        @include r(767) {
+            @include fcn;
+            text-align: left;
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+
         text-align: center;
         margin-right: 39px;
     }
 
     &__photo {
+        @include r(1279) {
+            width: 100px;
+        }
+
+        @include r(767) {
+            width: 79px;
+            margin-right: 16px;
+        }
+
         width: 135px;
         border-radius: 50%;
         margin-bottom: 6px;
     }
 
     &__time {
+        @include r(767) {
+            margin-top: 5px;
+
+            br {
+                display: none;
+            }
+        }
+
         color: $gray2;
         font-size: 12px;
         line-height: 1.33;
@@ -2421,16 +3714,37 @@
 
     &__center {
         .btn {
+            @include r(767) {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                text-align: center;
+            }
+
             padding: 7px 19px;
         }
     }
 
     &__name {
+        @include r(1279) {
+            font-size: 20px;
+            line-height: 1.35;
+        }
+
         font-weight: 700;
         font-size: 24px;
     }
 
     &__stars {
+        @include r(1279) {
+            width: 70px;
+            margin-bottom: 10px;
+        }
+
+        @include r(767) {
+            margin-bottom: 0;
+        }
+
         width: 94px;
         margin-bottom: 13px;
 
@@ -2440,12 +3754,27 @@
     }
 
     &__work {
+        @include r(1023) {
+            margin-bottom: 15px;
+
+            br {
+                display: none;
+            }
+        }
+
         font-weight: 700;
         color: $gray2;
         margin-bottom: 27px;
     }
 
     &__right {
+        @include r(767) {
+            margin-left: 0;
+            padding-left: 0;
+            border: 0;
+            margin-top: 16px;
+        }
+
         margin-left: auto;
         padding-left: 29px;
         border-left: 1px solid $gray;
@@ -2464,12 +3793,20 @@
     }
 
     .social {
+        @include r(1023) {
+            margin-top: 0;
+        }
+
         margin-top: 14px;
     }
 }
 
 .message {
     &__img {
+        @include r(767) {
+            padding-bottom: 66%;
+        }
+
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -2477,16 +3814,28 @@
     }
 
     &__body {
+        @include r(767) {
+            padding: 15px 20px;
+        }
+
         padding: 51px 30px 35px;
     }
 
     &__title {
+        @include r(767) {
+            font-size: 16px;
+        }
+
         font-weight: 700;
         font-size: 18px;
         margin-bottom: 25px;
     }
 
     &__text {
+        @include r(767) {
+            font-size: 14px;
+        }
+
         font-size: 16px;
         line-height: 1.37;
         margin-bottom: 28px;
@@ -2509,6 +3858,11 @@
 
 .survey {
     &__top {
+        @include r(767) {
+            padding: 15px 20px;
+            background: $darkBlue;
+        }
+
         background: url(../img/bg.png) no-repeat right center;
         background-size: cover;
         padding: 20px 30px 62px;
@@ -2516,22 +3870,51 @@
     }
 
     &__title {
+        @include r(767) {
+            font-size: 18px;
+            line-height: 1.35;
+            font-weight: normal;
+
+            br {
+                display: none;
+            }
+        }
+
         font-weight: 700;
         font-size: 24px;
         margin-bottom: 11px;
     }
 
     &__subtitle {
+        @include r(767) {
+            font-size: 14px;
+            line-height: 1.35;
+            font-weight: normal;
+
+            br {
+                display: none;
+            }
+        }
+
         font-size: 16px;
         font-weight: 700;
     }
 
     &__main {
+        @include r(767) {
+            display: block;
+            padding: 15px 20px;
+        }
+
         @include fssb;
         padding: 39px 33px;
     }
 
     &__sidebar {
+        @include r(767) {
+            display: none;
+        }
+
         width: 312px;
         flex-shrink: 0;
         margin-left: 30px;
@@ -2583,6 +3966,10 @@
     }
 
     &__body {
+        @include r(767) {
+            min-height: 259px;
+        }
+
         min-height: 373px;
         background: url(../img/search.png) no-repeat center bottom;
         background-size: contain;
@@ -2590,6 +3977,10 @@
         position: relative;
 
         input {
+            @include r(767) {
+                font-size: 16px;
+            }
+
             width: 100%;
             border: 1px solid $blue;
             padding: 14px 17px;
@@ -2639,6 +4030,10 @@
             }
 
             img {
+                @include r(767) {
+                    width: 33px;
+                }
+
                 width: 44px;
                 margin-right: 15px;
             }
@@ -2653,10 +4048,19 @@
 }
 
 .settings {
+    @include r(767) {
+        padding: 0;
+    }
+
     padding: 41px 23px 24px;
     padding-right: 30px;
 
     &__title {
+        @include r(767) {
+            @include fcsb;
+            margin-bottom: 12px;
+        }
+
         color: $orange;
         font-weight: 700;
         margin-bottom: 32px;
@@ -2722,6 +4126,10 @@
                 }
 
                 span {
+                    @include r(767) {
+                        font-size: 12px;
+                    }
+
                     position: relative;
                     z-index: 2;
                     background: #fff;
@@ -2748,6 +4156,10 @@
             }
 
             &.active {
+                @include r(767) {
+                    flex-wrap: wrap;
+                }
+
                 &::before {
                     content: '';
                     position: absolute;
@@ -2772,10 +4184,15 @@
                 .icon {
                     fill: $gray;
                     margin-right: 21px;
+                    flex-shrink: 0;
                 }
             }
 
             span:last-child {
+                @include r(767) {
+                    text-align: right;
+                }
+
                 font-weight: 700;
             }
 
@@ -2798,11 +4215,21 @@
     }
 
     &__edit {
+        @include r(767) {
+            width: 100%;
+            margin-top: 10px;
+            margin-left: 0;
+        }
+
         margin-left: 49px;
         display: block !important;
         padding: 0 !important;
 
         input[type='text'] {
+            @include r(767) {
+                margin-bottom: 10px;
+            }
+
             padding: 5px 15px;
             border-color: $gray;
             font-size: 14px;
@@ -2829,9 +4256,18 @@
     }
 
     .password {
+        @include r(767) {
+            width: 100%;
+        }
+
         width: 390px;
 
         input {
+            @include r(767) {
+                font-size: 16px;
+                padding: 14px 34px;
+            }
+
             width: 100%;
             border: 1px solid $blue;
             padding: 14px 56px;
@@ -2845,6 +4281,14 @@
 }
 
 .lock {
+    @include r(767) {
+        white-space: normal;
+        left: 0;
+        transform: translateX(0) translateY(-50%);
+        br {
+            display: none;
+        }
+    }
     position: absolute !important;
     top: 50%;
     left: 50%;
@@ -2866,6 +4310,9 @@
     }
 
     img {
+        @include r(767) {
+            margin: 0 auto;
+        }
         pointer-events: none;
         user-select: none;
     }
@@ -2886,6 +4333,11 @@
     }
 
     .form-group {
+        @include r(767) {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
         width: 668px;
         margin-bottom: 68px;
 
@@ -2898,6 +4350,10 @@
     }
 
     &__title {
+        @include r(767) {
+            font-size: 20px;
+        }
+
         color: $blue;
         font-size: 24px;
         font-weight: 700;
@@ -2905,6 +4361,10 @@
     }
 
     &__list {
+        @include r(767) {
+            display: block;
+        }
+
         @include fsn;
         margin-bottom: 56px;
 
@@ -2913,16 +4373,33 @@
         }
 
         ul {
+            @include r(767) {
+                width: 100%;
+            }
+
             width: 32%;
         }
     }
 }
 
 .description {
+    @include r(767) {
+        padding: 0;
+    }
+
     padding: 20px 39px;
 }
 
 .plan {
+    @include r(767) {
+        .btn {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+        }
+    }
+
     padding: 60px 0;
 
     .container {
@@ -2934,6 +4411,10 @@
     }
 
     &__banner {
+        @include r(1279) {
+            display: none;
+        }
+
         flex-shrink: 0;
         margin-left: 30px;
     }
@@ -2946,6 +4427,11 @@
     }
 
     &__item {
+        @include r(767) {
+            display: block;
+            padding: 30px 22px;
+        }
+
         background: #ffffff;
         box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
         padding: 20px 27px;
@@ -2953,14 +4439,34 @@
         margin-bottom: 30px;
 
         &.bg {
+            @include r(767) {
+                background: transparent;
+                padding: 24px 16px;
+            }
+
             background: url(../img/tarif-bg.svg) no-repeat right center;
         }
 
         .btn {
+            @include r(767) {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                text-align: center;
+            }
+
             margin-left: auto;
         }
 
         .plan__title {
+            @include r(767) {
+                font-size: 18px;
+
+                br {
+                    display: none;
+                }
+            }
+
             margin-bottom: 0;
         }
     }
@@ -2978,6 +4484,10 @@
     }
 
     &__subtitle {
+        @include r(767) {
+            margin-bottom: 24px;
+        }
+
         color: $gray2;
     }
 
@@ -2986,10 +4496,24 @@
     }
 
     &__pay {
+        @include r(767) {
+            display: block;
+            padding: 0;
+        }
+
         @include fcn;
         padding: 16px 0;
 
         .form-group {
+            @include r(767) {
+                margin-right: 0;
+                margin-bottom: 27px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
             @include fcn;
             margin-right: 89px;
 
@@ -2998,10 +4522,18 @@
             }
 
             img {
+                @include r(767) {
+                    width: 35px;
+                }
+
                 margin-right: 14px;
             }
 
             label {
+                @include r(767) {
+                    font-size: 16px;
+                }
+
                 padding-left: 30px;
                 font-size: 20px;
 
@@ -3024,6 +4556,12 @@
 }
 
 .tariff {
+    @include r(767) {
+        display: block;
+        margin-left: -10px;
+        width: calc(100% + 20px);
+    }
+
     display: flex;
     margin-bottom: 30px;
 
@@ -3083,9 +4621,26 @@
 }
 
 .links {
+    @include r(767) {
+        overflow: scroll;
+        @include fcn;
+        flex-wrap: nowrap;
+        padding: 10px;
+        margin: -10px;
+    }
+
     @include flexlist(15px);
 
     &__item {
+        @include r(767) {
+            width: auto;
+            white-space: nowrap;
+            margin-left: 0;
+            margin-right: 10px;
+            font-size: 16px;
+            padding: 20px 16px;
+        }
+
         @include flexitem(33.33%, 15px);
         background: #ffffff;
         box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
@@ -3127,6 +4682,15 @@
 }
 
 .page-404 {
+    @include r(767) {
+        .btn {
+            width: 90%;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+        }
+    }
+
     text-align: center;
     padding: 82px 0;
     display: flex;
@@ -3144,6 +4708,15 @@
     }
 
     img {
+        @include r(1023) {
+            margin-top: -33px;
+            margin-bottom: -53px;
+        }
+
+        @include r(767) {
+            margin: 0 0 20px;
+        }
+
         margin-top: -60px;
         margin-bottom: -100px;
         pointer-events: none;
@@ -3152,17 +4725,33 @@
 }
 
 .link {
+    @include r(767) {
+        display: block;
+    }
+
     @include fcsb;
     padding: 13px 30px;
     background: $orange;
     color: #fff;
 
     span {
+        @include r(767) {
+            margin-bottom: 16px;
+            display: block;
+        }
+
         font-weight: 700;
         font-size: 18px;
     }
 
     .btn {
+        @include r(767) {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+        }
+
         padding: 8px 19px;
     }
 }
@@ -3171,12 +4760,22 @@
     @include fssb;
     padding: 24px 30px;
 
+    &-wrap {
+        @include r(767) {
+            display: none;
+        }
+    }
+
     &__sidebar {
         flex-shrink: 0;
         margin-right: 20px;
     }
 
     &__count {
+        @include r(1279) {
+            font-size: 14px;
+        }
+
         color: $gray2;
         font-size: 16px;
         margin-bottom: 10px;
@@ -3194,6 +4793,10 @@
         margin-bottom: 37px;
 
         div {
+            @include r(1279) {
+                font-size: 14px;
+            }
+
             @include fcn;
             font-weight: 700;
             font-size: 18px;
@@ -3220,17 +4823,34 @@
 }
 
 .table {
+    @include r(767) {
+        overflow: scroll;
+    }
+
     &.pd {
+        @include r(767) {
+            padding: 16px 22px;
+        }
+
         padding: 30px;
     }
 
     table {
+        @include r(767) {
+            white-space: nowrap;
+        }
+
         width: 100%;
         border-collapse: collapse;
         font-size: 16px;
 
         th,
         td {
+            @include r(767) {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
             padding: 20px 0;
 
             &:last-child {
@@ -3260,10 +4880,31 @@
 }
 
 .buttons {
+    @include r(767) {
+        @include flexlist(1px);
+        box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
+        margin-bottom: 35px;
+    }
+
     @include flexlist(15px);
     margin-bottom: 30px;
 
     &__item {
+        @include r(767) {
+            @include flexitem(100%, 1px, 0);
+            box-shadow: none;
+
+            &:nth-child(2) {
+                background: $blue;
+                color: #fff;
+
+                &:hover {
+                    background: $blue;
+                    color: #fff;
+                }
+            }
+        }
+
         @include flexitem(33.33%, 15px);
         background: #ffffff;
         box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
@@ -3274,6 +4915,11 @@
         transition: $trans;
 
         &:hover {
+            @include r(767) {
+                background: #ffffff;
+                color: $text;
+            }
+
             background: $blue;
             color: #fff;
         }
@@ -3290,13 +4936,25 @@
 }
 
 .pdf {
+    @include r(767) {
+        padding: 20px;
+    }
+
     padding: 16px 29px;
 
     &__list {
+        @include r(767) {
+            @include flexlist(1px);
+        }
+
         @include flexlist(15px);
     }
 
     &__item {
+        @include r(767) {
+            @include flexitem(100%, 1px, 15px);
+        }
+
         @include flexitem(33.33%, 15px, 20px);
         border: 1px solid $blue;
         padding: 13px 17px;
@@ -3331,6 +4989,10 @@
 }
 
 .send {
+    @include r(767) {
+        padding: 20px 16px;
+    }
+
     padding: 30px 27px;
 
     &__item {
@@ -3339,6 +5001,11 @@
         border-top: 1px solid #b3b8be;
 
         &.flex {
+            @include r(767) {
+                flex-direction: column;
+                @include fsn;
+            }
+
             @include fcsb;
         }
 
@@ -3357,6 +5024,10 @@
     }
 
     &__company {
+        @include r(767) {
+            order: 2;
+        }
+
         @include fcn;
         font-weight: 700;
         font-size: 18px;
@@ -3369,10 +5040,19 @@
     }
 
     &__search {
+        @include r(767) {
+            width: 100%;
+            margin-bottom: 26px;
+        }
+
         width: 380px;
         position: relative;
 
         input {
+            @include r(767) {
+                font-size: 14px;
+            }
+
             width: 100%;
             border-color: $blue;
             font-size: 20px;
@@ -3391,6 +5071,10 @@
             }
 
             .icon {
+                @include r(767) {
+                    font-size: 21px;
+                }
+
                 font-size: 27px;
                 fill: $gray;
                 transition: $trans;
@@ -3399,9 +5083,18 @@
     }
 
     .service__progress-item {
+        @include r(767) {
+            margin-bottom: 3px;
+        }
+
         margin-bottom: 6px;
 
         & > span {
+            @include r(767) {
+                font-size: 10px;
+                min-width: 150px;
+            }
+
             white-space: nowrap;
             font-weight: 700;
             color: $gray2;
@@ -3409,6 +5102,11 @@
         }
 
         div span {
+            @include r(767) {
+                width: 20px;
+                height: 7px;
+            }
+
             width: 40px;
             height: 10px;
         }
@@ -3421,11 +5119,20 @@
     }
 
     &__form {
+        @include r(767) {
+            margin-left: -16px;
+            width: calc(100% + 32px);
+        }
+
         background: #f4f7fa;
         padding: 22px 19px;
         margin-bottom: 30px;
 
         .form-group {
+            @include r(767) {
+                margin-bottom: 16px;
+            }
+
             width: 100%;
             margin-bottom: 29px;
 
@@ -3441,6 +5148,10 @@
 
             textarea,
             input {
+                @include r(767) {
+                    font-size: 16px;
+                }
+
                 display: block;
                 width: 100%;
                 background: #ffffff;
@@ -3466,16 +5177,52 @@
     }
 
     &__controls {
+        @include r(767) {
+            display: block;
+
+            .btn {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                width: 100%;
+            }
+        }
+
         margin-top: 35px;
         @include fcn;
 
         .btn-outline {
+            @include r(767) {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
             margin-left: 12px;
+        }
+    }
+
+    .checkbox {
+        label {
+            @include r(767) {
+                font-size: 8px;
+
+                br {
+                    display: none;
+                }
+            }
         }
     }
 }
 
 .note {
+    @include r(767) {
+        display: block;
+        font-size: 14px;
+        margin-left: -16px;
+        width: calc(100% + 32px);
+        padding: 17px 16px;
+    }
+
     background: #f4f7fa;
     @include fcn;
     font-size: 16px;
@@ -3484,6 +5231,10 @@
     padding-right: 57px;
 
     img {
+        @include r(767) {
+            margin-bottom: 0;
+        }
+
         margin-right: 36px;
         margin-bottom: -28px;
         margin-top: -40px;
@@ -3521,6 +5272,10 @@
     }
 
     &__overlay {
+        @include r(767) {
+            padding: 0 10px;
+        }
+
         position: absolute;
         top: 0;
         left: 0;
@@ -3535,18 +5290,30 @@
     }
 
     &__name {
+        @include r(767) {
+            font-size: 12px;
+        }
+
         font-weight: 700;
         color: #898d9c;
         transition: $trans;
     }
 
     &__btn {
+        @include r(767) {
+            font-size: 12px;
+        }
+
         @include fcn;
         font-weight: 700;
         color: $orange;
         transition: $trans;
 
         .icon {
+            @include r(767) {
+                font-size: 16px;
+            }
+
             font-size: 20px;
             fill: $orange;
             margin-right: 10px;
@@ -3555,12 +5322,27 @@
     }
 }
 
+.create-shadow {
+    @include r(767) {
+        overflow: visible;
+    }
+}
+
 .create {
+    @include r(767) {
+        padding: 101px 16px 37px;
+    }
+
     padding: 40px 30px;
     padding-right: 154px;
     background: url(../img/create-bg.svg) no-repeat right -20%;
 
     &__title {
+        @include r(767) {
+            font-size: 20px;
+            padding: 18px 16px;
+        }
+
         font-weight: 700;
         font-size: 30px;
         padding: 15px 37px;
@@ -3572,6 +5354,11 @@
         position: relative;
 
         textarea {
+            @include r(767) {
+                box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
+                height: 372px;
+            }
+
             height: 280px;
             width: 100%;
             border: 0;
@@ -3592,18 +5379,32 @@
     }
 
     &__controls {
+        @include r(767) {
+            position: static;
+            margin-top: 20px;
+        }
+
         position: absolute;
         top: 20px;
         left: 229px;
         @include fcn;
 
         &-body {
+            @include r(767) {
+                background: transparent;
+                padding: 0;
+            }
+
             background: #f4f7fa;
             @include fcn;
             padding: 0 10px;
             position: relative;
 
             &::before {
+                @include r(767) {
+                    display: none;
+                }
+
                 content: '';
                 position: absolute;
                 top: 50%;
@@ -3618,6 +5419,14 @@
         }
 
         &-item {
+            @include r(767) {
+                background: #f4f7fa;
+                width: 48px;
+                height: 48px;
+                margin-right: 12px;
+                margin-left: 0;
+            }
+
             padding: 13px 7px;
             cursor: pointer;
             @include fcc;
@@ -3634,6 +5443,10 @@
     }
 
     &__close {
+        @include r(767) {
+            display: none;
+        }
+
         width: 28px;
         height: 28px;
         transition: $trans;
@@ -3658,10 +5471,22 @@
     }
 
     &__services {
+        @include r(767) {
+            display: block;
+        }
+
         @include fesb;
         margin-bottom: 50px;
 
         .btn {
+            @include r(767) {
+                margin-top: 20px;
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                margin-left: 0;
+            }
+
             flex-shrink: 0;
             margin-left: 32px;
         }
@@ -3723,12 +5548,38 @@
     }
 
     &__list {
+        @include r(1023) {
+            @include flexlist(10px);
+            height: 2121px;
+        }
+
+        @include r(767) {
+            height: auto;
+            @include flexlist(1px);
+
+            & + .btn {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                text-align: center;
+            }
+        }
+
         @include flexlist(15px);
         flex-flow: column wrap;
         height: 1367px;
     }
 
     &__item {
+        @include r(1023) {
+            @include flexitem(50%, 10px, 30px);
+        }
+
+        @include r(767) {
+            @include flexitem(100%, 1px, 24px);
+            padding: 18px 20px;
+        }
+
         @include flexitem(33.33%, 15px, 30px);
         background: #ffffff;
         box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
@@ -3745,6 +5596,10 @@
     }
 
     &__letter {
+        @include r(767) {
+            font-size: 22px;
+        }
+
         font-weight: 700;
         font-size: 38px;
     }
@@ -3770,24 +5625,55 @@
     }
 
     &__main {
+        @include r(767) {
+            display: block;
+
+            & + .btn {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                text-align: center;
+            }
+        }
+
         @include fssb;
 
         img {
+            @include r(767) {
+                display: none;
+            }
+
             flex-shrink: 0;
             margin-left: 30px;
         }
     }
 
     &__body {
+        @include r(767) {
+            padding: 18px 20px;
+        }
+
         width: 100%;
         padding: 3px 30px;
     }
 }
 
 .alphabet {
+    @include r(767) {
+        padding: 32px 22px;
+
+        .dictionary__letter {
+            margin-bottom: 15px;
+        }
+    }
+
     padding: 24px 27px;
 
     &__row {
+        @include r(767) {
+            flex-wrap: wrap;
+        }
+
         @include fcn;
         margin-bottom: 20px;
 
@@ -3797,6 +5683,19 @@
         }
 
         a {
+            @include r(1279) {
+                font-size: 19px;
+            }
+
+            @include r(1023) {
+                margin: 0 4px;
+                font-size: 17px;
+            }
+
+            @include r(767) {
+                font-size: 15px;
+            }
+
             margin: 0 7px;
             color: $blue;
             font-size: 24px;
@@ -3809,9 +5708,17 @@
     }
 
     .form-group {
+        @include r(767) {
+            display: block;
+        }
+
         @include fcsb;
 
         input {
+            @include r(767) {
+                font-size: 14px;
+            }
+
             width: 100%;
             border-color: $blue;
             height: 50px;
@@ -3820,6 +5727,15 @@
         }
 
         .btn {
+            @include r(767) {
+                margin-left: 0;
+                margin-top: 10px;
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                text-align: center;
+            }
+
             flex-shrink: 0;
             margin-left: 22px;
             height: 50px;
@@ -3836,11 +5752,26 @@
 }
 
 .course {
+    @include r(767) {
+        display: block;
+        padding: 21px 23px;
+    }
+
     display: flex;
     padding: 7px 9px;
     padding-right: 30px;
 
     &__left {
+        @include r(767) {
+            border-right: 0;
+            padding-right: 0;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            border-bottom: 1px solid $gray;
+            text-align: left;
+        }
+
         padding-right: 14px;
         border-right: 1px solid $gray;
         text-align: center;
@@ -3869,6 +5800,14 @@
     }
 
     &__center {
+        @include r(767) {
+            padding: 0;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            border-bottom: 1px solid $gray;
+        }
+
         padding: 0 15px;
     }
 
@@ -3894,6 +5833,11 @@
     }
 
     &__right {
+        @include r(767) {
+            border-left: 0;
+            padding-left: 0;
+        }
+
         margin-left: auto;
         padding-left: 14px;
         border-left: 1px solid $gray;
@@ -3901,11 +5845,28 @@
     }
 
     .btn {
+        @include r(1279) {
+            padding: 8px 24px;
+        }
+
+        @include r(767) {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+        }
+
         padding: 12px 34px;
     }
 }
 
 .article {
+    @include r(767) {
+        display: block;
+        position: relative;
+        padding: 16px;
+    }
+
     background: #ffffff;
     box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
     padding: 24px 27px;
@@ -3928,6 +5889,12 @@
         margin-bottom: 3px;
 
         span {
+            @include r(767) {
+                display: block;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
             color: $gray2;
             font-size: 14px;
             font-weight: normal;
@@ -3960,11 +5927,21 @@
     }
 
     &__right {
+        @include r(767) {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+        }
+
         @include fcn;
         margin-left: auto;
         align-self: center;
 
         a {
+            @include r(767) {
+                margin: 0 6px;
+            }
+
             width: 40px;
             height: 40px;
             @include fcc;
@@ -3979,6 +5956,10 @@
             }
 
             .icon {
+                @include r(767) {
+                    font-size: 25px;
+                }
+
                 fill: $blue;
                 font-size: 33px;
                 transition: $trans;
@@ -3988,6 +5969,12 @@
 }
 
 .blog {
+    @include r(767) {
+        & + .sidebar {
+            display: none !important;
+        }
+    }
+
     padding-top: 50px;
 
     h1,
@@ -3995,6 +5982,10 @@
     h3,
     h4,
     h5 {
+        @include r(767) {
+            margin-bottom: 15px;
+        }
+
         margin-bottom: 0;
         display: block;
         text-align: left;
@@ -4012,17 +6003,49 @@
 
     &-header {
         .container {
+            padding-top: 50px;
+            padding-bottom: 50px;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            height: 220px;
             @include fcc;
             flex-direction: column;
             color: #fff;
             text-align: center;
 
             &.full {
+                @include r(767) {
+                    height: 313px;
+                }
+
+                padding-top: 0;
+                padding-bottom: 0;
                 height: 340px;
+            }
+
+            h1 {
+                @include r(767) {
+                    font-size: 24px;
+                    margin-bottom: 0;
+                }
+            }
+
+            h3 {
+                @include r(767) {
+                    font-size: 14px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__mainTitle {
+        @include r(767) {
+            font-size: 18px;
+
+            & + h3 {
+                font-size: 14px;
+                margin-bottom: 0;
             }
         }
     }
@@ -4057,6 +6080,10 @@
     }
 
     &__top {
+        @include r(767) {
+            padding: 32px 13px 10px;
+        }
+
         background: #fff;
         padding: 40px 40px 10px;
         margin-top: -193px;
@@ -4076,12 +6103,21 @@
     }
 
     &__author {
+        @include r(767) {
+            display: block;
+            margin-bottom: 0;
+        }
+
         @include fcsb;
         padding: 25px 0;
         border-top: 1px solid $gray;
         margin-bottom: 20px;
 
         &-left {
+            @include r(767) {
+                margin-bottom: 22px;
+            }
+
             @include fcn;
 
             img {
@@ -4104,9 +6140,17 @@
     }
 
     .social {
+        @include r(767) {
+        }
+
         box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
 
         a {
+            @include r(767) {
+                width: 25%;
+                @include fcc;
+            }
+
             padding: 12px 17px;
             border-right: 1px solid $gray;
             margin: 0;
@@ -4136,6 +6180,10 @@
     }
 
     &__caption {
+        @include r(767) {
+            font-size: 12px;
+        }
+
         text-align: center;
         color: #828282;
         margin-bottom: 35px;
@@ -4148,10 +6196,33 @@
     }
 
     &__images {
+        @include r(767) {
+            overflow: scroll;
+            @include fcs;
+            margin-left: -10px;
+            padding-left: 10px;
+            width: calc(100% + 20px);
+            padding-right: 10px;
+        }
+
         @include fcc;
         margin-bottom: 14px;
 
         img {
+            @include r(1023) {
+                width: 28%;
+            }
+
+            @include r(767) {
+                width: 90%;
+                white-space: nowrap;
+                margin: 0 5px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
             margin: 0 15px;
         }
     }
@@ -4199,6 +6270,13 @@
         flex-wrap: wrap;
 
         div {
+            @include r(767) {
+                font-size: 10px;
+                margin-right: 5px;
+                margin-bottom: 6px;
+                padding: 3px 9px;
+            }
+
             background: #f5f9fa;
             margin-right: 15px;
             padding: 4px 14px;
@@ -4207,6 +6285,11 @@
         }
 
         a {
+            @include r(767) {
+                font-size: 10px;
+                margin-bottom: 5px;
+            }
+
             margin-bottom: 12px;
             @include fcn;
             color: $blue;
@@ -4232,6 +6315,12 @@
 }
 
 .blockquote {
+    @include r(767) {
+        padding: 25px 20px;
+        margin-left: -10px;
+        width: calc(100% + 20px);
+    }
+
     background: #f4f7fa;
     padding: 40px 70px;
     font-size: 16px;
@@ -4248,6 +6337,10 @@
 }
 
 .advice {
+    @include r(767) {
+        padding-left: 21px;
+    }
+
     border-left: 3px solid $text;
     padding-left: 32px;
     line-height: 1.8;
@@ -4279,6 +6372,10 @@
     }
 
     &__sort {
+        @include r(767) {
+            font-size: 14px;
+        }
+
         font-weight: 700;
         font-size: 18px;
 
@@ -4289,10 +6386,19 @@
     }
 
     form {
+        @include r(767) {
+            @include fsn;
+        }
+
         @include fcn;
         margin-bottom: 22px;
 
         img {
+            @include r(767) {
+                width: 30px;
+                margin-right: 11px;
+            }
+
             width: 44px;
             flex-shrink: 0;
             margin-right: 26px;
@@ -4304,6 +6410,10 @@
         }
 
         input {
+            @include r(767) {
+                font-size: 12px;
+            }
+
             width: 100%;
             padding: 13px 18px;
             padding-right: 80px;
@@ -4333,10 +6443,19 @@
     }
 
     &__item {
+        @include r(767) {
+            padding-left: 0;
+        }
+
         @include fsn;
         padding-left: 70px;
 
         img {
+            @include r(767) {
+                width: 30px;
+                margin-right: 11px;
+            }
+
             width: 44px;
             margin-right: 20px;
             flex-shrink: 0;
@@ -4346,6 +6465,10 @@
             width: 100%;
 
             & > .comment__item {
+                @include r(767) {
+                    margin-left: -25px;
+                }
+
                 padding-left: 0;
 
                 img {
@@ -4357,6 +6480,10 @@
     }
 
     &__text {
+        @include r(767) {
+            font-size: 12px;
+        }
+
         width: 100%;
         padding: 18px;
         background: #f4f7fa;
@@ -4388,22 +6515,46 @@
 }
 
 .points {
+    @include r(767) {
+        padding: 26px 20px;
+    }
+
     padding: 20px 30px;
 
     &__top {
+        @include r(767) {
+            display: block;
+        }
+
         @include fce;
     }
 
     &__range {
+        @include r(767) {
+            flex-wrap: wrap;
+            @include fcsb;
+        }
+
         @include fcn;
 
         span {
+            @include r(767) {
+                display: block;
+                width: 100%;
+                margin-bottom: 12px;
+            }
+
             font-weight: 700;
             color: $gray2;
             margin-right: 8px;
         }
 
         div {
+            @include r(767) {
+                width: 48%;
+                margin: 0;
+            }
+
             cursor: pointer;
             border: 1px solid $gray;
             color: #828282;
@@ -4424,6 +6575,13 @@
     }
 
     .btn {
+        @include r(767) {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;    
+        }
+
         padding: 7px 43px;
     }
 }
@@ -4438,9 +6596,17 @@
     }
 
     &__body {
+        @include r(767) {
+            display: block;
+        }
+
         @include fcn;
 
         img {
+            @include r(767) {
+                margin-bottom: 10px;
+            }
+
             width: 112px;
             border-radius: 50%;
             flex-shrink: 0;
