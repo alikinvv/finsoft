@@ -756,6 +756,7 @@ div.select {
 
         border: 1px solid $blue;
         padding: 17px 57px;
+        padding-left: 17px;
         position: relative;
         cursor: pointer;
         user-select: none;
@@ -769,6 +770,10 @@ div.select {
             @include centerYa;
             left: 17px;
             font-size: 25px;
+
+            & + span {
+                padding-left: 40px;
+            }
         }
 
         &::before {
