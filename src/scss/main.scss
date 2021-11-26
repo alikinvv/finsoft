@@ -1371,6 +1371,7 @@
         @include fcc;
         display: none;
         margin-left: 20px;
+        flex-shrink: 0;
 
         .icon {
             fill: #fff;
@@ -3551,7 +3552,7 @@
 
     &__controls {
         @include r(767) {
-            margin-top: 20px;    
+            margin-top: 20px;
         }
 
         margin-top: 60px;
