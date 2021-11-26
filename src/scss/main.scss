@@ -1963,6 +1963,7 @@
             display: block;
             width: 47%;
             margin-right: 0;
+            margin-bottom: 10px;
         }
 
         margin-right: 19px;
@@ -1991,7 +1992,7 @@
     &__likes {
         @include r(767) {
             @include fcn;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         order: 4;
