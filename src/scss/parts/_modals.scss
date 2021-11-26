@@ -42,15 +42,29 @@
 
     &[data-modal='sale'] {
         .top {
+            @include r(767) {
+                display: block;
+                padding: 10px 20px 0;
+            }
+
             padding: 30px;
             @include fcn;
 
             img {
+                @include r(767) {
+                    width: 75px;
+                    margin-right: 0;
+                }
+
                 width: 95px;
                 margin-right: 30px;
             }
 
             h2 {
+                @include r(767) {
+                    font-size: 18px;
+                }
+
                 margin-bottom: 10px;
                 display: block;
                 text-align: left;
@@ -66,6 +80,10 @@
         }
 
         .body {
+            @include r(767) {
+                padding: 10px 20px;
+            }
+
             padding: 0 30px 30px;
 
             &__text {
@@ -78,6 +96,12 @@
             @include fcn;
 
             input {
+                @include r(767) {
+                    font-size: 14px;
+                    padding: 14px 20px;
+                    height: 49px;
+                }
+
                 width: 100%;
                 border: 1px solid #5b88d9;
                 font-weight: 700;
@@ -90,6 +114,12 @@
             }
 
             button {
+                @include r(767) {
+                    width: 49px;
+                    height: 49px;
+                    font-size: 20px;
+                }
+
                 width: 66px;
                 height: 66px;
                 padding: 0;
@@ -99,17 +129,29 @@
                 font-weight: 700;
 
                 .icon {
+                    @include r(767) {
+                        font-size: 30px;
+                    }
+
                     font-size: 44px;
                 }
             }
         }
 
         .modal__footer {
+            @include r(767) {
+                padding: 20px 20px;
+            }
+
             padding: 30px;
             background: #f4f7fa;
         }
 
         .subtitle {
+            @include r(767) {
+                margin-bottom: 15px;
+            }
+
             font-weight: 700;
             font-size: 16px;
             margin-bottom: 20px;
