@@ -545,10 +545,13 @@ let sameHeight = (item, element, count) => {
 let resize = () => {
     ww = $(window).width();
     sameHeight('.news__list:not(.three) .news__item', '.news__title', 4);
-    sameHeight('.news__list.three .news__item', '.news__title', 3);
     sameHeight('.users__item', '.users__text', 4);
     sameHeight('.reviews__item', '.reviews__body', 2);
     sameHeight('.service', '.service__text', 3);
+
+    if (ww > 767) {
+        sameHeight('.news__list.three .news__item', '.news__title', 3);
+    }
 };
 
 resize();
@@ -608,6 +611,7 @@ if (ww < 768) {
     $('.profile__name').append($('.profile__stars'));
     $('.profile__name').append($('.profile__time'));
     sameHeight('.features__row', '.features__item', 3);
+    $('.news__list.three  .news__title').css('height', 'auto');
 
     if (!$('.main__search').length) {
         $('.header').addClass('center');
