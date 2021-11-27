@@ -158,6 +158,7 @@
             user-select: none;
             transition: $trans;
             box-shadow: 0 0 9px 2px rgba(#000, 0.3);
+            z-index: 3;
 
             div {
                 display: block;
@@ -209,9 +210,11 @@
 
                 @include r(767) {
                     margin-bottom: -83px;
+                    width: 100%;
                 }
 
                 cursor: pointer;
+                width: 365px;
 
                 &:hover .how__btn img {
                     transform: scale(1.1);
@@ -288,22 +291,32 @@
     }
 
     &__btn {
+        @include r(1023) {
+            top: -5%;
+            right: 16%;
+        }
+
         @include r(767) {
             top: -9%;
-            right: 16%;
         }
 
         @include fcn;
         position: absolute;
         top: 12%;
-        right: 7%;
+        right: -26%;
 
         img {
-            @include r(767) {
+            @include r(1279) {
+                right: -9%;
+            }
+
+            @include r(1023) {
                 width: 78px;
                 height: 78px;
             }
 
+            width: 92px;
+            height: 92px;
             margin-right: 10px;
             margin-top: 0;
             margin-bottom: 0;
@@ -1160,36 +1173,10 @@
 
     padding: 34px 0;
 
-    &__header {
-        @include r(767) {
-            margin-bottom: 29px;
-        }
-
-        @include fcsb;
-        margin-bottom: 18px;
-
-        h2 {
-            display: block;
-            margin-bottom: 0;
-        }
-
-        a {
-            @include r(767) {
-                display: none;
-            }
-
-            transform: none;
-            position: static;
-            color: $text;
-            font-size: 24px;
-            text-decoration: none;
-            border-bottom: 1px dashed;
-            transition: $trans;
-
-            &:hover {
-                border-color: transparent;
-            }
-        }
+    h2 {
+        display: block;
+        margin-bottom: 29px;
+        text-align: left;
     }
 
     &__main {
@@ -1199,13 +1186,46 @@
 
         @include fssb;
 
-        img {
-            @include r(1023) {
-                margin-left: 0;
-                margin-top: 30px;
+        & > div {
+            &:last-child {
+                @include r(1023) {
+                    display: block;
+                }
+
+                @include fen;
+                flex-direction: column;
+                flex-shrink: 0;
+
+                a {
+                    @include r(1023) {
+                        display: none;
+                    }
+
+                    transform: none;
+                    position: static;
+                    color: $text;
+                    font-size: 24px;
+                    text-decoration: none;
+                    border-bottom: 1px dashed;
+                    transition: $trans;
+                    display: inline-block;
+                    margin-bottom: 29px;
+                    flex-shrink: 0;
+
+                    &:hover {
+                        border-color: transparent;
+                    }
+                }
             }
 
-            margin-left: 40px;
+            img {
+                @include r(1023) {
+                    margin-left: 0;
+                    margin-top: 30px;
+                }
+
+                margin-left: 40px;
+            }
         }
     }
 
@@ -1222,11 +1242,10 @@
         flex-wrap: wrap;
 
         a {
-            color: $blue;
             transition: $trans;
 
             &:hover {
-                color: $orange;
+                color: $blue;
             }
         }
 
@@ -1576,10 +1595,19 @@
         margin-bottom: 70px;
     }
 
-    @include fcc;
     font-size: 20px;
     color: #060c1c;
+    text-align: center;
     margin-top: 40px;
+
+    &__nums {
+        @include r(767) {
+            margin-bottom: 10px;
+        }
+
+        @include fcc;
+        margin-bottom: 15px;
+    }
 
     &__num {
         width: 30px;
@@ -1604,14 +1632,16 @@
     &__prev {
         @include r(767) {
             margin-top: 10px;
-            width: 50%;
+            width: 49%;
             margin-right: 0;
             text-align: center;
+            font-size: 16px;
         }
 
         cursor: pointer;
         margin-right: 30px;
         transition: $trans;
+        display: inline-block;
 
         &:hover {
             color: $orange;
@@ -1621,12 +1651,14 @@
     &__next {
         @include r(767) {
             margin-top: 10px;
-            width: 50%;
+            width: 49%;
             text-align: center;
+            font-size: 16px;
         }
 
         cursor: pointer;
         transition: $trans;
+        display: inline-block;
 
         &:hover {
             color: $orange;
@@ -1699,7 +1731,6 @@
             padding: 3px 27px;
             font-size: 12px;
             cursor: pointer;
-            transition: $trans;
 
             &.active {
                 @include r(767) {
@@ -1721,9 +1752,8 @@
                     }
 
                     content: '';
-                    position: absolute;
                     width: 27px;
-                    top: 0;
+                    @include centerYa;
                     height: 100%;
                     right: -16px;
                     background: url(../img/icons/path.svg) no-repeat center;
@@ -1736,8 +1766,7 @@
                     }
 
                     content: '';
-                    position: absolute;
-                    top: 0;
+                    @include centerYa;
                     width: 0;
                     height: 0;
                     right: -12px;
@@ -1813,6 +1842,8 @@
         @include r(767) {
             padding-left: 0;
             margin-top: 30px;
+            display: flex;
+            flex-direction: column;
 
             .btn {
                 margin: 0;
@@ -1823,7 +1854,9 @@
             }
 
             .btn-outline {
-                margin-bottom: 10px;
+                margin-top: 10px;
+                order: 2;
+                margin-bottom: 0;
             }
         }
     }
@@ -1832,7 +1865,13 @@
         @include r(767) {
             max-width: 100%;
             flex-wrap: nowrap;
-            @include fcsb;
+            @include fcs;
+
+            & > div,
+            & > a {
+                margin-right: 10px !important;
+                margin-left: 0 !important;
+            }
 
             .reviews__rating {
                 margin-right: 0;
@@ -1993,19 +2032,20 @@
         @include r(767) {
             @include fcn;
             margin-top: 10px;
+            order: 4;
         }
-
-        order: 4;
     }
 
     &__form {
         @include r(1279) {
             margin-left: 0;
+            margin-top: 10px;
         }
 
         @include r(767) {
             @include fssb;
             width: 100%;
+            margin-top: 0;
         }
 
         @include fcn;

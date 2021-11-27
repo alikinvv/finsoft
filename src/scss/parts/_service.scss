@@ -69,6 +69,10 @@
         line-height: 1.33;
         padding-right: 30px;
         transition: $trans;
+
+        img {
+            margin-left: 5px;
+        }
     }
 
     &__reviews {

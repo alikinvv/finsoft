@@ -105,8 +105,10 @@
     }
 
     &__buttons {
+        margin-left: 20px;
         @include fcc;
         flex-direction: column;
+        flex-shrink: 0;
 
         a {
             display: block;
@@ -133,14 +135,20 @@
             position: absolute;
             top: 10px;
             right: 0;
+            margin-top: 0;
         }
 
         @include fcn;
+        flex-shrink: 0;
+        position: relative;
+        margin-top: 7px;
     }
 
     &__controls {
-        @include fcn;
+        @include fsn;
         margin-bottom: -3px;
+        top: 10px;
+        flex-shrink: 0;
 
         .heart,
         .bookmark {
@@ -168,14 +176,14 @@
     &__title {
         font-weight: 700;
         font-size: 18px;
-        @include fcn;
         margin-right: 9px;
+        transition: $trans;
+
+        &:hover {
+            color: $blue;
+        }
 
         .icon {
-            @include r(767) {
-                display: none;
-            }
-
             fill: $blue;
             font-size: 10px;
             margin-left: 9px;
@@ -184,15 +192,25 @@
         }
     }
 
+    .item__reviews {
+        @include r(767) {
+            margin-top: 0;
+        }
+
+        margin-top: 7px;
+    }
+
     &__reviews {
         @include r(767) {
-            order: 2;
+            order: 4;
             margin-left: 10px;
+            margin-top: 0;
         }
 
         color: $gray2;
         text-decoration: underline;
         font-size: 12px;
+        flex-shrink: 0;
 
         &:hover {
             text-decoration: none;

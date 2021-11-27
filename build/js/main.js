@@ -496,6 +496,8 @@ var resize = function resize() {
   sameHeight('.users__item', '.users__text', 4);
   sameHeight('.reviews__item', '.reviews__body', 2);
   sameHeight('.service', '.service__text', 3);
+  sameHeight('.sale__list:not(.four) .sale__item', '.sale__text', 5);
+  sameHeight('.sale__list.four .sale__item', '.sale__text', 4);
 
   if (ww > 767) {
     sameHeight('.news__list.three .news__item', '.news__title', 3);

@@ -42,9 +42,18 @@
 
         @include r(1023) {
             margin-bottom: 35px;
+
+            br {
+                display: none;
+            }
+        }
+
+        @include r(767) {
+            width: 100%;
         }
 
         margin: 0 4%;
+        width: 33.33%;
     }
 
     &__title {

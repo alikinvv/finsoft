@@ -39,8 +39,8 @@
             line-height: 1.33;
             margin-top: -4px;
             min-height: 61px;
-            @include fcn;
             margin-bottom: 0;
+            display: block;
         }
 
         font-weight: 700;
@@ -71,7 +71,7 @@
 
     &__awards {
         @include r(767) {
-            order: 3;
+            order: 2;
         }
 
         @include fcn;
@@ -79,6 +79,8 @@
         font-weight: 700;
         margin-right: 9px;
         font-size: 12px;
+        margin-left: 16px;
+        flex-shrink: 0;
 
         img {
             @include r(767) {
@@ -86,7 +88,6 @@
             }
 
             margin-right: 5px;
-            margin-left: 16px;
         }
     }
 
@@ -203,23 +204,25 @@
     }
 
     &__check {
-        @include r(1279) {
-            font-size: 12px;
-        }
-
-        @include r(767) {
-            font-size: 10px;
-        }
-
-        font-size: 10px;
         @include fcn;
-        color: $green;
+        color: $gray2;
+        margin-bottom: 12px;
         font-weight: 700;
-        white-space: nowrap;
-        margin-top: 2px;
+        font-size: 10px;
 
-        img {
-            margin-right: 5px;
+        &.active {
+            color: $green;
+
+            .icon {
+                fill: $green;
+            }
+        }
+
+        .icon {
+            fill: $gray2;
+            font-size: 11px;
+            margin-right: 4px;
+            flex-shrink: 0;
         }
     }
 

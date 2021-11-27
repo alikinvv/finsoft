@@ -144,6 +144,11 @@
     }
 
     &__text {
+        @include r(1023) {
+            min-height: 38.375px;
+            height: auto !important;
+        }
+
         font-size: 12px;
         color: $gray2;
     }
