@@ -160,6 +160,7 @@ textarea {
     border: 1px solid #b3b8be;
     transition: $trans;
     user-select: none;
+    resize: none;
 
     &:focus {
         border-color: $text;
@@ -774,6 +775,10 @@ div.select {
             font-size: 25px;
 
             & + span {
+                @include r(767) {
+                    padding-left: 10px;
+                }
+
                 padding-left: 40px;
             }
         }

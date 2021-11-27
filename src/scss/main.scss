@@ -3141,6 +3141,154 @@
         }
     }
 
+    &__sort {
+        @include fsn;
+
+        &-body {
+            width: 100%;
+
+            .file {
+                margin-bottom: 10px;
+            }
+
+            input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        &-icon {
+            @include r(767) {
+                margin-top: 14px;
+            }
+
+            margin-top: 14px;
+            margin-left: 15px;
+            flex-shrink: 0;
+            cursor: pointer;
+
+            &:hover .icon {
+                fill: $orange !important;
+            }
+
+            .icon {
+                @include r(767) {
+                    font-size: 25px !important;
+                }
+
+                position: static !important;
+                transform: none !important;
+                fill: $gray2 !important;
+                font-size: 36px !important;
+                margin: 0 -7px;
+                transition: $trans;
+            }
+        }
+
+        &-flex {
+            @include r(767) {
+                display: block;
+            }
+
+            margin-bottom: 10px;
+            @include fcn;
+
+            input {
+                margin-bottom: 0;
+            }
+
+            button {
+                @include r(767) {
+                    height: 50px;
+                    margin-left: 0;
+                    margin-top: 10px;
+                }
+
+                height: 60px;
+                margin-left: 12px;
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    &__more {
+        font-weight: 700;
+        color: $orange;
+        @include fcn;
+        margin-bottom: 28px;
+        cursor: pointer;
+        transition: $trans;
+
+        &:hover {
+            color: $blue;
+
+            .icon {
+                fill: $blue !important;
+            }
+        }
+
+        .icon {
+            position: static !important;
+            transform: none !important;
+            font-size: 18px !important;
+            transition: $trans;
+            margin-right: 10px;
+        }
+    }
+
+    &__row {
+        @include r(767) {
+            display: block;
+        }
+
+        @include fsn;
+        margin-bottom: 22px;
+    }
+
+    .reviews__progress + .form__controls {
+        margin-top: 30px;
+    }
+
+    .service__progress-item {
+        margin-bottom: 10px;
+
+        & > span {
+            @include r(767) {
+                font-size: 12px;
+                min-width: 180px;
+            }
+
+            color: $gray2;
+            min-width: 230px;
+            font-weight: 700;
+        }
+
+        div span {
+            @include r(767) {
+                width: 20px;
+                height: 7px;
+            }
+
+            width: 40px;
+            height: 10px;
+        }
+    }
+
+    &__col {
+        @include r(767) {
+            width: 100%;
+            padding-right: 0;
+        }
+
+        width: 50%;
+        padding-right: 20px;
+
+        .form-group {
+            margin-bottom: 18px;
+            align-items: flex-start !important;
+        }
+    }
+
     & > .form-group {
         margin-bottom: 22px;
 
@@ -3250,17 +3398,39 @@
         }
 
         &.flex {
+            @include r(767) {
+                display: block;
+            }
+
             @include fcs;
 
-            span {
+            & > span {
+                @include r(767) {
+                    margin-bottom: 15px;
+                    display: block;
+                }
+
                 font-weight: 700;
                 color: $text;
                 margin-right: 18px;
                 font-size: 16px;
                 flex-shrink: 0;
+
+                span {
+                    display: block;
+                    font-weight: normal;
+                    color: $gray2;
+                    font-size: 14px;
+                }
             }
 
             .radio {
+                @include r(767) {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                    margin-left: 0 !important;
+                }
+
                 margin-right: 35px;
 
                 &:last-child {
@@ -6754,6 +6924,42 @@
 
         &:hover {
             text-decoration: none;
+        }
+    }
+}
+
+.add {
+    margin-bottom: 30px;
+    margin-top: -15px;
+
+    &__item {
+        @include r(767) {
+            display: block;
+        }
+
+        @include fcn;
+        padding: 13px 0;
+        border-bottom: 1px solid $gray;
+
+        &:last-child {
+            border: 0;
+        }
+
+        .form__tags {
+            @include r(767) {
+                min-width: auto;
+                margin-bottom: 10px;
+            }
+
+            flex-shrink: 0;
+            min-width: 200px;
+        }
+
+        input[type='text'] {
+            height: initial;
+            font-size: 14px;
+            padding: 6px 13px;
+            width: 100%;
         }
     }
 }
