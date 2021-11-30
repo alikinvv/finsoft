@@ -92,10 +92,6 @@
     }
 
     &__top {
-        @include r(767) {
-            position: relative;
-        }
-
         @include fssb;
         margin-bottom: -5px;
 
@@ -219,9 +215,24 @@
 
     &__info {
         @include r(767) {
-            flex-wrap: wrap;
-            max-width: 250px;
             margin-top: 10px;
+            margin-bottom: 15px;
+            max-width: 200px;
+            flex-wrap: wrap;
+
+            .item__reviews {
+                order: 2;
+            }
+
+            .reviews__awards {
+                order: 3;
+                margin-left: 0;
+                margin-top: 5px;
+            }
+
+            .reviews__rating {
+                margin-top: 5px;
+            }
         }
 
         @include fcn;
@@ -230,8 +241,6 @@
     .reviews__rating,
     .reviews__awards {
         @include r(767) {
-            margin-top: 10px;
-            margin-bottom: 30px;
         }
     }
 

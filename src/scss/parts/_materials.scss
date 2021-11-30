@@ -11,6 +11,12 @@
 
     &__list {
         overflow: visible;
+
+        & + .content__more {
+            @include r(767) {
+                display: none;
+            }
+        }
     }
 
     &__item {

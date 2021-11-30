@@ -236,6 +236,11 @@
         font-weight: 700;
         font-size: 12px;
         margin-bottom: 13px;
+        white-space: nowrap;
+
+        img {
+            margin-right: 5px;
+        }
     }
 
     &__head {
@@ -328,10 +333,14 @@
             border-color: transparent transparent #f1f3f5 transparent;
         }
 
-        img {
+        & > a {
             width: 50px;
-            border-radius: 50%;
             margin-right: 21px;
+            flex-shrink: 0;
+
+            img {
+                border-radius: 50%;
+            }
         }
 
         &-top {
@@ -351,6 +360,11 @@
 
             font-size: 12px;
             font-weight: 700;
+            transition: $trans;
+
+            &:hover {
+                color: $blue;
+            }
         }
 
         &-date {

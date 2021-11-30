@@ -58,6 +58,7 @@
             width: 10px;
             position: relative;
             top: -6px;
+            margin-left: 5px;
         }
     }
 
@@ -66,6 +67,15 @@
             margin-top: 10px;
             margin-left: -75px;
             max-width: 260px;
+
+            .reviews__count {
+                order: 2;
+            }
+
+            .reviews__awards {
+                order: 3;
+                margin-left: 0;
+            }
         }
     }
 

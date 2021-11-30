@@ -98,6 +98,10 @@ $('body').on('click', '.sidebar .scrollto', function (e) {
   $(e.currentTarget).next().slideDown(300);
   $(e.currentTarget).remove();
 });
+$('body').on('click', '.overview__text a', function (e) {
+  $(e.currentTarget).parent().find('.hide').show();
+  $(e.currentTarget).remove();
+});
 $('body').on('click', '.sort__filter, .filter__close', function (e) {
   $('.content.with-filter').toggleClass('show-filter');
   $('.filter').toggleClass('active');
@@ -201,6 +205,12 @@ $('body').on('click', '.select:not(.active) .select__current', function (e) {
 var masks = document.querySelectorAll('.phone-mask');
 masks.forEach(function (el) {
   IMask(el, {
+    mask: '(000) 000 00 00'
+  });
+});
+var phones = document.querySelectorAll('.phone-input');
+phones.forEach(function (el) {
+  IMask(el, {
     mask: '+{7} (000) 000 00 00'
   });
 });
@@ -213,7 +223,7 @@ if (ww > 768) {
 }
 
 $('body').on('click', '.video + .content__more', function (e) {
-  $('.video.hide').addClass('active');
+  $(e.currentTarget).prev().addClass('active');
   $(e.currentTarget).remove();
 });
 $('body').on('click', '.logos + .content__more', function (e) {
@@ -490,14 +500,55 @@ var sameHeight = function sameHeight(item, element, count) {
   }
 };
 
+var sameHeightFeatures = function sameHeightFeatures(item, element, count) {
+  var titleHeight = 0;
+  var items = [];
+
+  for (var i = 0; i < $(item).length + 1; i++) {
+    var $step = $(item).eq(i - 1);
+
+    if (i !== 0 && i % count === 0) {
+      if ($step.find(element).height() > titleHeight) {
+        titleHeight = $step.find(element).height();
+      }
+
+      items.push(i - 1);
+
+      for (var j = 0; j < items.length; j++) {
+        $(item).eq(items[j]).find(element).height(titleHeight);
+      }
+
+      items = [];
+      titleHeight = 0;
+    } else {
+      items.push(i - 1);
+
+      if ($step.find(element).height() > titleHeight) {
+        titleHeight = $step.find(element).height();
+      }
+    }
+  }
+};
+
 var resize = function resize() {
   ww = $(window).width();
   sameHeight('.news__list:not(.three) .news__item', '.news__title', 4);
   sameHeight('.users__item', '.users__text', 4);
   sameHeight('.reviews__item', '.reviews__body', 2);
   sameHeight('.service', '.service__text', 3);
-  sameHeight('.sale__list:not(.four) .sale__item', '.sale__text', 5);
-  sameHeight('.sale__list.four .sale__item', '.sale__text', 4);
+  sameHeight('.sale__list:not(.four) .swiper-slide .sale__item', '.sale__text', 5);
+
+  if (ww > 1279) {
+    sameHeight('.sale__list.four .sale__item', '.sale__text', 4);
+  }
+
+  if (ww > 1023 && ww < 1280) {
+    sameHeight('.sale__list.four .sale__item', '.sale__text', 3);
+  }
+
+  if (ww > 767 && ww < 1024) {
+    sameHeight('.sale__list.four .sale__item', '.sale__text', 2);
+  }
 
   if (ww > 767) {
     sameHeight('.news__list.three .news__item', '.news__title', 3);
@@ -552,7 +603,7 @@ if (ww < 768) {
   $('.profile__left').append($('.profile__name'));
   $('.profile__name').append($('.profile__stars'));
   $('.profile__name').append($('.profile__time'));
-  sameHeight('.features__row', '.features__item', 3);
+  sameHeightFeatures('.features__row', '.features__item', 3);
   $('.news__list.three  .news__title').css('height', 'auto');
 
   if (!$('.main__search').length) {

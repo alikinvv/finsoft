@@ -1951,26 +1951,29 @@
         margin-top: 14px;
 
         a {
+            position: relative;
+
             @include r(1023) {
                 white-space: nowrap;
             }
 
-            color: $gray2;
             font-weight: 400;
 
-            &.active {
-                position: relative;
-                color: $text;
-
+            &:hover {
                 &::before {
-                    content: '';
-                    position: absolute;
-                    bottom: -10px;
-                    left: 0;
                     width: 100%;
-                    height: 3px;
-                    background: $orange;
                 }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 0;
+                transition: $trans;
+                height: 3px;
+                background: $orange;
             }
 
             &.orange {
@@ -2112,6 +2115,10 @@
                 text-decoration: none;
             }
         }
+
+        .hide {
+            display: none;
+        }
     }
 }
 
@@ -2172,7 +2179,23 @@
 }
 
 .compare {
+    @include r(767) {
+        overflow: scroll;
+        display: flex;
+        padding: 10px;
+        margin: -10px;
+    }
+
     a {
+        @include r(767) {
+            white-space: nowrap;
+            display: inline-block;
+            width: 216px;
+            flex-shrink: 0;
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+
         @include fcc;
         box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
         margin-bottom: 10px;
@@ -2180,6 +2203,10 @@
         transition: $trans;
 
         &:hover {
+            @include r(767) {
+                box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
+            }
+
             box-shadow: none;
         }
 
@@ -2192,7 +2219,7 @@
 .book {
     padding: 25px 20px;
     background: url(../img/icons/book.svg) no-repeat left bottom;
-    background-size: 70px;
+    background-size: 56px;
     box-shadow: 0px 0px 15px rgba(134, 135, 135, 0.35);
 
     &__title {
@@ -2201,6 +2228,7 @@
         font-size: 13px;
         line-height: 1.38;
         margin-bottom: 8px;
+        display: block;
     }
 
     &__text {
@@ -2250,12 +2278,17 @@
     &__title {
         font-weight: 700;
         @include fcn;
+        transition: $trans;
 
         img {
             margin-left: 5px;
             width: 10px;
             position: relative;
             top: -3px;
+        }
+
+        &:hover {
+            color: $blue;
         }
     }
 
@@ -2294,6 +2327,12 @@
 
         &.active {
             display: block;
+        }
+    }
+
+    & + .content__more {
+        @include r(767) {
+            display: none;
         }
     }
 
@@ -2554,9 +2593,9 @@
         }
 
         width: 33.33%;
-        text-align: center;
-        @include fcc;
+        @include fcn;
         line-height: 1.35;
+        padding: 0 20px;
 
         &.disable {
             color: $gray2;
@@ -2581,7 +2620,7 @@
         overflow: scroll;
     }
 
-    @include fcsb;
+    @include fssb;
     padding-top: 20px;
 
     &.hide {

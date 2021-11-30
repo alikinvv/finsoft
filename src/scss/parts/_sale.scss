@@ -36,6 +36,13 @@
     &__list {
         overflow: visible;
 
+        &:not(.four) {
+            @include r(1023) {
+                min-height: 38.375px;
+                height: auto !important;
+            }
+        }
+
         &.four {
             @include r(1023) {
                 @include flexlist(10px);
@@ -144,11 +151,6 @@
     }
 
     &__text {
-        @include r(1023) {
-            min-height: 38.375px;
-            height: auto !important;
-        }
-
         font-size: 12px;
         color: $gray2;
     }
