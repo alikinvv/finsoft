@@ -40,6 +40,18 @@
         opacity: 1;
     }
 
+    &[data-modal='sale2'] {
+        button {
+            @include r(767) {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                text-align: center;
+            }
+        }
+    }
+
+    &[data-modal='sale2'],
     &[data-modal='sale'] {
         .top {
             @include r(767) {

@@ -2885,7 +2885,7 @@
     &__list {
         margin-bottom: 41px;
 
-        div {
+        a {
             @include r(767) {
                 font-size: 14px;
             }
@@ -2895,6 +2895,15 @@
             color: $green;
             font-weight: 700;
             margin-bottom: 13px;
+            transition: $trans;
+
+            &:hover {
+                color: $blue;
+
+                .icon {
+                    fill: $blue;
+                }
+            }
 
             &:last-child {
                 margin-bottom: 0;
@@ -2904,6 +2913,7 @@
                 fill: $green;
                 font-size: 23px;
                 margin-right: 17px;
+                transition: $trans;
                 flex-shrink: 0;
             }
         }
@@ -2915,18 +2925,21 @@
 }
 
 .trust {
+    background: #f4f7fa;
+
     .container {
         @include r(1023) {
             padding: 53px 10px 30px;
         }
 
-        background: #f4f7fa;
         padding: 53px 64px 30px;
     }
 
     h2 {
         @include r(767) {
             margin-bottom: 14px;
+            text-align: center;
+            margin-bottom: 40px;
         }
 
         margin-bottom: 34px;
@@ -2934,11 +2947,12 @@
 
     &__list {
         @include r(767) {
-            white-space: nowrap;
-            overflow: scroll;
+            flex-wrap: wrap;
 
-            img {
-                margin: 0 10px;
+            div {
+                @include fcc;
+                width: 49%;
+                margin-bottom: 20px;
             }
         }
 
@@ -2966,6 +2980,14 @@
     }
 
     &__body {
+        @include r(767) {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 95%;
+            right: initial;
+        }
+
         position: absolute;
         top: 110px;
         right: 0;
