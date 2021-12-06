@@ -135,6 +135,11 @@
         }
 
         & + .company__main {
+            @include r(767) {
+                border-top: 1px dashed $gray;
+                padding-top: 30px !important;
+            }
+
             margin-top: 30px;
         }
     }
@@ -153,9 +158,9 @@
             }
         }
 
-        width: 190px;
+        width: 200px;
         flex-shrink: 0;
-        margin-right: 110px;
+        margin-right: 100px;
 
         a > img {
             @include r(767) {
@@ -179,6 +184,7 @@
 
             div span:first-child {
                 font-weight: 700;
+                color: $text;
             }
         }
 

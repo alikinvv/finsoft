@@ -69,6 +69,19 @@
         @include fcn;
     }
 
+    &.auth {
+        @include r(767) {
+            .header__user {
+                margin-left: auto;
+            }
+
+            .header__icons {
+                margin-right: 0;
+                padding-right: 0;
+            }
+        }
+    }
+
     &__logo {
         @include r(767) {
             font-size: 18px;

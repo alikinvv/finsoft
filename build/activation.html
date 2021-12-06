@@ -38,14 +38,31 @@
     </header>
 <!-- START CONTENT  -->
 
-<section class="breadcrumbs-wrap">
+<section class="head">
     <div class="container">
         <div class="breadcrumbs">
             <a href="javascript:void(0)">Главная</a>
-            <a href="javascript:void(0)">Регистрация</a>
+            <a href="javascript:void(0)">Маркетинг</a>
+            <a href="javascript:void(0)">Лучшие программы</a>
+        </div>
+
+        <div class="main__search">
+            <input type="text" placeholder="Найдите сервис за 2 минуты">
+            <button>
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-search"></use>
+                </svg>
+            </button>
+            <div class="main__search-dropdown">
+                <div>Выберите правильный облачный сервис</div>
+                <div>Выберите правильный облачный сервис</div>
+                <div>Выберите правильный облачный сервис</div>
+            </div>
         </div>
     </div>
 </section>
+
+<section class="breadcrumbs-wrap"></section>
 
 <section class="wrapper">
     <div class="container">
@@ -83,7 +100,27 @@
         </div>
 
         <div class="wrapper__main">
-            <div class="wrapper__item  shadow">
+            <div class="lk">
+                <h3>Личный кабинет</h3>
+                <div class="form__flex">
+                    <div class="form-group">
+                        <div class="select">
+                            <div class="select__current">
+                                <span>Профиль</span>
+                            </div>
+                            <div class="select__dropdown custom-scroll">
+                                <div class="select__item">1-10</div>
+                                <div class="select__item">10-50</div>
+                                <div class="select__item">50-100</div>
+                                <div class="select__item">100-500</div>
+                                <div class="select__item">500-1000</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper__item shadow overflow">
                 <div class="wrapper__top">
                     <h2>Активируй аккаунт - <span class="green">Пользователя</span></h2>
                     <div class="divider"></div>
@@ -93,6 +130,14 @@
                         </svg>
                         Email: tane.photo.tane@mail.ru
                     </a>
+                </div>
+
+                <div class="progress">
+                    <div class="progress__count">1 из 3</div>
+                    <div class="progress__bar p-1">
+                        <!-- .p-2 .p-3-->
+                        <span></span>
+                    </div>
                 </div>
 
                 <div class="wrapper__body">
@@ -156,16 +201,24 @@
                                 <button class="btn btn-darkBlue sm">Получить <br> КОД по SMS</button>
                             </div>
                             <div class="form-group phone-wrap">
-                                <input type="text" class="sm phone-input" placeholder="Введите КОД из SMS">
+                                <input type="text" class="sm code" placeholder="Введите КОД из SMS">
                                 <button class="btn btn-darkBlue sm">Подтвердить <br> телефон</button>
                             </div>
                         </div>
                         <div class="form__flex">
                             <div class="form-group">
-                                <svg class="icon">
-                                    <use xlink:href="img/symbol-defs.svg#icon-pin"></use>
-                                </svg>
-                                <input type="text" placeholder="Город">
+                                <div class="select">
+                                    <div class="select__current">
+                                        <svg class="icon">
+                                            <use xlink:href="img/symbol-defs.svg#icon-pin"></use>
+                                        </svg>
+                                        <span>Город</span>
+                                    </div>
+                                    <div class="select__dropdown custom-scroll">
+                                        <div class="select__item">Смоленск</div>
+                                        <div class="select__item">Смоленская область</div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <span>Пол</span>
@@ -197,21 +250,10 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="select">
-                                    <div class="select__current">
-                                        <svg class="icon">
-                                            <use xlink:href="img/symbol-defs.svg#icon-case2"></use>
-                                        </svg>
-                                        <span>Название компании</span>
-                                    </div>
-                                    <div class="select__dropdown custom-scroll">
-                                        <div class="select__item">1-10</div>
-                                        <div class="select__item">10-50</div>
-                                        <div class="select__item">50-100</div>
-                                        <div class="select__item">100-500</div>
-                                        <div class="select__item">500-1000</div>
-                                    </div>
-                                </div>
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-case2"></use>
+                                </svg>
+                                <input type="text" placeholder="Название компании">
                             </div>
                         </div>
                         <div class="form__flex">
@@ -323,6 +365,56 @@
 
             <div class="wrapper__item">
                 <div class="survey">
+                    <div class="survey__top">
+                        <div class="survey__title">Какие сервисы вы используете в своей работе?</div>
+                        <div class="survey__subtitle">Выберите все сервисы, которые вы использовали ранее <br> или
+                            используете сейчас</div>
+                    </div>
+                    <div class="survey__main">
+                        <div class="survey__body">
+                            <input type="text" placeholder="Введите название">
+
+                            <div class="survey__dropdown">
+                                <div><img src="img/ps.png" alt=""> Фотошоп</div>
+                                <div><img src="img/ps.png" alt=""> Фотошоп</div>
+                                <div><img src="img/ps.png" alt=""> Фотошоп</div>
+                                <div><img src="img/ps.png" alt=""> Фотошоп</div>
+                                <div><img src="img/ps.png" alt=""> Фотошоп</div>
+                                <div><img src="img/ps.png" alt=""> Фотошоп</div>
+                            </div>
+                        </div>
+                        <div class="survey__sidebar">
+                            <div class="survey__name">Выберите 3 или больше сервисов </div>
+                            <div class="survey__list">
+                                <div class="survey__item">
+                                    <img src="img/ps.png" alt="">
+                                    Фотошоп
+                                    <a href="javascript:void(0)">
+                                        <svg class="icon">
+                                            <use xlink:href="img/symbol-defs.svg#icon-close"></use>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="survey__item">
+                                    <img src="img/ps.png" alt="">
+                                    Фотошоп
+                                    <a href="javascript:void(0)">
+                                        <svg class="icon">
+                                            <use xlink:href="img/symbol-defs.svg#icon-close"></use>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="survey__controls">
+                        <a href="javascript:void(0)" class="btn btn-big">Далее</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper__item">
+                <div class="survey mobile hide">
                     <div class="survey__top">
                         <div class="survey__title">Какие сервисы вы используете в своей работе?</div>
                         <div class="survey__subtitle">Выберите все сервисы, которые вы использовали ранее <br> или

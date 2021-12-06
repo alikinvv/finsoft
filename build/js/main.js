@@ -120,6 +120,11 @@ $('body').on('click', '.tabs a', function (e) {
   $('.tab').removeClass('active');
   $(e.currentTarget).addClass('active');
   $(".tab[data-tab=\"".concat($(e.currentTarget).attr('data-tab'), "\"]")).addClass('active');
+  $('.news__list.three  .news__title').css('height', 'auto');
+
+  if (ww > 767) {
+    sameHeight('.news__list.three .news__item', '.news__title', 3);
+  }
 });
 $('body').on('click', '.theme__nav-item', function (e) {
   $('.theme__nav-item').removeClass('active');
@@ -212,6 +217,12 @@ var phones = document.querySelectorAll('.phone-input');
 phones.forEach(function (el) {
   IMask(el, {
     mask: '+{7} (000) 000 00 00'
+  });
+});
+var code = document.querySelectorAll('.code');
+code.forEach(function (el) {
+  IMask(el, {
+    mask: '0000'
   });
 });
 
@@ -605,6 +616,7 @@ if (ww < 768) {
   $('.profile__name').append($('.profile__time'));
   sameHeightFeatures('.features__row', '.features__item', 3);
   $('.news__list.three  .news__title').css('height', 'auto');
+  $('.sale__list:not(.four) .sale__text').css('height', 'auto');
 
   if (!$('.main__search').length) {
     $('.header').addClass('center');

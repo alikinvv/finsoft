@@ -703,6 +703,10 @@ ol {
         width: 100%;
     }
 
+    .settings__list {
+        margin-bottom: 10px;
+    }
+
     .img {
         @include r(1023) {
             display: none;
@@ -757,7 +761,7 @@ div.select {
         }
 
         border: 1px solid $blue;
-        padding: 17px 57px;
+        padding: 13px 57px;
         padding-left: 17px;
         position: relative;
         cursor: pointer;
@@ -813,7 +817,7 @@ div.select {
         opacity: 0;
         pointer-events: none;
         user-select: none;
-        z-index: 2;
+        z-index: 3;
         box-shadow: 0 7px 7px rgba(#000, 0.1);
     }
 
