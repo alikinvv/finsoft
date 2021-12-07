@@ -3763,6 +3763,15 @@
         }
 
         padding-left: 54px;
+
+        &:focus {
+            & + .main__search-dropdown {
+                opacity: 1;
+                pointer-events: all;
+                user-select: initial;
+                bottom: -10px;
+            }
+        }
     }
 
     .divider {
