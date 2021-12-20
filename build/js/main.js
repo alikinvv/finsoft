@@ -203,6 +203,11 @@ $('body').on('click', '.select.active .select__current', function (e) {
   $('.select').removeClass('active');
   $(e.currentTarget).parent().removeClass('active');
 });
+$('body').on('click', '.select__dropdown .select__item', function (e) {
+  $(e.currentTarget).parent().removeClass('active');
+  $(e.currentTarget).closest('.select').find('.select__current span').text($(e.currentTarget).text());
+  $(e.currentTarget).closest('.select').removeClass('active');
+});
 $('body').on('click', '.select:not(.active) .select__current', function (e) {
   $('.select').removeClass('active');
   $(e.currentTarget).parent().addClass('active');
